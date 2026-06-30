@@ -1,0 +1,46 @@
+---
+description: Portfolio site workflow — Next.js build target, docs references, and design conventions
+alwaysApply: true
+---
+
+# Portfolio (juliet-gobran.com.au)
+
+## Active build
+
+- **Target:** Next.js App Router — Home (`/`), project detail (`/projects/[slug]`), About (`/about`)
+- **Design reference:** Figma frame `359:1096` in file `2qIoGOLmiSESnYiqVLyHco`
+- **Do not build** legacy `/home-v2` route unless explicitly asked
+
+## Before editing code
+
+1. Read relevant docs in `docs/portfolio/`:
+   - `site-map.md` — pages and routes
+   - `nextjs.md` — project structure and commands
+   - `content-schema.md` — project JSON format
+   - `figma.md` — frame structure and mapping
+   - `design-tokens.md` — colors, fonts, spacing (Figma source)
+   - `styles.md` — **use these CSS/Tailwind mappings first**
+2. **Prefer design tokens** — use CSS variables from `src/styles/tokens.css` and Tailwind theme extensions; avoid hardcoded values
+3. Use **shared layout** for nav/footer (app shell), not duplicated per page
+4. Use **client components** only when needed (e.g. live Wollongong clock)
+5. Do not deploy to production without explicit user approval
+
+## Voice and content
+
+- Title: **Senior Product Designer**
+- Tone: friendly, professional, not corporate
+- Nav links: LinkedIn (`https://www.linkedin.com/in/juliet-gobran/`), Medium (`https://medium.com/@juliet.gobran`)
+
+## Workflow
+
+```text
+Figma (design) → docs/portfolio/ (specs) → Next.js (implementation)
+```
+
+When implementing from Figma, match tokens in `design-tokens.md`. When updating project copy, edit JSON in `content/projects/`. Prefer docs over guessing.
+
+## Content
+
+- One JSON file per project in `content/projects/`
+- Images in `public/images/projects/{slug}/`
+- Only `published` projects appear on the home page (drafts are excluded)

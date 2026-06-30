@@ -1,0 +1,19 @@
+{
+  "slug": "recapped",
+  "title": "Recapped",
+  "status": "published",
+  "role": "Senior Product Designer",
+  "cardImage": "/images/projects/recapped/Floating-device.png",
+  "subtitle": "A simple place to store the things you don't want to forget.",
+  "year": 2026,
+  "url": "https://recapped.com.au/",
+  "content": "Recapped was designed to be an SLC (Simple, Lovable & Complete) rather than an MVP (Minimum Viable Product). With limited and simple features, the focus was on making the app feel calming and easy to use.\n\nIt was Sean's (Managing Director of Go To Apps) idea to create the product as an easy way to document the names of his daughters' toys. He wanted to create a simple filing system that would be universal across all sorts of items. This simple data structure (image, title, and notes) is applicable to so many use cases. Maybe it's a list of books you've read, or perhaps you're collecting vintage comics.\n\nAs the product designer on this project, I wanted it to feel personal without requiring too much effort from the user. To achieve this, I created a simple colour palette that allows users to build colour associations with their collections. Another simple value-add was assigning an emoji to each collection. This helps users quickly identify what a collection contains and makes the collections page feel more vibrant and engaging.\n\nAs the sole designer on this project, I was responsible for:\n\n- Researching competitors and helping define the product concept and name\n- Creating responsive wireframes for the web app\n- Developing the product branding, including the logo, signature gradient, font pairing, and core colour palette\n- Mapping user flows and defining the required screens\n- Creating a design system and high-fidelity designs\n- Designing a landing page to market the product\n- Conducting quality assurance following development\n\nThis project was an exciting opportunity to design a polished product in just three weeks.",
+  "images": [
+    "/images/projects/recapped/Rceapped-devices-on-gradient.png",
+    "/images/projects/recapped/Recapped-on-laptop.png",
+    "/images/projects/recapped/Recapped-on-iphones.png",
+    "/images/projects/recapped/Recapped-process.png",
+    "/images/projects/recapped/Recappoed-on-mac.png"
+  ],
+  "extraContent": null
+}

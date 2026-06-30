@@ -1,0 +1,38 @@
+import fs from "fs";
+import path from "path";
+
+import { projectSchema, type Project } from "@/lib/projects.schema";
+
+const PROJECTS_DIR = path.join(process.cwd(), "content", "projects");
+
+function readProjectFile(filename: string, projectsDir: string): Project {
+  const filePath = path.join(projectsDir, filename);
+  const raw = fs.readFileSync(filePath, "utf-8");
+  return projectSchema.parse(JSON.parse(raw));
+}
+
+export function getAllProjects(projectsDir = PROJECTS_DIR): Project[] {
+  const filenames = fs
+    .readdirSync(projectsDir)
+    .filter((name) => name.endsWith(".json"))
+    .sort();
+
+  return filenames.map((filename) => readProjectFile(filename, projectsDir));
+}
+
+export function getPublishedProjects(projectsDir = PROJECTS_DIR): Project[] {
+  return getAllProjects(projectsDir).filter(
+    (project) => project.status === "published",
+  );
+}
+
+export function getProjectBySlug(
+  slug: string,
+  projectsDir = PROJECTS_DIR,
+): Project | undefined {
+  return getAllProjects(projectsDir).find((project) => project.slug === slug);
+}
+
+export function getAllProjectSlugs(projectsDir = PROJECTS_DIR): string[] {
+  return getAllProjects(projectsDir).map((project) => project.slug);
+}

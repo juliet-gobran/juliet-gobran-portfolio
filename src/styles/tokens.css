@@ -1,0 +1,48 @@
+:root {
+  /* Colors — see docs/portfolio/design-tokens.md */
+  --color-background-dark: #0f0e0f;
+  --color-accent-orange: #ca492a;
+  --color-text-primary: #ffffff;
+  --color-text-on-accent: #000000;
+  --color-border-shell: #ffffff;
+
+  /* Spacing */
+  --spacing-shell-inset: 16px;
+  --spacing-nav-padding-x: 16px;
+  --spacing-nav-padding-y: 8px;
+  --spacing-center-padding-y: 32px;
+  --spacing-center-padding-x: 16px;
+  --spacing-footer-padding-x: 16px;
+  --spacing-footer-padding-y: 8px;
+  --spacing-nav-link-gap: 16px;
+  --spacing-project-stack-gap: 80px;
+
+  /* Radius */
+  --radius-shell-top: 8px;
+  --radius-shell-bottom: 8px;
+  --radius-card: 16px;
+  --radius-pill: 32px;
+
+  /* Layout */
+  --layout-content-max-width: 800px;
+  --layout-project-max-width: 1920px;
+
+  /* Typography sizes (reference — applied via Tailwind utilities in Phase 2) */
+  --font-size-nav-name: 32px;
+  --font-size-nav-link: 20px;
+  --font-size-footer-clock: 14px;
+  --font-size-project-title: 48px;
+  --font-size-project-title-md: 64px;
+  --font-size-project-title-lg: 80px;
+  --font-size-project-meta: 16px;
+  --font-size-project-body: 24px;
+  --font-size-project-detail-body: 20px;
+
+  /* Project card hover — tweak duration, easing, lift, and shadow here */
+  --project-card-hover-duration: 500ms;
+  --project-card-hover-easing: cubic-bezier(0.22, 1, 0.36, 1);
+  --project-card-title-shadow: -2px 2px 0 var(--color-accent-orange);
+  --project-card-title-lift-x: 2px;
+  --project-card-title-lift-y: -2px;
+  --project-card-image-scale: 1.2;
+}
