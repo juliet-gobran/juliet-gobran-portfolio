@@ -78,7 +78,7 @@ Route: [`src/app/projects/[slug]/page.tsx`](../../src/app/projects/[slug]/page.t
 | Breakpoint | Behaviour |
 |------------|-----------|
 | `< lg` | Single column: header → image gallery → content panel → optional extra content |
-| `lg+` | `grid-cols-[1fr_2fr] gap-8` — content panel sticky (`lg:sticky lg:top-8`) while images scroll |
+| `lg+` | `grid-cols-[1fr_2fr] gap-8` — content panel and image gallery scroll together |
 
 **Image gallery** ([`project-image-gallery.tsx`](../../src/components/project/project-image-gallery.tsx)): patterned layout for up to 5 images — hero square, pair row (`md:grid-cols-2`), landscape frame (`aspect-[1200/590]`), final square. Frames use `rounded-card bg-background-dark p-8`; images `object-contain`.
 
@@ -125,11 +125,11 @@ Nav and footer are **separate bordered blocks** (not one continuous shell outlin
 | Center (`<main>`) | none | — |
 | Footer (`<footer>`) | `border border-border-shell` | `rounded-b-shell-bottom` |
 
-Center scrolls with `flex-1 min-h-0 overflow-y-auto`. Footer row uses `flex-wrap` for narrow viewports.
+Shell is viewport-locked (`h-dvh`) so nav stays pinned to the top and footer to the bottom. Center is the only scroll region (`flex-1 min-h-0 overflow-y-auto`). Footer row uses `flex-wrap` for narrow viewports.
 
 ### Motion toggle
 
-In [`src/components/nav-bar.tsx`](../../src/components/nav-bar.tsx). State via [`src/components/motion-preference-provider.tsx`](../../src/components/motion-preference-provider.tsx). Default: on (galaxy animating). Off pauses the crossfade exactly where it is; on resumes from that point.
+In [`src/components/nav-bar.tsx`](../../src/components/nav-bar.tsx). State via [`src/components/motion-preference-provider.tsx`](../../src/components/motion-preference-provider.tsx). Default: on (galaxy animating). Off pauses the crossfade exactly where it is; on resumes from that point. The background also pauses while document visibility is hidden.
 
 ### Galaxy background
 

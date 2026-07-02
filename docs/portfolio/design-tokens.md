@@ -60,9 +60,9 @@ Implemented in [`src/components/app-shell.tsx`](../../src/components/app-shell.t
 | Property | Value |
 |----------|-------|
 | Outer inset | 16px (`shell-inset`) around the shell column |
-| Shell layout | Vertical stack, full viewport height (`min-h-dvh`) |
+| Shell layout | Vertical stack, viewport-locked (`h-dvh`) so nav/footer stay in frame |
 | Nav | Horizontal, space-between; own 1px border + top corner radius (`shell-top`) |
-| Center | Flex-grow, scrollable (`overflow-y: auto`); **no border** — open gap between nav and footer |
+| Center | Flex-grow, only scroll region (`overflow-y: auto`); **no border** — open gap between nav and footer |
 | Footer | Horizontal, space-between, `flex-wrap`; own 1px border + bottom corner radius (`shell-bottom`) |
 | Content max width | 800px (centered inner wrapper) |
 | Background | Animated galaxy crossfade (`GalaxyBackground`) over `background-dark` fallback |
@@ -100,5 +100,5 @@ Implemented in [`src/components/galaxy-background.tsx`](../../src/components/gal
 | Assets | `public/galaxy/1-Galaxy.png` … `6-Galaxy.png` |
 | Loop | 1 → 2 → 3 → 4 → 5 → 6 → 1 (endless) |
 | Hold per frame | None — next crossfade begins as soon as the previous one finishes |
-| Crossfade | 6s (`linear` opacity) — full loop ~36s |
-| Motion toggle | Paused when **Motion** is off (default on), or OS `prefers-reduced-motion` — freezes the blend in place (including mid-crossfade) |
+| Crossfade | 5s (`linear` opacity) — full loop ~30s |
+| Motion toggle | Paused when **Motion** is off (default on), OS `prefers-reduced-motion`, or hidden document visibility — freezes the blend in place (including mid-crossfade) |

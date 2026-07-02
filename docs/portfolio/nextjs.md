@@ -92,8 +92,8 @@ Do not deploy to production without explicit approval.
   - Center: borderless, `overflow-y-auto`, `max-w-content` inner wrapper
   - Responsive typography at `md` breakpoint (see [styles.md](styles.md))
 - Galaxy background animation — [`src/components/galaxy-background.tsx`](../../src/components/galaxy-background.tsx)
-  - Crossfade loop through `public/galaxy/1-Galaxy.png` … `6-Galaxy.png` (continuous fades)
-  - Paused when **Motion** toggle is off (default on) or OS `prefers-reduced-motion`; freezes mid-blend, resumes from same point
+  - Crossfade loop through `public/galaxy/1-Galaxy.png` … `6-Galaxy.png` (continuous 5s fades, no hold)
+  - Paused when **Motion** toggle is off (default on), OS `prefers-reduced-motion`, or tab visibility is hidden; freezes mid-blend and resumes from same point
 - Responsive nav — [`src/components/nav-bar.tsx`](../../src/components/nav-bar.tsx)
   - Mobile: bordered dropdown + hamburger/cross animation
   - Desktop: inline links + Motion toggle

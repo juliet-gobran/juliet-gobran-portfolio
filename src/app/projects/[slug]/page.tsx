@@ -49,7 +49,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
         <ProjectContentPanel
           content={project.content}
-          className="order-2 lg:order-1 lg:sticky lg:top-8 lg:self-start"
+          className="order-2 lg:order-1"
         />
       </div>
 

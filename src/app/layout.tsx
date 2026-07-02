@@ -46,8 +46,9 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${jura.variable} ${albertSans.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-dvh">
+      <body className="h-dvh overflow-hidden" suppressHydrationWarning>
         <AppShell>{children}</AppShell>
       </body>
     </html>

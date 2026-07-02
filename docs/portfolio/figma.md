@@ -50,7 +50,7 @@ Implemented in [`src/components/app-shell.tsx`](../../src/components/app-shell.t
 | Figma | Code |
 |-------|------|
 | Continuous shell outline (nav + center sides + footer) | Nav and footer each have their own `border border-border-shell`; center has no border |
-| Galaxy background (`1-Galaxy 1`) | Animated crossfade through six PNGs in `public/galaxy/` (continuous 6s fades, no hold) |
+| Galaxy background (`1-Galaxy 1`) | Animated crossfade through six PNGs in `public/galaxy/` (continuous 5s fades, no hold; pauses on motion off, reduced-motion, or hidden tab visibility) |
 | Fixed desktop font sizes | Responsive: smaller type below `md`, token sizes at `md+` (see [design-tokens.md](design-tokens.md#breakpoints)) |
 
 ## Design principles (from Figma)

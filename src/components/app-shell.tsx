@@ -11,12 +11,12 @@ type AppShellProps = {
 
 export function AppShell({ children }: AppShellProps) {
   return (
-    <div className="relative min-h-dvh">
+    <div className="relative h-dvh overflow-hidden">
       <MotionPreferenceProvider>
         <GalaxyBackground />
-        <div className="relative flex min-h-dvh flex-col p-shell-inset">
-          <div className="flex min-h-0 flex-1 flex-col">
-            <header className="relative flex shrink-0 items-center justify-between rounded-t-shell-top border border-border-shell px-nav-padding-x py-nav-padding-y">
+        <div className="relative flex h-full min-h-0 flex-col p-shell-inset">
+          <div className="flex h-full min-h-0 flex-1 flex-col">
+            <header className="relative z-10 flex shrink-0 items-center justify-between rounded-t-shell-top border border-border-shell px-nav-padding-x py-nav-padding-y">
               <Link
                 href="/"
                 className="font-jura text-2xl text-text-primary transition-colors duration-300 ease-in-out hover:text-accent-orange md:text-nav-name"
@@ -26,7 +26,7 @@ export function AppShell({ children }: AppShellProps) {
               <NavBar />
             </header>
 
-            <main className="min-h-0 flex-1 overflow-y-auto px-center-padding-x py-center-padding-y">
+            <main className="min-h-0 flex-1 overflow-y-auto overscroll-y-contain px-center-padding-x py-center-padding-y">
               {children}
             </main>
 
