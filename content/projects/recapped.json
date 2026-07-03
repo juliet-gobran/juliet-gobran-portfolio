@@ -4,6 +4,7 @@
   "status": "published",
   "role": "Senior Product Designer",
   "cardImage": "/images/projects/recapped/Floating-device.png",
+  "order": 3,
   "subtitle": "A simple place to store the things you don't want to forget.",
   "year": 2026,
   "url": "https://recapped.com.au/",

@@ -11,6 +11,7 @@ Project content mirrors the former Framer CMS **Projects** collection. Each proj
 | `status` | `"draft" \| "published"` | yes | Only `published` projects appear on home |
 | `role` | `string` | yes | Your role, e.g. `Senior Product Designer` |
 | `cardImage` | `string` | yes | Path under `public/`, e.g. `/images/projects/recapped/card.webp` |
+| `order` | `number` | no | Manual home-card order. Smaller number appears earlier; unordered projects appear after ordered ones |
 | `subtitle` | `string` | yes | Short description for project cards |
 | `year` | `number` | yes | Project year (integer) |
 | `url` | `string \| null` | yes | External project URL, or `null` |
@@ -45,6 +46,7 @@ public/
   "status": "draft",
   "role": "Senior Product Designer",
   "cardImage": "/images/projects/recapped/card.webp",
+  "order": 3,
   "subtitle": "A simple place to store the things you don't want to forget.",
   "year": 2026,
   "url": "https://recapped.com.au/",
@@ -69,6 +71,7 @@ public/
 - Schema: [`src/lib/projects.schema.ts`](../../src/lib/projects.schema.ts)
 - Type: [`src/types/project.ts`](../../src/types/project.ts)
 - Helpers: [`src/lib/projects.ts`](../../src/lib/projects.ts)
+- Ordering: `getPublishedProjects()` sorts by `order` ascending when provided; ties and unset values fallback to `slug` order
 
 Invalid JSON or schema violations will fail the build with a Zod error message.
 

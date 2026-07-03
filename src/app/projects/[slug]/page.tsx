@@ -43,14 +43,18 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     <article className="mx-auto flex w-full max-w-project flex-col gap-4 md:gap-8">
       <ProjectPageHeader project={project} />
 
-      <div className="flex flex-col gap-4 md:gap-8 lg:grid lg:grid-cols-[1fr_2fr] lg:items-start">
-        <div className="order-1 lg:order-2">
-          <ProjectImageGallery images={project.images} />
+      <div className="flex flex-col gap-4 md:gap-8 lg:hidden">
+        <ProjectImageGallery images={project.images} />
+        <ProjectContentPanel content={project.content} />
+      </div>
+
+      <div className="hidden lg:block">
+        <div className="grid grid-cols-[2fr_1fr] items-start gap-8">
+          <div className="sticky top-0">
+            <ProjectImageGallery images={project.images} />
+          </div>
+          <ProjectContentPanel content={project.content} />
         </div>
-        <ProjectContentPanel
-          content={project.content}
-          className="order-2 lg:order-1"
-        />
       </div>
 
       {project.extraContent ? (

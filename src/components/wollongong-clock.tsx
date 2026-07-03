@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from "react";
 
 const TIMEZONE = "Australia/Sydney";
+let currentSnapshot = "";
 
 function formatWollongongTime(date: Date): string {
   const parts = new Intl.DateTimeFormat("en-AU", {
@@ -33,12 +34,22 @@ function formatWollongongTime(date: Date): string {
 }
 
 function subscribe(onStoreChange: () => void) {
-  const intervalId = window.setInterval(onStoreChange, 1000);
+  const updateSnapshot = () => {
+    const nextSnapshot = formatWollongongTime(new Date());
+
+    if (nextSnapshot !== currentSnapshot) {
+      currentSnapshot = nextSnapshot;
+      onStoreChange();
+    }
+  };
+
+  updateSnapshot();
+  const intervalId = window.setInterval(updateSnapshot, 1000);
   return () => window.clearInterval(intervalId);
 }
 
 function getSnapshot() {
-  return formatWollongongTime(new Date());
+  return currentSnapshot;
 }
 
 function getServerSnapshot() {

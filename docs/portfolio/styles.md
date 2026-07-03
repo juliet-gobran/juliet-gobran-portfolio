@@ -78,7 +78,9 @@ Route: [`src/app/projects/[slug]/page.tsx`](../../src/app/projects/[slug]/page.t
 | Breakpoint | Behaviour |
 |------------|-----------|
 | `< lg` | Single column: header → image gallery → content panel → optional extra content |
-| `lg+` | `grid-cols-[1fr_2fr] gap-8` — content panel and image gallery scroll together |
+| `lg+` | Header scrolls away in `<main>`, then `grid-cols-[1fr_2fr] gap-8` shows the full image gallery in a sticky right column beside the scrolling content panel |
+
+At `lg+`, gallery and content stay side by side with the gallery column pinned via `sticky top-0`; optional `extraContent` remains full-width below.
 
 **Image gallery** ([`project-image-gallery.tsx`](../../src/components/project/project-image-gallery.tsx)): patterned layout for up to 5 images — hero square, pair row (`md:grid-cols-2`), landscape frame (`aspect-[1200/590]`), final square. Frames use `rounded-card bg-background-dark p-8`; images `object-contain`.
 

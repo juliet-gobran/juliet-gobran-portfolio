@@ -9,6 +9,7 @@ export const projectSchema = z.object({
   status: z.enum(["draft", "published"]),
   role: z.string().min(1),
   cardImage: z.string().min(1),
+  order: z.number().int().optional(),
   subtitle: z.string().min(1),
   year: z.number().int().min(1900).max(2100),
   url: z.string().url().nullable(),

@@ -1,0 +1,20 @@
+{
+  "slug": "fpm-app",
+  "title": "Footprints Maps App",
+  "status": "published",
+  "role": "Senior Product Designer",
+  "cardImage": "/images/projects/fpm-app/Appstore-mock.png",
+  "order": 1,
+  "subtitle": "Gamified travel app coming soon to iOS and Android in Australia.",
+  "year": 2026,
+  "url": "https://footprintsmaps.com.au",
+  "content": "After travelling around Australia for almost two years, the opportunity to design the Footprints Maps app presented itself. It was a no-brainer. I had the perspective of the user and the skills of a product designer to help bring this idea to life.\n\nFootprints Maps is a travel app that gamifies the way people explore Australia while making regional tourism more accessible. Whether you're visiting a new destination or looking for something to do close to home, the app helps you discover experiences through an interactive map filled with challenges.\n\nFrom the beginning, we wanted the experience to feel different. We didn't reinvent any core app patterns, but we focused on creating a product that showed its value before asking anything from the user. As soon as the app is opened, users are free to explore the map—there are no authentication or paywalls, just the freedom to look around. It's only when users begin interacting with deeper features, such as viewing the full details of a challenge or using search, that they're prompted to create a free account. This approach allows the product to earn the user's trust before asking them to sign up.\n\nWith the map sitting at the heart of the experience, every other interface element needed to complement such a visually complex component rather than compete with it. The warm sandy tones were inspired by the Sandy Taupe LandCruiser, a colour that instantly resonated with the client and, hopefully, with people exploring Australia. For the category colours, we experimented with a wide range of shades across seven distinct colour groups, carefully balancing vibrancy with usability. The result is a palette that naturally stands out against the earthy map while remaining cohesive and easy to navigate.\n\nWorking in a small team of three at Go To Apps, I was involved in every stage of the product's development, from initial concepts through to launch. As the Senior Product Designer, I needed to adapt quickly as requirements evolved, balancing client requests with user research and product thinking. Whenever research suggested a stronger direction, I worked to justify design decisions and guide the product towards the best possible user experience.\n\nI was responsible for the end-to-end product design, including user flows, wireframing, visual design, design systems, interactive prototyping, user testing, developer handoff, and ongoing design refinement throughout development.\n\nThe app has been designed with future growth in mind, creating a robust yet flexible foundation that can continue to evolve as new features and ideas are introduced.",
+  "images": [
+    "/images/projects/fpm-app/Appstore-screenshots.png",
+    "/images/projects/fpm-app/Trips.png",
+    "/images/projects/fpm-app/Profile.png",
+    "/images/projects/fpm-app/Trips-design-result.gif",
+    "/images/projects/fpm-app/Colour-testing.png"
+  ],
+  "extraContent": null
+}

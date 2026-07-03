@@ -21,9 +21,32 @@ export function getAllProjects(projectsDir = PROJECTS_DIR): Project[] {
 }
 
 export function getPublishedProjects(projectsDir = PROJECTS_DIR): Project[] {
-  return getAllProjects(projectsDir).filter(
-    (project) => project.status === "published",
-  );
+  return getAllProjects(projectsDir)
+    .filter((project) => project.status === "published")
+    .sort((a, b) => {
+      const aOrder = a.order;
+      const bOrder = b.order;
+      const aHasOrder = typeof aOrder === "number";
+      const bHasOrder = typeof bOrder === "number";
+
+      if (aHasOrder && bHasOrder) {
+        if (aOrder !== bOrder) {
+          return aOrder - bOrder;
+        }
+
+        return a.slug.localeCompare(b.slug);
+      }
+
+      if (aHasOrder) {
+        return -1;
+      }
+
+      if (bHasOrder) {
+        return 1;
+      }
+
+      return a.slug.localeCompare(b.slug);
+    });
 }
 
 export function getProjectBySlug(
