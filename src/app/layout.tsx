@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Albert_Sans, Jura } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 import { AppShell } from "@/components/app-shell";
 import "./globals.css";
@@ -50,6 +51,7 @@ export default function RootLayout({
     >
       <body className="h-dvh overflow-hidden" suppressHydrationWarning>
         <AppShell>{children}</AppShell>
+        <Analytics />
       </body>
     </html>
   );
