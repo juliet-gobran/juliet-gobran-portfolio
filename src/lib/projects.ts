@@ -8,7 +8,25 @@ const PROJECTS_DIR = path.join(process.cwd(), "content", "projects");
 function readProjectFile(filename: string, projectsDir: string): Project {
   const filePath = path.join(projectsDir, filename);
   const raw = fs.readFileSync(filePath, "utf-8");
-  return projectSchema.parse(JSON.parse(raw));
+  let json: unknown;
+
+  try {
+    json = JSON.parse(raw);
+  } catch (error) {
+    throw new Error(`Invalid JSON in content/projects/${filename}`, {
+      cause: error,
+    });
+  }
+
+  const result = projectSchema.safeParse(json);
+  if (!result.success) {
+    throw new Error(
+      `Invalid project schema in content/projects/${filename}: ${result.error.message}`,
+      { cause: result.error },
+    );
+  }
+
+  return result.data;
 }
 
 export function getAllProjects(projectsDir = PROJECTS_DIR): Project[] {

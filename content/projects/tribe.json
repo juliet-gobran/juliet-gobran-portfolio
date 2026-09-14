@@ -1,0 +1,18 @@
+{
+  "slug": "tribe",
+  "title": "TRIBE",
+  "status": "published",
+  "role": "Senior Product Designer",
+  "cardImage": "/images/projects/tribe/Floating-device.png",
+  "order": 4,
+  "subtitle": "Designing an early-stage platform to test interest in a new community.",
+  "year": 2025,
+  "url": null,
+  "content": "TRIBE was an idea that needed to be tested, not just designed.\n\nI worked with Native Earth to turn an early-stage concept into a tangible product experience ahead of the 2025 NDIS Expo in Perth.\n\nThe first challenge was understanding the platform's two-sided audience: Participants and Providers. Through competitor analysis and product exploration, I identified how each audience would interact with TRIBE and where the experience needed to create value for both sides.\n\nWith only three weeks to bring the concept to life, I focused on the core experiences that could communicate the product quickly and clearly. Rather than designing the entire platform, I created a focused set of app experiences that demonstrated discovery, connections and community events.\n\nThe expo then became an opportunity to test the proposition in the real world. I designed the physical experience around a simple journey: see, understand, scan, sign up. QR codes connected the expo banners directly to the digital experience, allowing visitors to move from curiosity to engagement with minimal friction.\n\nThe result was more than a polished concept. TRIBE had something tangible to put in front of its audience and use to gauge interest in the platform.\n\nThe project reinforced an important product principle for me: when you're working with an unvalidated idea, the goal isn't to design everything. It's to design enough to learn.",
+  "images": [
+    "/images/projects/tribe/Banner.png",
+    "/images/projects/tribe/Community-events.png",
+    "/images/projects/tribe/Provider.png"
+  ],
+  "extraContent": null
+}

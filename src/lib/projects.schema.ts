@@ -12,7 +12,10 @@ export const projectSchema = z.object({
   order: z.number().int().optional(),
   subtitle: z.string().min(1),
   year: z.number().int().min(1900).max(2100),
-  url: z.string().url().nullable(),
+  url: z
+    .union([z.string().url(), z.null()])
+    .optional()
+    .transform((value) => value ?? null),
   content: z.string(),
   images: z.array(z.string()).max(5),
   extraContent: z.string().nullable(),
