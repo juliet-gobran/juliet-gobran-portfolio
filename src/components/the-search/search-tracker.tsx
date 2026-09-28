@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import {
   STATUSES,
@@ -21,7 +21,7 @@ const fieldClassName =
   "w-full rounded-shell-bottom border border-border-shell bg-transparent px-3 py-2 font-albert-sans text-sm text-text-primary outline-none focus:border-accent-orange";
 
 const labelClassName =
-  "font-jura text-sm text-text-primary/70";
+  "font-jura text-sm text-text-primary";
 
 function statusClassName(status: Application["status"]) {
   if (status === "Interview" || status === "Offer") {
@@ -68,9 +68,11 @@ function useDebouncedCallback<Args extends unknown[]>(
 function CriteriaPanel({
   criteria,
   onChange,
+  className,
 }: {
   criteria: Criteria;
   onChange: (patch: Partial<Criteria>) => void;
+  className?: string;
 }) {
   const fields: {
     key: keyof Criteria;
@@ -85,8 +87,10 @@ function CriteriaPanel({
   ];
 
   return (
-    <section className="flex flex-col gap-4 rounded-card border border-border-shell p-6">
-      <h2 className="font-jura text-lg">What you&apos;re looking for</h2>
+    <section
+      className={`flex flex-col gap-4 ${className ?? ""}`}
+    >
+      <h2 className="font-jura text-xl text-text-primary">What I&apos;m looking for</h2>
       {fields.map(({ key, label, multiline }) => (
         <div key={key} className="flex flex-col gap-1">
           <label className={labelClassName} htmlFor={`criteria-${key}`}>
@@ -95,7 +99,7 @@ function CriteriaPanel({
           {multiline ? (
             <textarea
               id={`criteria-${key}`}
-              className={`${fieldClassName} min-h-20 resize-y`}
+              className={`${fieldClassName} min-h-20 resize-y bg-background-dark`}
               value={criteria[key]}
               onChange={(event) => onChange({ [key]: event.target.value })}
             />
@@ -136,14 +140,79 @@ function Stats({ applications }: { applications: Application[] }) {
     <div className="grid grid-cols-2 gap-px overflow-hidden rounded-card border border-border-shell bg-border-shell/20 md:grid-cols-4">
       {stats.map(([label, value]) => (
         <div key={label} className="bg-background-dark p-4">
-          <span className="block font-jura text-2xl">{value}</span>
-          <span className="font-albert-sans text-xs text-text-primary/70">
+          <span className="block font-jura text-accent-orange text-4xl">{value}</span>
+          <span className="font-albert-sans text-sm text-text-primary">
             {label}
           </span>
         </div>
       ))}
     </div>
   );
+}
+
+type SortableKey =
+  | "date"
+  | "company"
+  | "role"
+  | "platform"
+  | "status"
+  | "contact"
+  | "contactRole"
+  | "lastTouch";
+
+type SortState = { key: SortableKey; dir: "asc" | "desc" };
+
+type Column = {
+  key: SortableKey | null;
+  label: string;
+  type?: "date" | "text" | "status";
+  defaultDir?: "asc" | "desc";
+};
+
+const COLUMNS: Column[] = [
+  { key: "date", label: "Date", type: "date", defaultDir: "desc" },
+  { key: "company", label: "Company", type: "text", defaultDir: "asc" },
+  { key: "role", label: "Role", type: "text", defaultDir: "asc" },
+  { key: "platform", label: "Platform", type: "text", defaultDir: "asc" },
+  { key: "status", label: "Status", type: "status", defaultDir: "asc" },
+  { key: "contact", label: "Contact", type: "text", defaultDir: "asc" },
+  {
+    key: "contactRole",
+    label: "Contact role",
+    type: "text",
+    defaultDir: "asc",
+  },
+  { key: "lastTouch", label: "Last touch", type: "date", defaultDir: "desc" },
+  { key: null, label: "Notes / next step" },
+  { key: null, label: "" },
+];
+
+function compareApplications(
+  a: Application,
+  b: Application,
+  sort: SortState,
+): number {
+  const { key, dir } = sort;
+  const column = COLUMNS.find((c) => c.key === key);
+
+  let result: number;
+  if (column?.type === "status") {
+    result = STATUSES.indexOf(a.status) - STATUSES.indexOf(b.status);
+  } else {
+    const aVal = a[key] ?? "";
+    const bVal = b[key] ?? "";
+    if (column?.type === "date") {
+      // empty dates always sort last, regardless of direction
+      if (aVal === "" && bVal === "") result = 0;
+      else if (aVal === "") result = 1;
+      else if (bVal === "") result = -1;
+      else result = aVal.localeCompare(bVal);
+    } else {
+      result = aVal.localeCompare(bVal, undefined, { sensitivity: "base" });
+    }
+  }
+
+  return dir === "asc" ? result : -result;
 }
 
 function ApplicationsTable({
@@ -155,45 +224,133 @@ function ApplicationsTable({
   onFieldChange: (id: string, patch: ApplicationInput) => void;
   onDelete: (id: string) => void;
 }) {
+  const [sort, setSort] = useState<SortState>({ key: "date", dir: "desc" });
+  const [statusFilter, setStatusFilter] = useState<
+    Set<Application["status"]>
+  >(new Set());
+
+  const visibleApplications = useMemo(() => {
+    const filtered =
+      statusFilter.size === 0
+        ? applications
+        : applications.filter((application) =>
+            statusFilter.has(application.status),
+          );
+
+    return [...filtered].sort((a, b) => compareApplications(a, b, sort));
+  }, [applications, statusFilter, sort]);
+
+  const toggleStatusFilter = useCallback((status: Application["status"]) => {
+    setStatusFilter((current) => {
+      const next = new Set(current);
+      if (next.has(status)) {
+        next.delete(status);
+      } else {
+        next.add(status);
+      }
+      return next;
+    });
+  }, []);
+
+  const handleSort = useCallback((column: Column) => {
+    const key = column.key;
+    if (!key) return;
+    setSort((current) =>
+      current.key === key
+        ? { key, dir: current.dir === "asc" ? "desc" : "asc" }
+        : { key, dir: column.defaultDir ?? "asc" },
+    );
+  }, []);
+
   if (applications.length === 0) {
     return (
-      <div className="rounded-card border border-border-shell p-10 text-center font-albert-sans text-text-primary/70">
+      <div className="rounded-card border border-border-shell p-10 text-center font-albert-sans text-text-primary/70 bg-background-dark">
         Nothing logged yet — add your first application above.
       </div>
     );
   }
 
   const inputClassName =
-    "w-full min-w-0 rounded border border-transparent bg-transparent px-2 py-1 font-albert-sans text-sm text-text-primary outline-none hover:border-border-shell focus:border-accent-orange";
+    "w-full min-w-0 rounded border border-transparent bg-transparent px-1 py-1 font-albert-sans text-sm text-text-primary outline-none hover:border-border-shell focus:border-accent-orange [color-scheme:dark] [&::-webkit-calendar-picker-indicator]:hidden";
 
   return (
-    <div className="overflow-x-auto rounded-card border border-border-shell">
-      <table className="w-full min-w-[920px] border-collapse">
-        <thead>
-          <tr className="bg-border-shell/10 text-left font-jura text-xs text-text-primary/70">
-            {[
-              "Date",
-              "Company",
-              "Role",
-              "Platform",
-              "Status",
-              "Contact",
-              "Contact role",
-              "Last touch",
-              "Notes / next step",
-              "",
-            ].map((heading) => (
-              <th key={heading} className="whitespace-nowrap px-3 py-2">
-                {heading}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {applications.map((application) => (
+    <div className="flex flex-col gap-3">
+      <div className="flex flex-wrap items-center gap-2">
+        {STATUSES.map((status) => {
+          const active = statusFilter.has(status);
+          return (
+            <button
+              key={status}
+              type="button"
+              onClick={() => toggleStatusFilter(status)}
+              className={`rounded-pill border px-3 py-1 font-albert-sans text-xs transition-colors duration-300 ease-in-out ${
+                active
+                  ? "border-accent-orange bg-accent-orange text-text-on-accent"
+                  : "border-border-shell text-text-primary hover:border-accent-orange"
+              }`}
+            >
+              {status}
+            </button>
+          );
+        })}
+        {statusFilter.size > 0 && (
+          <button
+            type="button"
+            onClick={() => setStatusFilter(new Set())}
+            className="font-albert-sans text-xs text-text-primary/70 underline underline-offset-2 hover:text-accent-orange"
+          >
+            Clear
+          </button>
+        )}
+      </div>
+
+      <div className="overflow-x-auto rounded-card border border-border-shell">
+        <table className="w-full min-w-[920px] table-fixed border-collapse">
+          <colgroup>
+            <col className="w-[9%]" />
+            <col className="w-[13%]" />
+            <col className="w-[13%]" />
+            <col className="w-[9%]" />
+            <col className="w-[10%]" />
+            <col className="w-[11%]" />
+            <col className="w-[11%]" />
+            <col className="w-[9%]" />
+            <col className="w-[12%]" />
+            <col className="w-[3%]" />
+          </colgroup>
+          <thead>
+            <tr className="bg-border-shell/10 text-left font-jura text-xs text-text-primary">
+              {COLUMNS.map((column) => (
+                <th
+                  key={column.label || "actions"}
+                  className={`truncate px-3 py-2 ${column.key ? "cursor-pointer select-none hover:text-accent-orange" : ""}`}
+                  onClick={() => handleSort(column)}
+                >
+                  {column.label}
+                  {sort.key === column.key && (
+                    <span className="ml-1 text-accent-orange">
+                      {sort.dir === "asc" ? "↑" : "↓"}
+                    </span>
+                  )}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {visibleApplications.length === 0 ? (
+              <tr>
+                <td
+                  colSpan={COLUMNS.length}
+                  className="p-10 text-center font-albert-sans text-text-primary/70"
+                >
+                  No applications match the selected filters.
+                </td>
+              </tr>
+            ) : (
+              visibleApplications.map((application) => (
             <tr
               key={application.id}
-              className="border-t border-border-shell align-top"
+              className="border-t border-border-shell align-top bg-background-dark"
             >
               <td className="px-3 py-2">
                 <input
@@ -291,7 +448,7 @@ function ApplicationsTable({
                   }
                 />
               </td>
-              <td className="min-w-40 px-3 py-2">
+              <td className="px-3 py-2">
                 <input
                   className={inputClassName}
                   value={application.notes}
@@ -317,9 +474,11 @@ function ApplicationsTable({
                 </button>
               </td>
             </tr>
-          ))}
-        </tbody>
-      </table>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
@@ -422,22 +581,21 @@ export function SearchTracker() {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <h1 className="font-jura text-3xl">Role search log</h1>
-        <p className="mt-1 font-albert-sans text-text-primary/70">
-          Product Designer → Product Manager, Illawarra &amp; Sydney. One
-          place to hold what you&apos;re looking for and what&apos;s
-          happened since you applied.
-        </p>
+        <h1 className="font-jura text-3xl">The Search</h1>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[300px_1fr] lg:items-start">
-        <CriteriaPanel criteria={criteria} onChange={handleCriteriaChange} />
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_300px] lg:items-start">
+        <CriteriaPanel
+          className="order-2"
+          criteria={criteria}
+          onChange={handleCriteriaChange}
+        />
 
-        <div className="flex flex-col gap-4">
+        <div className="order-1 flex flex-col gap-2">
           <Stats applications={applications} />
 
-          <div className="flex flex-wrap items-baseline justify-between gap-3">
-            <h2 className="font-jura text-xl">Applications</h2>
+          <div className="flex flex-wrap items-baseline justify-between gap-3 pt-4">
+            <h2 className="font-jura text-2xl">Applications</h2>
             <button
               type="button"
               onClick={handleAdd}
