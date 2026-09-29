@@ -271,7 +271,7 @@ function ApplicationsTable({
   }
 
   const inputClassName =
-    "w-full min-w-0 rounded border border-transparent bg-transparent px-1 py-1 font-albert-sans text-sm text-text-primary outline-none hover:border-border-shell focus:border-accent-orange [color-scheme:dark] [&::-webkit-calendar-picker-indicator]:hidden";
+    "w-full min-w-0 rounded border border-transparent bg-transparent px-1 py-1 font-albert-sans text-sm text-text-primary outline-none hover:border-border-shell focus:border-accent-orange [color-scheme:dark] [&::-webkit-calendar-picker-indicator]:ml-1 [&::-webkit-calendar-picker-indicator]:h-3.5 [&::-webkit-calendar-picker-indicator]:w-3.5 [&::-webkit-calendar-picker-indicator]:p-0 [&::-webkit-calendar-picker-indicator]:opacity-70 [&::-webkit-calendar-picker-indicator]:hover:opacity-100";
 
   return (
     <div className="flex flex-col gap-3">
@@ -307,14 +307,14 @@ function ApplicationsTable({
       <div className="overflow-x-auto rounded-card border border-border-shell">
         <table className="w-full min-w-[920px] table-fixed border-collapse">
           <colgroup>
-            <col className="w-[9%]" />
+            <col className="w-[11%]" />
             <col className="w-[13%]" />
             <col className="w-[13%]" />
             <col className="w-[9%]" />
             <col className="w-[10%]" />
-            <col className="w-[11%]" />
-            <col className="w-[11%]" />
             <col className="w-[9%]" />
+            <col className="w-[9%]" />
+            <col className="w-[11%]" />
             <col className="w-[12%]" />
             <col className="w-[3%]" />
           </colgroup>
