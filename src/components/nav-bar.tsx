@@ -4,16 +4,11 @@ import { useCallback, useEffect, useId, useRef, useState } from "react";
 
 const NAV_ITEMS = ["Work", "Gallery", "About"] as const;
 
-const navItemClassName =
-  "font-jura text-base font-normal text-text-primary md:text-nav-link";
-
 function NavLinks() {
   return (
     <>
       {NAV_ITEMS.map((label) => (
-        <span key={label} className={navItemClassName}>
-          {label}
-        </span>
+        <span key={label}>{label}</span>
       ))}
     </>
   );
@@ -29,6 +24,9 @@ function ContactCta({ className }: { className?: string }) {
   );
 }
 
+const hamburgerBarClassName =
+  "block h-px w-5 bg-text-primary transition-all duration-300 ease-in-out";
+
 function MenuToggle({
   isOpen,
   onClick,
@@ -38,6 +36,10 @@ function MenuToggle({
   onClick: () => void;
   menuId: string;
 }) {
+  const barStateClassNames = isOpen
+    ? ["translate-y-[7px] rotate-45", "opacity-0", "-translate-y-[7px] -rotate-45"]
+    : ["", "", ""];
+
   return (
     <button
       type="button"
@@ -47,15 +49,12 @@ function MenuToggle({
       onClick={onClick}
       className="flex size-8 flex-col items-center justify-center gap-1.5 md:hidden"
     >
-      <span
-        className={`block h-px w-5 bg-text-primary transition-all duration-300 ease-in-out ${isOpen ? "translate-y-[7px] rotate-45" : ""}`}
-      />
-      <span
-        className={`block h-px w-5 bg-text-primary transition-all duration-300 ease-in-out ${isOpen ? "opacity-0" : ""}`}
-      />
-      <span
-        className={`block h-px w-5 bg-text-primary transition-all duration-300 ease-in-out ${isOpen ? "-translate-y-[7px] -rotate-45" : ""}`}
-      />
+      {barStateClassNames.map((stateClassName, index) => (
+        <span
+          key={index}
+          className={`${hamburgerBarClassName} ${stateClassName}`}
+        />
+      ))}
     </button>
   );
 }
