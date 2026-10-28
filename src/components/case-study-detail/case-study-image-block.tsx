@@ -9,7 +9,7 @@ type CaseStudyImageBlockProps = {
 export function CaseStudyImageBlock({ block }: CaseStudyImageBlockProps) {
   return (
     <figure className="flex w-full flex-col items-center gap-2">
-      <div className="w-full overflow-hidden rounded-control border border-border-subtle bg-surface-sunken p-8">
+      <div className="w-full overflow-hidden rounded-control border border-border-subtle bg-surface-sunken">
         <Image
           src={block.src}
           alt={block.alt}
