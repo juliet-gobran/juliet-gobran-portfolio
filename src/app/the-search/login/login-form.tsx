@@ -12,7 +12,7 @@ export function LoginForm() {
   return (
     <form
       action={formAction}
-      className="flex w-full max-w-sm flex-col gap-4 rounded-shell-top border border-border-shell p-6"
+      className="flex w-full max-w-sm flex-col gap-4 rounded-control border border-border-subtle p-6"
     >
       <div className="flex flex-col gap-2">
         <label htmlFor="password" className="font-jura text-base">
@@ -24,7 +24,7 @@ export function LoginForm() {
           type="password"
           autoFocus
           required
-          className="rounded-shell-bottom border border-border-shell bg-transparent px-3 py-2 font-albert-sans text-text-primary outline-none focus:border-accent-orange"
+          className="rounded-control border border-border-subtle bg-transparent px-3 py-2 font-albert-sans text-text-primary outline-none focus:border-accent-orange"
         />
       </div>
 
@@ -37,7 +37,7 @@ export function LoginForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="rounded-pill border border-border-shell px-4 py-2 font-jura text-base transition-colors duration-300 ease-in-out hover:border-accent-orange hover:text-accent-orange disabled:opacity-60"
+        className="rounded-pill border border-border-subtle px-4 py-2 font-jura text-base transition-colors duration-300 ease-in-out hover:border-accent-orange hover:text-accent-orange disabled:opacity-60"
       >
         {isPending ? "Checking..." : "Enter"}
       </button>

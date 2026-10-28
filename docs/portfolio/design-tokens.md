@@ -1,57 +1,59 @@
 # Design tokens
 
-Extracted from Figma frame `359:1096` (Portfolio app shell). Update when Figma changes.
+Extracted from Figma frame `593:4869` (Portfolio — light redesign). Update when Figma changes.
 
 **Next.js implementation:** CSS variables in [`src/styles/tokens.css`](../../src/styles/tokens.css), Tailwind theme in [`src/app/globals.css`](../../src/app/globals.css). Style mapping: [styles.md](styles.md).
 
-**Framer reference (archived):** mapped text and color styles in [framer-styles.md](framer-styles.md).
-
 ## Colors
 
-| Token | Hex / value | Framer color | Usage |
+| Token | Hex / value | Figma style | Usage |
 |-------|-------------|--------------|-------|
-| `background-dark` | `#0f0e0f` | **Blackk** | Mockup frames, deep surfaces |
-| `accent-orange` | `#ca492a` | **Burnn** | Project pill tags (future content) |
-| `text-primary` | `#ffffff` | **Whitee** | Nav, footer, headings |
-| `text-on-accent` | `#000000` | — (use **CTA** text style) | Text on orange pills |
-| `border-shell` | `#ffffff` | **Whitee** | 1px border on nav and footer blocks (center is borderless) |
+| `background` | `#f9f6ef` | Home/Surface/Cream | Page background |
+| `surface-sunken` | `#f5f1e9` | Home/Surface/Darker Cream | Nav bar fill, case study image frames; legacy "deep surface" panels (project detail content panel, image gallery) pending their own redesign |
+| `surface-raised` | `#ffffff` | Home / Surface / White | Buttons (Contact, View case study) |
+| `border-subtle` | `#e5e2db` | Home / Border / Subtle | 1px borders — nav, buttons, image frames, spec row dividers |
+| `text-primary` | `#000000` | Home / Text / Black | Default body/heading text everywhere |
+| `text-on-accent` | `#000000` | — | Text on orange pills (legacy project-detail meta pill) |
+| `accent-orange` | `#d44e2e` | — (legacy, not in new design) | Project-detail meta pill, hover accents — pending redesign, not used by the new home page |
 
-Background: animated galaxy cycle — six seamless PNGs in `public/galaxy/` (`1-Galaxy.png` … `6-Galaxy.png`), crossfaded in [`src/components/galaxy-background.tsx`](../../src/components/galaxy-background.tsx). Figma reference frame uses `1-Galaxy 1` as a single still.
+No background image/animation — the galaxy crossfade has been removed entirely.
 
 ## Typography
 
-| Role | Font | Weight | Size | Framer text style |
-|------|------|--------|------|-------------------|
-| Nav name | Jura | Regular | 32px | **Heading 3** |
-| Nav links | Jura | Regular | 20px | **Nav Link** |
-| Footer title | Jura | Regular | 20px | **Nav Link** |
-| Footer clock | Jura | Regular | 16px | **Caption** |
-| Project title | Jura | Bold | 80px | **Project Title** |
-| Project meta | Albert Sans | Medium | 16px | **CTA** (on **Burnn** fill) |
-| Project body | Albert Sans | Light | 24px | **Project Body** |
+| Role | Font | Weight | Size | Figma style |
+|------|------|--------|------|-------------|
+| Nav name | Jura | SemiBold | 32px | Home / Heading / Brand |
+| Nav links | Jura | Regular | 20px | Home / Label / Navigation |
+| Nav/CTA buttons | Jura | SemiBold | 20px | Home / Label / Button |
+| Intro heading | Jura | SemiBold | 40px (30px below `md`) | Home / Heading / Intro |
+| Timestamp | Jura | Regular | 16px | Home / Caption / Timestamp |
+| Case study title | Jura | SemiBold | 32px, line-height 1.15 | Home / Heading / Project |
+| Case study body | Albert Sans | Light | 20px | Home / Body / Large |
+| Case study url link | Albert Sans | Light | 16px, underline | Home / Link / Small |
+| Case study spec label | Jura | SemiBold | 16px | Home / Label / Metadata |
+| Case study spec value | Albert Sans | Light | 16px | Home / Body / Small |
+
+Legacy project-detail typography (`project-title`, `project-body`, `project-meta`, `project-detail-body` tokens) is unchanged pending its own redesign — it now simply renders in the new light colors.
 
 ## Spacing
 
 | Token | Value | Usage |
 |-------|-------|-------|
-| `shell-inset` | 16px | Outer padding around bordered shell |
+| `shell-inset` | 16px | Outer padding around the nav |
 | `nav-padding-x` | 16px | Nav horizontal padding |
 | `nav-padding-y` | 8px | Nav vertical padding |
-| `center-padding-y` | 64px | Center content vertical padding |
-| `center-padding-x` | 16px | Center content horizontal padding |
-| `footer-padding-x` | 16px | Footer horizontal padding |
-| `footer-padding-y` | 8px | Footer vertical padding |
-| `nav-link-gap` | 16px | Gap between LinkedIn and Medium |
-| `project-stack-gap` | 80px | Gap between project previews (future) |
+| `center-padding-y` | 32px | Main content vertical padding |
+| `center-padding-x` | 16px | Main content horizontal padding |
+| `nav-link-gap` | 16px | Gap between nav items |
+| `case-study-section-y` | 64px | Vertical padding around each case study preview (divider-separated) |
 
 ## Radius
 
 | Token | Value | Usage |
 |-------|-------|-------|
-| `shell-top` | 8px | Nav top-left, top-right |
-| `shell-bottom` | 8px | Footer bottom-left, bottom-right |
-| `card-radius` | 16px | Project mockup frames (future) |
-| `pill-radius` | 32px | Orange meta pills (future) |
+| `radius-control` | 8px | Nav bar, nav CTA, view-case-study button, mobile menu dropdown |
+| `radius-card` | 16px | Case study image frame; legacy mockup/content frames |
+| `radius-pill` | 32px | Legacy orange meta pill |
 
 ## Layout
 
@@ -59,13 +61,24 @@ Implemented in [`src/components/app-shell.tsx`](../../src/components/app-shell.t
 
 | Property | Value |
 |----------|-------|
-| Outer inset | 16px (`shell-inset`) around the shell column |
-| Shell layout | Vertical stack, viewport-locked (`h-dvh`) so nav/footer stay in frame |
-| Nav | Horizontal, space-between; own 1px border + top corner radius (`shell-top`) |
-| Center | Flex-grow, only scroll region (`overflow-y: auto`); **no border** — open gap between nav and footer |
-| Footer | Horizontal, space-between, `flex-wrap`; own 1px border + bottom corner radius (`shell-bottom`) |
-| Content max width | 800px (centered inner wrapper) |
-| Background | Animated galaxy crossfade (`GalaxyBackground`) over `background-dark` fallback |
+| Outer inset | 16px (`shell-inset`) around the nav |
+| Shell layout | Vertical stack, viewport-locked (`h-dvh`) so nav stays in frame; `<main>` is the scroll region |
+| Nav | Bordered, rounded (`radius-control`) bar — `surface-sunken` fill; left: name, right: Work / Gallery / About (inert placeholders, no routing yet) + Contact button |
+| No footer | The previous footer (clock + role) has been removed — the clock now lives inline under the home page intro |
+| Home max width | 1200px (`max-w-home`) |
+| Content max width | 800px (`max-w-content`) — intro heading |
+| Project max width | 1920px (`max-w-project`) — unchanged, project detail page |
+
+## Case study preview
+
+Implemented in [`src/components/case-study-preview/`](../../src/components/case-study-preview/):
+
+- `case-study-preview.tsx` — top-level component, lays out meta + image side by side (stacks on mobile)
+- `case-study-meta.tsx` — large meta component composing:
+  - `case-study-header.tsx` — title, subtitle, url
+  - `case-study-specs.tsx` — Role / Client / Scope / Industry / Completed rows (only rendered when the project JSON provides a value — `client`, `scope`, `industry`, `completed` are optional fields on top of the existing `role`)
+  - `case-study-cta.tsx` — "View case study" button, links to `/projects/[slug]`
+- `case-study-image-frame.tsx` — bordered, rounded, `surface-sunken` frame; image rendered `object-contain` so background-removed PNG exports sit inside without cropping
 
 ## Footer clock format
 
@@ -78,27 +91,19 @@ Example: `1:16:59pm Tue 23 Jun 2026 | Wollongong, Australia`
 - Timezone: `Australia/Sydney` (covers Wollongong)
 - Updates every second
 - Implemented in [`src/components/wollongong-clock.tsx`](../../src/components/wollongong-clock.tsx) (`useSyncExternalStore`, hydration-safe)
+- Now rendered inline under the home page intro heading, not in a footer
 
 ## Breakpoints
-
-Framer project uses Desktop / Tablet / Phone variants. Responsive shell typography (Tailwind `md:` breakpoint):
 
 | Element | Mobile | Desktop (`md+`) |
 |---------|--------|-----------------|
 | Nav name | 24px (`text-2xl`) | 32px (`text-nav-name`) |
-| Nav links, footer title | 16px (`text-base`) | 20px (`text-nav-link`) |
-| Footer clock | 14px (`text-sm`) | 16px (`text-footer-clock`) |
+| Nav links, buttons | 16px (`text-base`) | 20px (`text-nav-link` / `text-case-study-button`) |
+| Intro heading | 30px (`text-3xl`) | 40px (`text-intro-heading`) |
+| Case study meta/image | Stacked (`flex-col`) | Side by side (`flex-row`, meta fixed 400px) |
 
-Footer uses `flex-wrap` so the clock can wrap on narrow screens.
+## Removed
 
-## Galaxy background animation
-
-Implemented in [`src/components/galaxy-background.tsx`](../../src/components/galaxy-background.tsx).
-
-| Setting | Value |
-|---------|-------|
-| Assets | `public/galaxy/1-Galaxy.png` … `6-Galaxy.png` |
-| Loop | 1 → 2 → 3 → 4 → 5 → 6 → 1 (endless) |
-| Hold per frame | None — next crossfade begins as soon as the previous one finishes |
-| Crossfade | 5s (`linear` opacity) — full loop ~30s |
-| Motion toggle | Paused when **Motion** is off (default on), OS `prefers-reduced-motion`, or hidden document visibility — freezes the blend in place (including mid-crossfade) |
+- `GalaxyBackground` component, `useGalaxyCrossfade` hook, and `public/galaxy/*` assets — fully deleted, no background animation in the new design
+- `MotionPreferenceProvider` / Motion toggle — nothing left to pause now that the background animation is gone
+- Old `ProjectCard` component — replaced by `CaseStudyPreview`

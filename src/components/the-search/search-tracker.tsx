@@ -18,7 +18,7 @@ const EMPTY_CRITERIA: Criteria = {
 };
 
 const fieldClassName =
-  "w-full rounded-shell-bottom border border-border-shell bg-transparent px-3 py-2 font-albert-sans text-sm text-text-primary outline-none focus:border-accent-orange";
+  "w-full rounded-control border border-border-subtle bg-transparent px-3 py-2 font-albert-sans text-sm text-text-primary outline-none focus:border-accent-orange";
 
 const labelClassName =
   "font-jura text-sm text-text-primary";
@@ -99,7 +99,7 @@ function CriteriaPanel({
           {multiline ? (
             <textarea
               id={`criteria-${key}`}
-              className={`${fieldClassName} min-h-20 resize-y bg-background-dark`}
+              className={`${fieldClassName} min-h-20 resize-y bg-surface-sunken`}
               value={criteria[key]}
               onChange={(event) => onChange({ [key]: event.target.value })}
             />
@@ -137,9 +137,9 @@ function Stats({ applications }: { applications: Application[] }) {
   ];
 
   return (
-    <div className="grid grid-cols-2 gap-px overflow-hidden rounded-card border border-border-shell bg-border-shell/20 md:grid-cols-4">
+    <div className="grid grid-cols-2 gap-px overflow-hidden rounded-card border border-border-subtle bg-border-subtle/20 md:grid-cols-4">
       {stats.map(([label, value]) => (
-        <div key={label} className="bg-background-dark p-4">
+        <div key={label} className="bg-surface-sunken p-4">
           <span className="block font-jura text-accent-orange text-4xl">{value}</span>
           <span className="font-albert-sans text-sm text-text-primary">
             {label}
@@ -264,14 +264,14 @@ function ApplicationsTable({
 
   if (applications.length === 0) {
     return (
-      <div className="rounded-card border border-border-shell p-10 text-center font-albert-sans text-text-primary/70 bg-background-dark">
+      <div className="rounded-card border border-border-subtle p-10 text-center font-albert-sans text-text-primary/70 bg-surface-sunken">
         Nothing logged yet — add your first application above.
       </div>
     );
   }
 
   const inputClassName =
-    "w-full min-w-0 rounded border border-transparent bg-transparent px-1 py-1 font-albert-sans text-sm text-text-primary outline-none hover:border-border-shell focus:border-accent-orange [color-scheme:dark] [&::-webkit-calendar-picker-indicator]:ml-1 [&::-webkit-calendar-picker-indicator]:h-3.5 [&::-webkit-calendar-picker-indicator]:w-3.5 [&::-webkit-calendar-picker-indicator]:p-0 [&::-webkit-calendar-picker-indicator]:opacity-70 [&::-webkit-calendar-picker-indicator]:hover:opacity-100";
+    "w-full min-w-0 rounded border border-transparent bg-transparent px-1 py-1 font-albert-sans text-sm text-text-primary outline-none hover:border-border-subtle focus:border-accent-orange [color-scheme:dark] [&::-webkit-calendar-picker-indicator]:ml-1 [&::-webkit-calendar-picker-indicator]:h-3.5 [&::-webkit-calendar-picker-indicator]:w-3.5 [&::-webkit-calendar-picker-indicator]:p-0 [&::-webkit-calendar-picker-indicator]:opacity-70 [&::-webkit-calendar-picker-indicator]:hover:opacity-100";
 
   return (
     <div className="flex flex-col gap-3">
@@ -286,7 +286,7 @@ function ApplicationsTable({
               className={`rounded-pill border px-3 py-1 font-albert-sans text-xs transition-colors duration-300 ease-in-out ${
                 active
                   ? "border-accent-orange bg-accent-orange text-text-on-accent"
-                  : "border-border-shell text-text-primary hover:border-accent-orange"
+                  : "border-border-subtle text-text-primary hover:border-accent-orange"
               }`}
             >
               {status}
@@ -304,7 +304,7 @@ function ApplicationsTable({
         )}
       </div>
 
-      <div className="overflow-x-auto rounded-card border border-border-shell">
+      <div className="overflow-x-auto rounded-card border border-border-subtle">
         <table className="w-full min-w-[920px] table-fixed border-collapse">
           <colgroup>
             <col className="w-[11%]" />
@@ -319,7 +319,7 @@ function ApplicationsTable({
             <col className="w-[3%]" />
           </colgroup>
           <thead>
-            <tr className="bg-border-shell/10 text-left font-jura text-xs text-text-primary">
+            <tr className="bg-border-subtle/10 text-left font-jura text-xs text-text-primary">
               {COLUMNS.map((column) => (
                 <th
                   key={column.label || "actions"}
@@ -350,7 +350,7 @@ function ApplicationsTable({
               visibleApplications.map((application) => (
             <tr
               key={application.id}
-              className="border-t border-border-shell align-top bg-background-dark"
+              className="border-t border-border-subtle align-top bg-surface-sunken"
             >
               <td className="px-3 py-2">
                 <input
@@ -407,7 +407,7 @@ function ApplicationsTable({
                     <option
                       key={status}
                       value={status}
-                      className="bg-background-dark text-text-primary"
+                      className="bg-surface-sunken text-text-primary"
                     >
                       {status}
                     </option>

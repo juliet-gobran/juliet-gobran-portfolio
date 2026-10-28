@@ -6,7 +6,7 @@ type ProjectExtraContentProps = {
 
 export function ProjectExtraContent({ content }: ProjectExtraContentProps) {
   return (
-    <div className="rounded-card bg-background-dark p-8">
+    <div className="rounded-card bg-surface-sunken p-8">
       <MarkdownContent>{content}</MarkdownContent>
     </div>
   );

@@ -8,13 +8,18 @@
 
 ## Frame mapping
 
-| Figma frame | Node ID | Framer target | Scope |
-|-------------|---------|---------------|-------|
-| Portfolio (app shell) | `359:1096` | Home (`QjWmlHjIE`) | Nav + empty center + footer — **implemented** |
-| Preview (project card) | `359:1624` | **Project Card** (`oYJmnmux7`) | Recapped — in progress |
-| Preview (project card) | `359:1179` | **Project Card** (`oYJmnmux7`) | Footprints Maps App — in progress |
+| Figma frame | Node ID | Scope |
+|-------------|---------|-------|
+| Portfolio (light redesign) | `593:4869` | Nav + intro + 3 case study previews — **implemented** |
+| Nav | `593:4871` | Logo, Work/Gallery/About (inert placeholders), Contact CTA — **implemented** |
+| Intro | `593:4971` | Heading + inline timestamp — **implemented** |
+| Case study preview (Recapped) | `593:4883` | `CaseStudyPreview` reference — **implemented** (generic, data-driven) |
 
-## App shell frame (`359:1096`) — structure
+Older dark-theme frames (`359:1096`, `359:1624`, `359:1179`) are superseded by this redesign and no longer tracked here.
+
+> Note: the project detail page, about page, and `/the-search` app have **not** been redesigned yet — they automatically picked up the new light color tokens (background, text, border) since they're token-driven, but their layout/typography is unchanged pending their own Figma frames.
+
+## Legacy app shell frame (`359:1096`) — structure (superseded)
 
 ```text
 Portfolio (1710 × 928)

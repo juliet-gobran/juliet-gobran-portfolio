@@ -1,10 +1,12 @@
 :root {
   /* Colors — see docs/portfolio/design-tokens.md */
-  --color-background-dark: #0f0e0f;
+  --color-background: #f9f6ef;
+  --color-surface-sunken: #f5f1e9;
+  --color-surface-raised: #ffffff;
+  --color-border-subtle: #e5e2db;
   --color-accent-orange: #d44e2e;
-  --color-text-primary: #ffffff;
+  --color-text-primary: #000000;
   --color-text-on-accent: #000000;
-  --color-border-shell: #ffffff;
 
   /* Spacing */
   --spacing-shell-inset: 16px;
@@ -16,21 +18,29 @@
   --spacing-footer-padding-y: 8px;
   --spacing-nav-link-gap: 16px;
   --spacing-project-stack-gap: 80px;
+  --spacing-case-study-section-y: 64px;
 
   /* Radius */
-  --radius-shell-top: 8px;
-  --radius-shell-bottom: 8px;
+  --radius-control: 8px;
   --radius-card: 16px;
   --radius-pill: 32px;
 
   /* Layout */
   --layout-content-max-width: 800px;
   --layout-project-max-width: 1920px;
+  --layout-home-max-width: 1200px;
 
   /* Typography sizes (reference — applied via Tailwind utilities in Phase 2) */
   --font-size-nav-name: 32px;
   --font-size-nav-link: 20px;
   --font-size-footer-clock: 14px;
+  --font-size-intro-heading: 40px;
+  --font-size-timestamp: 16px;
+  --font-size-case-study-title: 32px;
+  --font-size-case-study-body: 20px;
+  --font-size-case-study-link: 16px;
+  --font-size-case-study-label: 16px;
+  --font-size-case-study-button: 20px;
   --font-size-project-title: 48px;
   --font-size-project-title-md: 64px;
   --font-size-project-title-lg: 80px;

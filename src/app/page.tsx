@@ -1,18 +1,29 @@
-import { ProjectCard } from "@/components/project-card";
+import { CaseStudyPreview } from "@/components/case-study-preview/case-study-preview";
+import { WollongongClock } from "@/components/wollongong-clock";
 import { getPublishedProjects } from "@/lib/projects";
 
 export default function Home() {
   const projects = getPublishedProjects();
 
-  if (projects.length === 0) {
-    return null;
-  }
-
   return (
-    <div className="mx-auto flex w-full max-w-content flex-col gap-project-stack-gap">
-      {projects.map((project) => (
-        <ProjectCard key={project.slug} project={project} />
-      ))}
+    <div className="mx-auto flex w-full max-w-home flex-col">
+      <div className="flex flex-col gap-4">
+        <h1 className="max-w-content font-jura text-3xl font-semibold text-text-primary md:text-intro-heading">
+          I&rsquo;m Juliet, a Product Designer who turns unknowns into
+          shipped products.
+        </h1>
+        <WollongongClock />
+      </div>
+
+      {projects.length > 0 ? (
+        <div className="flex flex-col divide-y divide-border-subtle">
+          {projects.map((project) => (
+            <div key={project.slug} className="py-case-study-section-y">
+              <CaseStudyPreview project={project} />
+            </div>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }

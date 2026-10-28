@@ -5,7 +5,7 @@ type ProjectImageGalleryProps = {
 };
 
 const frameClassName =
-  "relative overflow-hidden rounded-card bg-background-dark p-8";
+  "relative overflow-hidden rounded-card bg-surface-sunken p-8";
 
 function GalleryImage({
   src,

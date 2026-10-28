@@ -8,7 +8,7 @@ import "./globals.css";
 const jura = Jura({
   variable: "--font-jura",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "600", "700"],
 });
 
 const albertSans = Albert_Sans({

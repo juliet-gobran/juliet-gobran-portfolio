@@ -10,7 +10,11 @@ Project content mirrors the former Framer CMS **Projects** collection. Each proj
 | `title` | `string` | yes | Project name |
 | `status` | `"draft" \| "published"` | yes | Only `published` projects appear on home |
 | `role` | `string` | yes | Your role, e.g. `Senior Product Designer` |
-| `cardImage` | `string` | yes | Path under `public/`, e.g. `/images/projects/recapped/card.webp` |
+| `client` | `string` | no | Case study "Client:" spec row — omitted when not set |
+| `scope` | `string` | no | Case study "Scope:" spec row — omitted when not set |
+| `industry` | `string` | no | Case study "Industry:" spec row — omitted when not set |
+| `completed` | `string` | no | Case study "Completed:" spec row, e.g. `April 2026` — omitted when not set |
+| `cardImage` | `string` | yes | Path under `public/`, e.g. `/images/projects/recapped/card.webp`. Export with a transparent background — the home page case study frame uses `object-contain` |
 | `order` | `number` | no | Manual home-card order. Smaller number appears earlier; unordered projects appear after ordered ones |
 | `subtitle` | `string` | yes | Short description for project cards |
 | `year` | `number` | yes | Project year (integer) |
@@ -68,8 +72,7 @@ public/
 
 ## Validation
 
-- Schema: [`src/lib/projects.schema.ts`](../../src/lib/projects.schema.ts)
-- Type: [`src/types/project.ts`](../../src/types/project.ts)
+- Schema and `Project` type: [`src/lib/projects.schema.ts`](../../src/lib/projects.schema.ts)
 - Helpers: [`src/lib/projects.ts`](../../src/lib/projects.ts)
 - Ordering: `getPublishedProjects()` sorts by `order` ascending when provided; ties and unset values fallback to `slug` order
 

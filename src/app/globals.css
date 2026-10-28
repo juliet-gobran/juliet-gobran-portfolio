@@ -2,11 +2,13 @@
 @import "../styles/tokens.css";
 
 @theme inline {
-  --color-background-dark: var(--color-background-dark);
+  --color-background: var(--color-background);
+  --color-surface-sunken: var(--color-surface-sunken);
+  --color-surface-raised: var(--color-surface-raised);
+  --color-border-subtle: var(--color-border-subtle);
   --color-accent-orange: var(--color-accent-orange);
   --color-text-primary: var(--color-text-primary);
   --color-text-on-accent: var(--color-text-on-accent);
-  --color-border-shell: var(--color-border-shell);
 
   --spacing-shell-inset: var(--spacing-shell-inset);
   --spacing-nav-padding-x: var(--spacing-nav-padding-x);
@@ -17,9 +19,9 @@
   --spacing-footer-padding-y: var(--spacing-footer-padding-y);
   --spacing-nav-link-gap: var(--spacing-nav-link-gap);
   --spacing-project-stack-gap: var(--spacing-project-stack-gap);
+  --spacing-case-study-section-y: var(--spacing-case-study-section-y);
 
-  --radius-shell-top: var(--radius-shell-top);
-  --radius-shell-bottom: var(--radius-shell-bottom);
+  --radius-control: var(--radius-control);
   --radius-card: var(--radius-card);
   --radius-pill: var(--radius-pill);
 
@@ -28,9 +30,17 @@
 
   --max-width-content: var(--layout-content-max-width);
   --max-width-project: var(--layout-project-max-width);
+  --max-width-home: var(--layout-home-max-width);
   --text-nav-name: var(--font-size-nav-name);
   --text-nav-link: var(--font-size-nav-link);
   --text-footer-clock: var(--font-size-footer-clock);
+  --text-intro-heading: var(--font-size-intro-heading);
+  --text-timestamp: var(--font-size-timestamp);
+  --text-case-study-title: var(--font-size-case-study-title);
+  --text-case-study-body: var(--font-size-case-study-body);
+  --text-case-study-link: var(--font-size-case-study-link);
+  --text-case-study-label: var(--font-size-case-study-label);
+  --text-case-study-button: var(--font-size-case-study-button);
   --text-project-title: var(--font-size-project-title);
   --text-project-title-md: var(--font-size-project-title-md);
   --text-project-title-lg: var(--font-size-project-title-lg);
@@ -40,7 +50,7 @@
 }
 
 body {
-  background-color: var(--color-background-dark);
+  background-color: var(--color-background);
   color: var(--color-text-primary);
   font-family: var(--font-jura), sans-serif;
 }
