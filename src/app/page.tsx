@@ -1,4 +1,5 @@
 import { CaseStudyPreview } from "@/components/case-study-preview/case-study-preview";
+import { RevealOnScroll } from "@/components/reveal-on-scroll";
 import { WollongongClock } from "@/components/wollongong-clock";
 import { getPublishedProjects } from "@/lib/projects";
 
@@ -7,20 +8,20 @@ export default function Home() {
 
   return (
     <div className="mx-auto flex w-full max-w-home flex-col">
-      <div className="flex flex-col gap-4">
+      <RevealOnScroll className="flex flex-col gap-4">
         <h1 className="max-w-content font-jura text-3xl font-semibold text-text-primary md:text-intro-heading">
           I&rsquo;m Juliet, a Product Designer who turns unknowns into
           shipped products.
         </h1>
         <WollongongClock />
-      </div>
+      </RevealOnScroll>
 
       {projects.length > 0 ? (
         <div className="flex flex-col">
           {projects.map((project) => (
-            <div key={project.slug} className="py-case-study-section-y">
+            <RevealOnScroll key={project.slug} className="py-case-study-section-y">
               <CaseStudyPreview project={project} />
-            </div>
+            </RevealOnScroll>
           ))}
         </div>
       ) : null}

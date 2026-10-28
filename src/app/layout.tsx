@@ -50,6 +50,9 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="h-dvh overflow-hidden" suppressHydrationWarning>
+        <noscript>
+          <style>{`.js-reveal { opacity: 1 !important; transform: none !important; }`}</style>
+        </noscript>
         <AppShell>{children}</AppShell>
         <Analytics />
       </body>

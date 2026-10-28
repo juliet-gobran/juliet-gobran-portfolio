@@ -20,7 +20,7 @@ export function CaseStudyImageFrame({
         alt={alt}
         fill
         sizes="(min-width: 768px) 55vw, 100vw"
-        className="object-contain"
+        className="object-contain transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none"
       />
     </div>
   );
