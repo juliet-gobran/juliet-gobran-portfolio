@@ -76,19 +76,19 @@ const EGGS: {
     accent: "blue",
     label: "thumbs-up",
     Icon: ThumbsUpIcon,
-    position: "min-[800px]:absolute min-[800px]:top-0 min-[800px]:right-2 min-[800px]:size-12 lg:size-14",
+    position: "min-[800px]:absolute min-[800px]:top-0 min-[800px]:left-0 min-[800px]:size-12 lg:size-14",
   },
   {
     accent: "orange",
     label: "star",
     Icon: StarIcon,
-    position: "min-[800px]:absolute min-[800px]:top-14 min-[800px]:right-20 lg:size-12",
+    position: "min-[800px]:absolute min-[800px]:top-14 min-[800px]:left-14 lg:size-12",
   },
   {
     accent: "pink",
     label: "heart",
     Icon: HeartIcon,
-    position: "min-[800px]:absolute min-[800px]:top-16 min-[800px]:right-0 min-[800px]:size-9 lg:size-11",
+    position: "min-[800px]:absolute min-[800px]:top-16 min-[800px]:left-2 min-[800px]:size-9 lg:size-11",
   },
 ];
 
@@ -108,7 +108,7 @@ export function AccentEasterEgg() {
     // A reserved frame next to the headline (>=800px) so the icons never
     // overlap the heading text; below 800px it collapses into a plain row
     // of ~40px icons under the heading instead.
-    <div className="flex w-full flex-wrap items-center justify-start gap-4 min-[800px]:relative min-[800px]:h-36 min-[800px]:w-44 min-[800px]:shrink-0 min-[800px]:justify-normal min-[800px]:gap-0">
+    <div className="flex w-full flex-wrap items-center justify-start gap-4 min-[800px]:relative min-[800px]:h-36 min-[800px]:w-32 min-[800px]:shrink-0 min-[800px]:justify-normal min-[800px]:gap-0">
       {EGGS.map(({ accent: eggAccent, label, Icon, position }, index) => (
         <button
           key={eggAccent}

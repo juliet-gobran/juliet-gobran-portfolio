@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <div className="mx-auto flex w-full max-w-home flex-col">
-      <RevealOnScroll className="flex flex-col gap-6 min-[800px]:flex-row min-[800px]:items-start min-[800px]:gap-6">
+      <RevealOnScroll className="flex flex-col gap-6 min-[800px]:flex-row min-[800px]:items-start min-[800px]:gap-2">
         <div className="flex min-w-0 flex-1 flex-col gap-4">
           <h1 className="max-w-content font-jura text-3xl font-bold text-text-primary md:text-intro-heading">
             I&rsquo;m Juliet, a Product Designer who turns unknowns into
