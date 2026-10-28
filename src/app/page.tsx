@@ -1,3 +1,4 @@
+import { AccentEasterEgg } from "@/components/accent-easter-egg";
 import { CaseStudyPreview } from "@/components/case-study-preview/case-study-preview";
 import { RevealOnScroll } from "@/components/reveal-on-scroll";
 import { WollongongClock } from "@/components/wollongong-clock";
@@ -8,12 +9,13 @@ export default function Home() {
 
   return (
     <div className="mx-auto flex w-full max-w-home flex-col">
-      <RevealOnScroll className="flex flex-col gap-4">
+      <RevealOnScroll className="relative flex flex-col gap-4">
         <h1 className="max-w-content font-jura text-3xl font-bold text-text-primary md:text-intro-heading">
           I&rsquo;m Juliet, a Product Designer who turns unknowns into
           shipped products.
         </h1>
         <WollongongClock />
+        <AccentEasterEgg />
       </RevealOnScroll>
 
       {projects.length > 0 ? (
