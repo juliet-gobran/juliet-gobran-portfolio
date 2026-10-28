@@ -16,7 +16,7 @@ export default function Home() {
       </div>
 
       {projects.length > 0 ? (
-        <div className="flex flex-col divide-y divide-border-subtle">
+        <div className="flex flex-col">
           {projects.map((project) => (
             <div key={project.slug} className="py-case-study-section-y">
               <CaseStudyPreview project={project} />

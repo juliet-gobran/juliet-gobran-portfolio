@@ -20,7 +20,7 @@ type CaseStudyPreviewProps = {
 
 export function CaseStudyPreview({ project }: CaseStudyPreviewProps) {
   return (
-    <article className="flex w-full flex-col items-start gap-8 md:flex-row">
+    <article className="flex w-full flex-col-reverse items-start gap-8 md:flex-row">
       <CaseStudyMeta project={project} />
       <CaseStudyImageFrame src={project.cardImage} />
     </article>
