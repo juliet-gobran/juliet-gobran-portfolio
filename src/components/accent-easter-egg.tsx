@@ -117,7 +117,7 @@ export function AccentEasterEgg() {
           title={label}
           onClick={() => setAccent(eggAccent)}
           style={{ transitionDelay: isVisible ? `${index * 120}ms` : undefined }}
-          className={`group relative flex size-10 shrink-0 items-center justify-center transition-all duration-500 ease-out hover:scale-110 hover:duration-200 motion-reduce:transition-opacity motion-reduce:duration-300 motion-reduce:hover:scale-100 ${
+          className={`group relative flex size-10 shrink-0 items-center justify-center drop-shadow-surface transition-all duration-500 ease-out hover:scale-110 hover:duration-200 motion-reduce:transition-opacity motion-reduce:duration-300 motion-reduce:hover:scale-100 ${
             isVisible
               ? "scale-100 opacity-100"
               : "scale-0 opacity-0 motion-reduce:scale-100"

@@ -61,10 +61,16 @@ All project pages now use these tokens — the old project-detail tokens (`proje
 | `shell-inset` | 16px | Outer padding around the nav |
 | `nav-padding-x` | 16px | Nav horizontal padding |
 | `nav-padding-y` | 8px | Nav vertical padding |
-| `center-padding-y` | 32px | Main content vertical padding |
+| `center-padding-y` | 64px | Main content vertical padding |
 | `center-padding-x` | 16px | Main content horizontal padding |
 | `nav-link-gap` | 16px | Gap between nav items |
 | `case-study-section-y` | 64px | Vertical padding around each case study preview on home (no dividers) |
+
+## Shadows
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `drop-shadow-surface` | `0 0 8px rgba(0, 0, 0, 0.25)` | Figma "Drop shadow" effect (X 0, Y 0, Blur 8, Spread 0, Black 25%) applied as a `drop-shadow` filter — conforms to the icon shape rather than boxing it. Used on the home intro accent Easter egg icons |
 
 ## Radius
 

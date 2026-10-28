@@ -35,6 +35,8 @@
   --color-cta-accent: var(--color-cta-accent);
   --color-cta-accent-dark: var(--color-cta-accent-dark);
 
+  --drop-shadow-surface: var(--drop-shadow-surface);
+
   --spacing-shell-inset: var(--spacing-shell-inset);
   --spacing-nav-padding-x: var(--spacing-nav-padding-x);
   --spacing-nav-padding-y: var(--spacing-nav-padding-y);

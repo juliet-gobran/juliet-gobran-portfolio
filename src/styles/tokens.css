@@ -34,6 +34,9 @@
   --spacing-project-stack-gap: 80px;
   --spacing-case-study-section-y: 64px;
 
+  /* Shadows */
+  --drop-shadow-surface: 0 0 8px rgba(0, 0, 0, 0.25);
+
   /* Radius */
   --radius-control: 8px;
   --radius-card: 16px;
