@@ -13,15 +13,17 @@ export function CaseStudyImageFrame({
 }: CaseStudyImageFrameProps) {
   return (
     <div
-      className={`relative aspect-[800/586] w-full flex-1 overflow-hidden rounded-card border border-border-subtle bg-surface-sunken p-8 ${className}`.trim()}
+      className={`aspect-[800/586] w-full flex-1 overflow-hidden rounded-card border border-border-subtle bg-surface-sunken p-8 ${className}`.trim()}
     >
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        sizes="(min-width: 768px) 55vw, 100vw"
-        className="object-contain"
-      />
+      <div className="relative size-full">
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="(min-width: 768px) 55vw, 100vw"
+          className="object-contain"
+        />
+      </div>
     </div>
   );
 }
