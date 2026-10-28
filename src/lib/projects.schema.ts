@@ -44,10 +44,7 @@ export const projectSchema = z.object({
     .union([z.string().url(), z.null()])
     .optional()
     .transform((value) => value ?? null),
-  content: z.string(),
-  images: z.array(z.string()).max(5),
-  extraContent: z.string().nullable(),
-  blocks: z.array(contentBlockSchema).min(1).optional(),
+  blocks: z.array(contentBlockSchema).min(1),
 });
 
 export type Project = z.infer<typeof projectSchema>;

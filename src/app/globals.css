@@ -29,7 +29,6 @@
   --font-albert-sans: var(--font-albert-sans);
 
   --max-width-content: var(--layout-content-max-width);
-  --max-width-project: var(--layout-project-max-width);
   --max-width-home: var(--layout-home-max-width);
   --text-nav-name: var(--font-size-nav-name);
   --text-nav-link: var(--font-size-nav-link);
@@ -44,12 +43,6 @@
   --text-case-study-page-title: var(--font-size-case-study-page-title);
   --text-case-study-page-subtitle: var(--font-size-case-study-page-subtitle);
   --text-case-study-page-heading: var(--font-size-case-study-page-heading);
-  --text-project-title: var(--font-size-project-title);
-  --text-project-title-md: var(--font-size-project-title-md);
-  --text-project-title-lg: var(--font-size-project-title-lg);
-  --text-project-meta: var(--font-size-project-meta);
-  --text-project-body: var(--font-size-project-body);
-  --text-project-detail-body: var(--font-size-project-detail-body);
 }
 
 body {
@@ -101,34 +94,5 @@ body {
     .group:focus-within .project-card-image {
       transform: none;
     }
-  }
-
-  .prose-project {
-    font-family: var(--font-albert-sans), sans-serif;
-    font-size: var(--font-size-project-detail-body);
-    font-weight: 300;
-    line-height: 1.2;
-    color: var(--color-text-primary);
-  }
-
-  .prose-project > * + * {
-    margin-top: 1em;
-  }
-
-  .prose-project ul {
-    list-style-type: disc;
-    padding-left: 1.25em;
-  }
-
-  .prose-project ul > li + li {
-    margin-top: 0.5em;
-  }
-
-  .prose-project a {
-    text-decoration: underline;
-  }
-
-  .prose-project strong {
-    font-weight: 500;
   }
 }

@@ -14,10 +14,12 @@
 | Nav | `593:4871` | Logo, Work/Gallery/About (inert placeholders), Contact CTA — **implemented** |
 | Intro | `593:4971` | Heading + inline timestamp — **implemented** |
 | Case study preview (Recapped) | `593:4883` | `CaseStudyPreview` reference — **implemented** (generic, data-driven) |
+| Case study detail (Recapped) | `604:5156` | `CaseStudyDetailSidebar` + `CaseStudyContent` — **implemented** (generic, data-driven `blocks` template) |
+| Case study detail (Footprints Maps advertising model) | `616:5605` | Second case study on the `blocks` template — **implemented**; read from a PDF export, not this MCP, since the Figma Starter-plan MCP rate limit was hit mid-task |
 
 Older dark-theme frames (`359:1096`, `359:1624`, `359:1179`) are superseded by this redesign and no longer tracked here.
 
-> Note: the project detail page, about page, and `/the-search` app have **not** been redesigned yet — they automatically picked up the new light color tokens (background, text, border) since they're token-driven, but their layout/typography is unchanged pending their own Figma frames.
+> Note: about page and `/the-search` app have **not** been redesigned yet — they automatically picked up the new light color tokens (background, text, border) since they're token-driven, but their layout/typography is unchanged pending their own Figma frames. The home page and both case study templates (preview + detail) are fully implemented.
 
 ## Legacy app shell frame (`359:1096`) — structure (superseded)
 
@@ -69,4 +71,4 @@ Implemented in [`src/components/app-shell.tsx`](../../src/components/app-shell.t
 1. Design or update frames in Figma.
 2. Share a frame URL with `node-id` when asking for implementation.
 3. Tokens and spacing are captured in [design-tokens.md](design-tokens.md).
-4. Implementation happens in Framer — Figma is the visual reference, not auto-synced.
+4. Implementation happens directly in this Next.js codebase — Figma is the visual reference, not auto-synced.

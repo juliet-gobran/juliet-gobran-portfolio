@@ -27,7 +27,6 @@
 
   /* Layout */
   --layout-content-max-width: 800px;
-  --layout-project-max-width: 1920px;
   --layout-home-max-width: 1200px;
 
   /* Typography sizes (reference — applied via Tailwind utilities in Phase 2) */
@@ -44,12 +43,6 @@
   --font-size-case-study-page-title: 48px;
   --font-size-case-study-page-subtitle: 24px;
   --font-size-case-study-page-heading: 24px;
-  --font-size-project-title: 48px;
-  --font-size-project-title-md: 64px;
-  --font-size-project-title-lg: 80px;
-  --font-size-project-meta: 16px;
-  --font-size-project-body: 24px;
-  --font-size-project-detail-body: 20px;
 
   /* Project card hover — tweak duration, easing, lift, and shadow here */
   --project-card-hover-duration: 500ms;

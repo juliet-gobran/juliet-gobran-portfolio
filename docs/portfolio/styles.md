@@ -60,31 +60,9 @@ Component: [`src/components/project-card.tsx`](../../src/components/project-card
 
 ### Project detail page
 
-Route: [`src/app/projects/[slug]/page.tsx`](../../src/app/projects/[slug]/page.tsx). Components in [`src/components/project/`](../../src/components/project/).
+Route: [`src/app/projects/[slug]/page.tsx`](../../src/app/projects/[slug]/page.tsx). Components in [`src/components/case-study-detail/`](../../src/components/case-study-detail/). Full breakdown in [design-tokens.md](design-tokens.md#case-study-detail-page).
 
-| UI element | Framer style | Tailwind (implemented) |
-|------------|--------------|------------------------|
-| Meta pill | CTA + Burnn fill | Same as project card — `{year} · {role}` separator |
-| Page title | Heading 1 | `font-jura font-bold leading-[1.15] text-project-title md:text-project-title-md text-text-primary` |
-| Subtitle | Project Body | `font-albert-sans text-project-body font-light text-text-primary` |
-| External URL | Paragraph 1 | `font-albert-sans text-base font-light underline text-text-primary` |
-| Content / extra panels | Blackk surface | `rounded-card bg-background-dark p-8` |
-| Detail body copy | Paragraph 3 | `.prose-project` — Albert Sans 20px light via `text-project-detail-body` token |
-
-**Max width:** Home uses `max-w-content` (800px) on the page wrapper. Project detail uses `max-w-project` (1920px). App shell `<main>` no longer constrains width — each page sets its own.
-
-**Layout:**
-
-| Breakpoint | Behaviour |
-|------------|-----------|
-| `< lg` | Single column: header → image gallery → content panel → optional extra content |
-| `lg+` | Header scrolls away in `<main>`, then `grid-cols-[1fr_2fr] gap-8` shows the full image gallery in a sticky right column beside the scrolling content panel |
-
-At `lg+`, gallery and content stay side by side with the gallery column pinned via `sticky top-0`; optional `extraContent` remains full-width below.
-
-**Image gallery** ([`project-image-gallery.tsx`](../../src/components/project/project-image-gallery.tsx)): patterned layout for up to 5 images — hero square, pair row (`md:grid-cols-2`), landscape frame (`aspect-[1200/590]`), final square. Frames use `rounded-card bg-background-dark p-8`; images `object-contain`.
-
-**Markdown:** `content` and `extraContent` fields render via [`markdown-content.tsx`](../../src/components/project/markdown-content.tsx) (`react-markdown` + `remark-gfm`). Prose styles in [`globals.css`](../../src/app/globals.css) `.prose-project`.
+Every project now uses the `blocks`-driven template — the old fixed header/gallery/markdown-panel layout (`src/components/project/*`, `react-markdown`) has been removed.
 
 ### General hierarchy
 
