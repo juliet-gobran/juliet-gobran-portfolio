@@ -8,7 +8,7 @@ type CaseStudyContentProps = {
 
 export function CaseStudyContent({ blocks }: CaseStudyContentProps) {
   return (
-    <div className="flex w-full min-w-0 flex-col gap-4 py-16 lg:w-[800px]">
+    <div className="flex w-full min-w-0 flex-col gap-4 lg:w-[800px]">
       {blocks.map((block, index) =>
         block.type === "section" ? (
           <CaseStudySectionBlock key={index} block={block} />

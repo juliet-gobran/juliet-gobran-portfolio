@@ -18,7 +18,7 @@ type CaseStudyDetailSidebarProps = {
 
 export function CaseStudyDetailSidebar({ project }: CaseStudyDetailSidebarProps) {
   return (
-    <div className="flex w-full shrink-0 flex-col lg:sticky lg:top-0 lg:w-[400px] lg:pt-16">
+    <div className="flex w-full shrink-0 flex-col lg:sticky lg:top-0 lg:w-[400px]">
       <CaseStudyDetailHeader
         title={project.title}
         subtitle={project.subtitle}
