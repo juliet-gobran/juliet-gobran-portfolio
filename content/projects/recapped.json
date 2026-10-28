@@ -7,19 +7,13 @@
   "scope": "Product structure, branding, design system, web app design, landing page and QA",
   "industry": "Consumer web app",
   "completed": "April 2026",
-  "cardImage": "/images/projects/recapped/Floating-device.png",
+  "cardImage": "/images/projects/recapped/launched-product.png",
   "order": 3,
   "subtitle": "A simple place to store the things you don't want to forget, designed in three weeks.",
   "year": 2025,
   "url": "https://recapped.com.au/",
   "content": "Recapped was designed to be an SLC (Simple, Lovable & Complete) rather than an MVP (Minimum Viable Product). With limited and simple features, the focus was on making the app feel calming and easy to use.\n\nIt was Sean's (Managing Director of Go To Apps) idea to create the product as an easy way to document the names of his daughters' toys. He wanted to create a simple filing system that would be universal across all sorts of items. This simple data structure (image, title, and notes) is applicable to so many use cases. Maybe it's a list of books you've read, or perhaps you're collecting vintage comics.\n\nAs the product designer on this project, I wanted it to feel personal without requiring too much effort from the user. To achieve this, I created a simple colour palette that allows users to build colour associations with their collections. Another simple value-add was assigning an emoji to each collection. This helps users quickly identify what a collection contains and makes the collections page feel more vibrant and engaging.\n\nAs the sole designer on this project, I was responsible for:\n\n- Researching competitors and helping define the product concept and name\n- Creating responsive wireframes for the web app\n- Developing the product branding, including the logo, signature gradient, font pairing, and core colour palette\n- Mapping user flows and defining the required screens\n- Creating a design system and high-fidelity designs\n- Designing a landing page to market the product\n- Conducting quality assurance following development\n\nThis project was an exciting opportunity to design a polished product in just three weeks.",
-  "images": [
-    "/images/projects/recapped/Rceapped-devices-on-gradient.png",
-    "/images/projects/recapped/Recapped-on-laptop.png",
-    "/images/projects/recapped/Recapped-on-iphones.png",
-    "/images/projects/recapped/Recapped-process.png",
-    "/images/projects/recapped/Recappoed-on-mac.png"
-  ],
+  "images": [],
   "extraContent": null,
   "blocks": [
     {
@@ -30,8 +24,8 @@
     {
       "type": "image",
       "src": "/images/projects/recapped/launched-product.png",
-      "width": 2400,
-      "height": 1600,
+      "width": 1598,
+      "height": 1172,
       "alt": "Recapped landing page and app screens on a laptop and phones",
       "caption": "Recapped - Launched Product"
     },
@@ -53,16 +47,16 @@
     {
       "type": "image",
       "src": "/images/projects/recapped/wireframes-customisable-fields.png",
-      "width": 2646,
-      "height": 1704,
-      "alt": "Wireframes exploring customisable fields",
+      "width": 1598,
+      "height": 1062,
+      "alt": "Customise Item and Add Field screens for building custom data fields",
       "caption": "Wireframes exploring customisable fields"
     },
     {
       "type": "image",
       "src": "/images/projects/recapped/item-fields-labelled.png",
-      "width": 900,
-      "height": 1840,
+      "width": 1598,
+      "height": 1700,
       "alt": "Final design of an item screen with labelled fields: image, title, location and notes",
       "caption": "Final design of item with labelled fields: image, title, location and notes"
     },
@@ -74,8 +68,8 @@
     {
       "type": "image",
       "src": "/images/projects/recapped/collections-and-items.png",
-      "width": 2400,
-      "height": 1600,
+      "width": 1596,
+      "height": 1172,
       "alt": "Collections list and item detail screens",
       "caption": "Collections and items"
     },
@@ -86,9 +80,9 @@
     },
     {
       "type": "image",
-      "src": "/images/projects/recapped/limit-warnings-subscription.png",
-      "width": 800,
-      "height": 518,
+      "src": "/images/projects/recapped/limit-warnings.png",
+      "width": 1598,
+      "height": 1036,
       "alt": "Close-to-limit and limit-reached storage warnings, and the subscription details panel",
       "caption": "Components used for limit warnings and subscription details"
     },
@@ -99,17 +93,17 @@
     },
     {
       "type": "image",
-      "src": "/images/projects/recapped/logo-colour-iterations.png",
-      "width": 800,
-      "height": 476,
+      "src": "/images/projects/recapped/branding-exploration.png",
+      "width": 1598,
+      "height": 952,
       "alt": "Earlier logo and colour exploration",
       "caption": "Earlier iterations of logo and colour exploration"
     },
     {
       "type": "image",
       "src": "/images/projects/recapped/final-branding-in-use.png",
-      "width": 1200,
-      "height": 630,
+      "width": 1598,
+      "height": 900,
       "alt": "Final Recapped branding in use",
       "caption": "Final branding in use"
     },
@@ -120,9 +114,9 @@
     },
     {
       "type": "image",
-      "src": "/images/projects/recapped/component-colour-variants.png",
-      "width": 800,
-      "height": 571,
+      "src": "/images/projects/recapped/components-and-variables.png",
+      "width": 1598,
+      "height": 1142,
       "alt": "Example component and colour variants in the design system library",
       "caption": "Example component and colour variants in library"
     },
@@ -138,9 +132,9 @@
     },
     {
       "type": "image",
-      "src": "/images/projects/recapped/plants-collection-example.png",
-      "width": 4096,
-      "height": 2731,
+      "src": "/images/projects/recapped/Recapped-on-laptop.png",
+      "width": 1596,
+      "height": 1596,
       "alt": "Recapped plants collection example on a laptop",
       "caption": "Plants collection example"
     },
