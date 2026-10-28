@@ -7,7 +7,7 @@
   "scope": "Product structure, branding, design system, web app design, landing page and QA",
   "industry": "Consumer web app",
   "completed": "April 2026",
-  "cardImage": "/images/projects/recapped/launched-product.png",
+  "cardImage": "/images/projects/recapped/product-launch-hero-v2.png",
   "order": 3,
   "subtitle": "A simple place to store the things you don't want to forget, designed in three weeks.",
   "year": 2025,
@@ -23,7 +23,7 @@
     },
     {
       "type": "image",
-      "src": "/images/projects/recapped/launched-product.png",
+      "src": "/images/projects/recapped/product-launch-hero-v2.png",
       "width": 1598,
       "height": 1172,
       "alt": "Recapped landing page and app screens on a laptop and phones",
@@ -46,7 +46,7 @@
     },
     {
       "type": "image",
-      "src": "/images/projects/recapped/wireframes-customisable-fields.png",
+      "src": "/images/projects/recapped/custom-fields-flow-v2.png",
       "width": 1598,
       "height": 1062,
       "alt": "Customise Item and Add Field screens for building custom data fields",
@@ -67,7 +67,7 @@
     },
     {
       "type": "image",
-      "src": "/images/projects/recapped/collections-and-items.png",
+      "src": "/images/projects/recapped/app-home-collections-v2.png",
       "width": 1596,
       "height": 1172,
       "alt": "Collections list and item detail screens",
@@ -80,7 +80,7 @@
     },
     {
       "type": "image",
-      "src": "/images/projects/recapped/limit-warnings.png",
+      "src": "/images/projects/recapped/storage-limit-warnings-v2.png",
       "width": 1598,
       "height": 1036,
       "alt": "Close-to-limit and limit-reached storage warnings, and the subscription details panel",
@@ -93,7 +93,7 @@
     },
     {
       "type": "image",
-      "src": "/images/projects/recapped/branding-exploration.png",
+      "src": "/images/projects/recapped/logo-exploration-v2.png",
       "width": 1598,
       "height": 952,
       "alt": "Earlier logo and colour exploration",
@@ -101,7 +101,7 @@
     },
     {
       "type": "image",
-      "src": "/images/projects/recapped/final-branding-in-use.png",
+      "src": "/images/projects/recapped/brand-in-use-v2.png",
       "width": 1598,
       "height": 900,
       "alt": "Final Recapped branding in use",
@@ -114,7 +114,7 @@
     },
     {
       "type": "image",
-      "src": "/images/projects/recapped/components-and-variables.png",
+      "src": "/images/projects/recapped/design-system-components-v2.png",
       "width": 1598,
       "height": 1142,
       "alt": "Example component and colour variants in the design system library",
@@ -132,7 +132,7 @@
     },
     {
       "type": "image",
-      "src": "/images/projects/recapped/Recapped-on-laptop.png",
+      "src": "/images/projects/recapped/plants-collection-v2.png",
       "width": 1596,
       "height": 1596,
       "alt": "Recapped plants collection example on a laptop",
