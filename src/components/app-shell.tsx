@@ -20,7 +20,7 @@ export function AppShell({ children }: AppShellProps) {
           <NavBar />
         </header>
 
-        <main className="min-h-0 flex-1 overflow-y-auto overscroll-y-contain px-center-padding-x py-center-padding-y">
+        <main className="min-h-0 flex-1 overflow-y-auto overscroll-y-contain px-center-padding-x py-center-padding-y motion-safe:scroll-smooth">
           {children}
         </main>
       </div>

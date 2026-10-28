@@ -5,38 +5,42 @@ import { useCallback, useEffect, useId, useRef, useState } from "react";
 
 const NAV_ITEMS = [
   { label: "Work", href: "/#work" },
-  { label: "Gallery", href: null },
-  { label: "About", href: null },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "About", href: "/#about" },
 ] as const;
 
 function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <>
-      {NAV_ITEMS.map(({ label, href }) =>
-        href ? (
-          <Link
-            key={label}
-            href={href}
-            onClick={onNavigate}
-            className="transition-opacity duration-300 ease-in-out hover:opacity-70"
-          >
-            {label}
-          </Link>
-        ) : (
-          <span key={label}>{label}</span>
-        ),
-      )}
+      {NAV_ITEMS.map(({ label, href }) => (
+        <Link
+          key={label}
+          href={href}
+          onClick={onNavigate}
+          className="transition-opacity duration-300 ease-in-out hover:opacity-70"
+        >
+          {label}
+        </Link>
+      ))}
     </>
   );
 }
 
-function ContactCta({ className }: { className?: string }) {
+function ContactCta({
+  className,
+  onClick,
+}: {
+  className?: string;
+  onClick?: () => void;
+}) {
   return (
-    <span
-      className={`inline-flex w-fit items-center justify-center rounded-control border border-border-subtle bg-surface-raised px-2 py-1 font-jura text-base font-bold text-text-primary md:text-case-study-button ${className ?? ""}`}
+    <Link
+      href="/#contact"
+      onClick={onClick}
+      className={`inline-flex w-fit items-center justify-center rounded-control border border-border-subtle bg-surface-raised px-2 py-1 font-jura text-base font-bold text-text-primary transition-opacity duration-300 ease-in-out hover:opacity-70 md:text-case-study-button ${className ?? ""}`}
     >
       Contact
-    </span>
+    </Link>
   );
 }
 
@@ -140,7 +144,7 @@ export function NavBar() {
         >
           <div className="flex flex-col gap-3">
             <NavLinks onNavigate={closeMenu} />
-            <ContactCta className="w-full" />
+            <ContactCta className="w-full" onClick={closeMenu} />
           </div>
         </div>
       </div>
