@@ -1,11 +1,14 @@
 import { AccentEasterEgg } from "@/components/accent-easter-egg";
 import { CaseStudyPreview } from "@/components/case-study-preview/case-study-preview";
+import { GalleryGrid } from "@/components/gallery/gallery-grid";
 import { RevealOnScroll } from "@/components/reveal-on-scroll";
 import { WollongongClock } from "@/components/wollongong-clock";
+import { getGalleryItems } from "@/lib/gallery";
 import { getPublishedProjects } from "@/lib/projects";
 
 export default function Home() {
   const projects = getPublishedProjects();
+  const galleryItems = getGalleryItems();
 
   return (
     <div className="mx-auto flex w-full max-w-home flex-col">
@@ -30,15 +33,18 @@ export default function Home() {
         </section>
       ) : null}
 
-      <section
-        id="gallery"
-        aria-label="Gallery"
-        className="py-case-study-section-y"
-      >
-        <h2 className="font-jura text-case-study-title font-bold leading-[1.15] text-text-primary">
-          Gallery
-        </h2>
-      </section>
+      {galleryItems.length > 0 ? (
+        <section
+          id="gallery"
+          aria-label="Gallery"
+          className="flex flex-col gap-8 py-case-study-section-y"
+        >
+          <h2 className="font-jura text-case-study-title font-bold leading-[1.15] text-text-primary">
+            Gallery of my work
+          </h2>
+          <GalleryGrid items={galleryItems} />
+        </section>
+      ) : null}
 
       <section
         id="about"

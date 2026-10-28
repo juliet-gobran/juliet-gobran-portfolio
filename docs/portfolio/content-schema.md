@@ -99,3 +99,47 @@ public/
 - Ordering: `getPublishedProjects()` sorts by `order` ascending when provided; ties and unset values fallback to `slug` order
 
 Invalid JSON or schema violations will fail the build with a Zod error message.
+
+## Gallery
+
+The home page Gallery section (`#gallery`) is a separate, lighter content type — each item is a single image, no case study page. Each item is a single JSON file in `content/gallery/`.
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `slug` | `string` | yes | Unique identifier, lowercase kebab-case. Not routed — used for React keys and file naming only |
+| `src` | `string` | yes | Path under `public/`, e.g. `/images/gallery/blumen.webp` |
+| `width` / `height` | `number` | yes | The image file's **real pixel dimensions** (`sips -g pixelWidth -g pixelHeight <file>` on macOS) |
+| `alt` | `string` | yes | Alt text |
+| `order` | `number` | no | Manual grid order. Smaller number appears earlier; unordered items appear after ordered ones, then alphabetically by `slug` |
+
+Images should be a 5:4 ratio — the grid tile (`aspect-[5/4]`, `object-cover`) maintains that ratio at every breakpoint regardless of the source file's exact dimensions.
+
+### File layout
+
+```text
+content/
+  gallery/
+    banking-app.json
+    blumen.json
+    ...
+
+public/
+  images/
+    gallery/
+      banking-app.webp
+      blumen.webp
+      ...
+```
+
+### Adding a gallery item
+
+1. Create `public/images/gallery/{slug}.{ext}` — rename on the way in, not the raw export filename.
+2. Measure its real pixel dimensions.
+3. Create `content/gallery/{slug}.json` using the schema above.
+4. Run `npm run build` — Zod validates all gallery files at build time.
+
+### Validation
+
+- Schema and `GalleryItem` type: [`src/lib/gallery.schema.ts`](../../src/lib/gallery.schema.ts)
+- Helpers: [`src/lib/gallery.ts`](../../src/lib/gallery.ts)
+- Grid: [`src/components/gallery/gallery-grid.tsx`](../../src/components/gallery/gallery-grid.tsx) — responsive `grid-cols-1` (mobile) → `md:grid-cols-2` (768px+) → `lg:grid-cols-3` (1024px+)
