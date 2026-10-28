@@ -37,7 +37,7 @@ function ContactCta({
     <Link
       href="/#contact"
       onClick={onClick}
-      className={`inline-flex w-fit items-center justify-center rounded-control border border-border-subtle bg-surface-raised px-2 py-1 font-jura text-base font-bold text-text-primary transition-opacity duration-300 ease-in-out hover:opacity-70 md:text-case-study-button ${className ?? ""}`}
+      className={`inline-flex w-fit items-center justify-center rounded-control border border-cta-accent-dark bg-cta-accent px-2 py-1 font-jura text-base font-bold text-text-primary transition-opacity duration-300 ease-in-out hover:opacity-70 md:text-case-study-button ${className ?? ""}`}
     >
       Contact
     </Link>

@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { Albert_Sans, Jura } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 
+import { AccentProvider } from "@/components/accent-provider";
 import { AppShell } from "@/components/app-shell";
 import "./globals.css";
+
+const SET_ACCENT_BEFORE_PAINT = `(function(){try{var a=localStorage.getItem("accent");if(a==="pink"||a==="blue"||a==="orange"){document.documentElement.dataset.accent=a;}}catch(e){}})();`;
 
 const jura = Jura({
   variable: "--font-jura",
@@ -49,11 +52,18 @@ export default function RootLayout({
       className={`${jura.variable} ${albertSans.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{ __html: SET_ACCENT_BEFORE_PAINT }}
+        />
+      </head>
       <body className="h-dvh overflow-hidden" suppressHydrationWarning>
         <noscript>
           <style>{`.js-reveal { opacity: 1 !important; transform: none !important; }`}</style>
         </noscript>
-        <AppShell>{children}</AppShell>
+        <AccentProvider>
+          <AppShell>{children}</AppShell>
+        </AccentProvider>
         <Analytics />
       </body>
     </html>

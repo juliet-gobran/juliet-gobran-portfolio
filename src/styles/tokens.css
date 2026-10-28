@@ -8,6 +8,20 @@
   --color-text-primary: #000000;
   --color-text-on-accent: #000000;
 
+  /* Accents — CTA palette (home card "View case study", nav/header "Contact").
+     Three accents, each with a light (fill) and dark (border) variant.
+     Swappable at runtime via [data-accent] on <html>; see accent-provider.tsx. */
+  --color-accents-pink: #ff9ed8;
+  --color-accents-pink-dark: #ec6cb9;
+  --color-accents-blue: #87c2ff;
+  --color-accents-blue-dark: #439efd;
+  --color-accents-orange: #ffa78a;
+  --color-accents-orange-dark: #ef774f;
+
+  /* Active accent — defaults to orange; [data-accent="pink"|"blue"] overrides below. */
+  --color-cta-accent: var(--color-accents-orange);
+  --color-cta-accent-dark: var(--color-accents-orange-dark);
+
   /* Spacing */
   --spacing-shell-inset: 16px;
   --spacing-nav-padding-x: 16px;

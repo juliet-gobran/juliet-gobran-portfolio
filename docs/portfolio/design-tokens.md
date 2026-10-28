@@ -10,29 +10,45 @@ Extracted from Figma frame `593:4869` (Portfolio — light redesign). Update whe
 |-------|-------------|--------------|-------|
 | `background` | `#f9f6ef` | Home/Surface/Cream | Page background |
 | `surface-sunken` | `#ebe5d8` | Home/Surface/Darker Cream | Nav bar fill, case study image frames (home card and detail page) |
-| `surface-raised` | `#ffffff` | Home / Surface / White | Buttons (Contact, View case study) |
-| `border-subtle` | `#d7d1c4` | Home / Border / Subtle | 1px borders — nav, buttons, image frames, spec row dividers |
+| `surface-raised` | `#ffffff` | Home / Surface / White | No longer referenced by the portfolio — the CTA buttons now use the accent tokens below |
+| `border-subtle` | `#d7d1c4` | Home / Border / Subtle | 1px borders — nav, image frames, spec row dividers, mobile menu panel |
 | `text-primary` | `#000000` | Home / Text / Black | Default body/heading text everywhere |
 | `text-on-accent` | `#000000` | — | Text on orange pills — only used by `/the-search` (unrelated job-tracker tool), not the portfolio |
 | `accent-orange` | `#d44e2e` | — | Only used by `/the-search` now; no longer referenced by any portfolio/case-study component |
 
 No background image/animation — the galaxy crossfade has been removed entirely.
 
+### Accents (CTA buttons)
+
+Three accents, each with a light (fill) and dark (border) variant. Defined in [`src/styles/tokens.css`](../../src/styles/tokens.css), swapped at runtime via `[data-accent]` on `<html>` — see [`src/components/accent-provider.tsx`](../../src/components/accent-provider.tsx).
+
+| Token | Hex | Usage |
+|-------|-----|-------|
+| `accents-pink` | `#ff9ed8` | Pink accent fill |
+| `accents-pink-dark` | `#ec6cb9` | Pink accent border |
+| `accents-blue` | `#87c2ff` | Blue accent fill |
+| `accents-blue-dark` | `#439efd` | Blue accent border |
+| `accents-orange` | `#ffa78a` | Orange accent fill (default) |
+| `accents-orange-dark` | `#ef774f` | Orange accent border (default) |
+| `cta-accent` / `cta-accent-dark` | — | The *active* accent's fill/border — resolves to one of the three pairs above depending on `[data-accent]`. Used by `Contact` (`nav-bar.tsx`) and `View case study` (`case-study-cta.tsx`) |
+
+Default accent is orange. The active accent persists to `localStorage` (`accent` key) and is applied before paint via an inline script in `layout.tsx`, so there's no flash of the default color on reload. `useAccent()` (from `accent-provider.tsx`) exposes `{ accent, setAccent }` for any future trigger (e.g. the planned home page Easter egg) to read/change it — no UI trigger exists yet.
+
 ## Typography
 
 | Role | Font | Weight | Size | Figma style |
 |------|------|--------|------|-------------|
-| Nav name | Jura | SemiBold | 32px | Home / Heading / Brand |
+| Nav name | Jura | Bold | 32px | Home / Heading / Brand |
 | Nav links | Jura | Regular | 20px | Home / Label / Navigation |
-| Nav/CTA buttons | Jura | SemiBold | 20px | Home / Label / Button |
-| Intro heading | Jura | SemiBold | 40px (30px below `md`) | Home / Heading / Intro |
+| Nav/CTA buttons | Jura | Bold | 20px | Home / Label / Button |
+| Intro heading | Jura | Bold | 40px (30px below `md`) | Home / Heading / Intro |
 | Timestamp | Jura | Regular | 16px | Home / Caption / Timestamp |
-| Case study title | Jura | SemiBold | 32px, line-height 1.15 | Home / Heading / Project |
+| Case study title | Jura | Bold | 32px, line-height 1.15 | Home / Heading / Project |
 | Case study body | Albert Sans | Light | 20px | Home / Body / Large |
 | Case study url link | Albert Sans | Light | 16px, underline | Home / Link / Small |
-| Case study spec label | Jura | SemiBold | 16px | Home / Label / Metadata |
+| Case study spec label | Jura | Bold | 16px | Home / Label / Metadata |
 | Case study spec value | Albert Sans | Light | 16px | Home / Body / Small |
-| Case study page title (H1) | Jura | SemiBold | 48px (`text-4xl` below `lg`) | — |
+| Case study page title (H1) | Jura | Bold | 48px (`text-4xl` below `lg`) | — |
 | Case study page subtitle | Albert Sans | Light | 24px (`text-case-study-body` below `lg`) | — |
 | Case study section heading | Jura | Bold | 24px | — |
 
@@ -66,7 +82,7 @@ Implemented in [`src/components/app-shell.tsx`](../../src/components/app-shell.t
 |----------|-------|
 | Outer inset | 16px (`shell-inset`) around the nav |
 | Shell layout | Vertical stack, viewport-locked (`h-dvh`) so nav stays in frame; `<main>` is the scroll region |
-| Nav | Bordered, rounded (`radius-control`) bar — `surface-sunken` fill; left: name, right: Work / Gallery / About (inert placeholders, no routing yet) + Contact button |
+| Nav | Bordered, rounded (`radius-control`) bar — `surface-sunken` fill; left: name (links to `/`), right: Work / Gallery / About (anchor links to `/#work`, `/#gallery`, `/#about`) + Contact button (`/#contact`) |
 | No footer | The previous footer (clock + role) has been removed — the clock now lives inline under the home page intro |
 | Home max width | 1200px (`max-w-home`) |
 | Content max width | 800px (`max-w-content`) — intro heading |

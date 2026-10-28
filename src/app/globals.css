@@ -1,6 +1,22 @@
 @import "tailwindcss";
 @import "../styles/tokens.css";
 
+/* Active accent — [data-accent] is set on <html> by accent-provider.tsx (default: orange). */
+:root[data-accent="pink"] {
+  --color-cta-accent: var(--color-accents-pink);
+  --color-cta-accent-dark: var(--color-accents-pink-dark);
+}
+
+:root[data-accent="blue"] {
+  --color-cta-accent: var(--color-accents-blue);
+  --color-cta-accent-dark: var(--color-accents-blue-dark);
+}
+
+:root[data-accent="orange"] {
+  --color-cta-accent: var(--color-accents-orange);
+  --color-cta-accent-dark: var(--color-accents-orange-dark);
+}
+
 @theme inline {
   --color-background: var(--color-background);
   --color-surface-sunken: var(--color-surface-sunken);
@@ -9,6 +25,15 @@
   --color-accent-orange: var(--color-accent-orange);
   --color-text-primary: var(--color-text-primary);
   --color-text-on-accent: var(--color-text-on-accent);
+
+  --color-accents-pink: var(--color-accents-pink);
+  --color-accents-pink-dark: var(--color-accents-pink-dark);
+  --color-accents-blue: var(--color-accents-blue);
+  --color-accents-blue-dark: var(--color-accents-blue-dark);
+  --color-accents-orange: var(--color-accents-orange);
+  --color-accents-orange-dark: var(--color-accents-orange-dark);
+  --color-cta-accent: var(--color-cta-accent);
+  --color-cta-accent-dark: var(--color-cta-accent-dark);
 
   --spacing-shell-inset: var(--spacing-shell-inset);
   --spacing-nav-padding-x: var(--spacing-nav-padding-x);
