@@ -8,7 +8,12 @@ const APPEAR_DELAY_MS = 1500;
 
 function StarIcon() {
   return (
-    <svg viewBox="0 0 56 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      viewBox="0 0 56 59"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-full w-full"
+    >
       <path
         d="M30.9359 4.68185C31.9093 3.46241 33.8532 3.98849 34.0926 5.53616L36.3084 19.8625C36.4073 20.5023 36.8381 21.0395 37.4371 21.2703L50.8506 26.438C52.2996 26.9963 52.4049 29.0261 51.0216 29.7343L38.2164 36.2899C37.6446 36.5826 37.2718 37.1624 37.2396 37.8091L36.5186 52.2909C36.4407 53.8554 34.5619 54.5838 33.4676 53.4738L23.3377 43.1991C22.8853 42.7402 22.2242 42.5613 21.6053 42.7302L7.74621 46.5127C6.24901 46.9213 4.98254 45.3417 5.68955 43.9475L12.2341 31.0418C12.5264 30.4654 12.4906 29.7751 12.1403 29.2327L4.29591 17.0887C3.44849 15.7768 4.54454 14.0721 6.07583 14.3204L20.2504 16.619C20.8835 16.7216 21.5224 16.4739 21.9249 15.9698L30.9359 4.68185Z"
         fill="#FFA78A"
@@ -23,7 +28,12 @@ function StarIcon() {
 
 function ThumbsUpIcon() {
   return (
-    <svg viewBox="0 0 53 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      viewBox="0 0 53 59"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-full w-full"
+    >
       <path
         d="M4.19434 30.029H7.33719C8.38481 29.3982 10.7315 27.3795 11.7372 24.3516C12.9943 20.5667 17.3943 15.5202 18.6515 13.6277C19.9086 11.7353 19.9086 7.84216 19.9086 6.05794C19.9086 3.64317 23.6801 3.53468 25.5658 4.79631C27.4515 6.05794 28.0801 16.7814 25.5658 20.5665C23.5543 23.5946 33.1086 23.0899 38.1372 22.459C40.861 22.459 46.3086 23.1985 46.3086 25.7217C46.3086 28.8758 44.4229 30.029 41.9086 30.029C44.0039 30.0289 48.1943 30.7858 48.1943 33.8137C48.1943 36.8416 44.4229 37.178 42.5372 36.9678C43.7943 37.3883 48.1943 37.8334 48.1943 40.8613C48.1943 43.3109 45.0406 44.4783 43.0592 44.6123C45.0406 44.8532 48.1943 45.7959 48.1943 49.062C48.1943 51.5852 43.1658 52.1074 41.9086 52.1074L9.85148 53.9998C8.59434 53.7895 5.95434 52.3597 5.45148 48.3225C4.94862 44.2852 4.40386 34.4446 4.19434 30.029Z"
         fill="#87C2FF"
@@ -38,7 +48,12 @@ function ThumbsUpIcon() {
 
 function HeartIcon() {
   return (
-    <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      viewBox="0 0 54 54"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-full w-full"
+    >
       <path
         d="M5.81332 8.71755C13.7096 -1.84849 27.95 5.53185 28.3776 14.2465C33.2731 7.87583 48.1735 7.36947 50.0383 20.4384C51.9032 33.5074 31.5413 39.7136 19.0967 48.421C12.3519 34.7932 -2.083 19.2837 5.81332 8.71755Z"
         fill="#FF9ED8"
@@ -55,25 +70,25 @@ const EGGS: {
   accent: Accent;
   label: string;
   Icon: () => React.JSX.Element;
-  className: string;
+  position: string;
 }[] = [
   {
     accent: "blue",
     label: "thumbs-up",
     Icon: ThumbsUpIcon,
-    className: "top-0 right-48 size-12 lg:size-14",
+    position: "min-[800px]:absolute min-[800px]:top-0 min-[800px]:right-2 min-[800px]:size-12 lg:size-14",
   },
   {
     accent: "orange",
     label: "star",
     Icon: StarIcon,
-    className: "top-16 right-64 size-10 lg:size-12",
+    position: "min-[800px]:absolute min-[800px]:top-14 min-[800px]:right-20 lg:size-12",
   },
   {
     accent: "pink",
     label: "heart",
     Icon: HeartIcon,
-    className: "top-20 right-40 size-9 lg:size-11",
+    position: "min-[800px]:absolute min-[800px]:top-16 min-[800px]:right-0 min-[800px]:size-9 lg:size-11",
   },
 ];
 
@@ -90,8 +105,11 @@ export function AccentEasterEgg() {
   }, []);
 
   return (
-    <div className="pointer-events-none absolute inset-0 hidden md:block">
-      {EGGS.map(({ accent: eggAccent, label, Icon, className }, index) => (
+    // A reserved frame next to the headline (>=800px) so the icons never
+    // overlap the heading text; below 800px it collapses into a plain row
+    // of ~40px icons under the heading instead.
+    <div className="flex w-full flex-wrap items-center justify-start gap-4 min-[800px]:relative min-[800px]:h-36 min-[800px]:w-44 min-[800px]:shrink-0 min-[800px]:justify-normal min-[800px]:gap-0">
+      {EGGS.map(({ accent: eggAccent, label, Icon, position }, index) => (
         <button
           key={eggAccent}
           type="button"
@@ -99,11 +117,11 @@ export function AccentEasterEgg() {
           title={label}
           onClick={() => setAccent(eggAccent)}
           style={{ transitionDelay: isVisible ? `${index * 120}ms` : undefined }}
-          className={`group pointer-events-auto absolute flex items-center justify-center transition-all duration-500 ease-out hover:scale-110 hover:duration-200 motion-reduce:transition-opacity motion-reduce:duration-300 motion-reduce:hover:scale-100 ${
+          className={`group relative flex size-10 shrink-0 items-center justify-center transition-all duration-500 ease-out hover:scale-110 hover:duration-200 motion-reduce:transition-opacity motion-reduce:duration-300 motion-reduce:hover:scale-100 ${
             isVisible
               ? "scale-100 opacity-100"
               : "scale-0 opacity-0 motion-reduce:scale-100"
-          } ${className}`}
+          } ${position}`}
         >
           <Icon />
           {eggAccent !== accent ? (
