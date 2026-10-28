@@ -1,15 +1,31 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 
-const NAV_ITEMS = ["Work", "Gallery", "About"] as const;
+const NAV_ITEMS = [
+  { label: "Work", href: "/#work" },
+  { label: "Gallery", href: null },
+  { label: "About", href: null },
+] as const;
 
-function NavLinks() {
+function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <>
-      {NAV_ITEMS.map((label) => (
-        <span key={label}>{label}</span>
-      ))}
+      {NAV_ITEMS.map(({ label, href }) =>
+        href ? (
+          <Link
+            key={label}
+            href={href}
+            onClick={onNavigate}
+            className="transition-opacity duration-300 ease-in-out hover:opacity-70"
+          >
+            {label}
+          </Link>
+        ) : (
+          <span key={label}>{label}</span>
+        ),
+      )}
     </>
   );
 }
@@ -123,7 +139,7 @@ export function NavBar() {
           className={`absolute top-full right-0 z-20 mt-1 min-w-44 origin-top-right rounded-control border border-border-subtle bg-surface-sunken p-3 transition-all duration-300 ease-in-out ${isMenuOpen ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"}`}
         >
           <div className="flex flex-col gap-3">
-            <NavLinks />
+            <NavLinks onNavigate={closeMenu} />
             <ContactCta className="w-full" />
           </div>
         </div>

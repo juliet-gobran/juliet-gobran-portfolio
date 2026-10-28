@@ -17,14 +17,44 @@ export default function Home() {
       </RevealOnScroll>
 
       {projects.length > 0 ? (
-        <div className="flex flex-col">
+        <section id="work" aria-label="Work" className="flex flex-col">
           {projects.map((project) => (
             <RevealOnScroll key={project.slug} className="py-case-study-section-y">
               <CaseStudyPreview project={project} />
             </RevealOnScroll>
           ))}
-        </div>
+        </section>
       ) : null}
+
+      <section
+        id="gallery"
+        aria-label="Gallery"
+        className="py-case-study-section-y"
+      >
+        <h2 className="font-jura text-case-study-title font-bold leading-[1.15] text-text-primary">
+          Gallery
+        </h2>
+      </section>
+
+      <section
+        id="about"
+        aria-label="About"
+        className="py-case-study-section-y"
+      >
+        <h2 className="font-jura text-case-study-title font-bold leading-[1.15] text-text-primary">
+          About
+        </h2>
+      </section>
+
+      <section
+        id="contact"
+        aria-label="Contact"
+        className="py-case-study-section-y"
+      >
+        <h2 className="font-jura text-case-study-title font-bold leading-[1.15] text-text-primary">
+          Contact
+        </h2>
+      </section>
     </div>
   );
 }
