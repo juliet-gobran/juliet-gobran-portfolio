@@ -1,0 +1,97 @@
+{
+  "slug": "metiora",
+  "title": "Feature testing Metiora",
+  "status": "published",
+  "role": "Senior Product Designer at Go To Apps",
+  "client": "Seer Data",
+  "scope": "Leading the research and UX audit for Metiora.",
+  "industry": "Impact Measurement, SaaS",
+  "completed": "May 2026",
+  "cardImage": "/images/projects/metiora/metiora-hero.png",
+  "order": 1,
+  "subtitle": "Feature testing a new product against real-user workflows.",
+  "year": 2026,
+  "url": "https://metiora.ai",
+  "blocks": [
+    {
+      "type": "section",
+      "heading": "In Short",
+      "body": "Seer Data had changed direction after a first round of research and needed to know whether the new design fitted real workflows and what an MVP should include. I ran moderated sessions with funders and fund recipients, plus a rapid UX audit. Seer's team adopted the recommendations and launched Metiora."
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/metiora/metiora-hero.png",
+      "width": 1598,
+      "height": 1172,
+      "alt": "Metiora homepage on a laptop with callouts reading 'Evidence traceability is foundational to trust' and 'AI is acceptable as assistance, not authority'",
+      "caption": "Metiora - Launched Product"
+    },
+    {
+      "type": "section",
+      "heading": "Overview",
+      "body": "Seer Data builds Metiora, a product that helps funders and investors measure and report on the impact of what they fund. After a first round of research with potential users, Seer changed direction. They wanted to know whether the new design fitted the way people really work, and what an MVP, their Phase 1, needed to include.\n\nGo To Apps was brought in for validation testing and a rapid UX audit. As the main contact for the project, I ran 16 of the 19 sessions and wrote the findings report. Our managing director, Sean, assisted with editing the final version."
+    },
+    {
+      "type": "section",
+      "heading": "Who we spoke to",
+      "body": "We held 19 moderated sessions of 45 to 60 minutes, mostly one-on-one, with a few including two or more people.\n\n15 funders: impact investors, grantmakers and government\n\n4 fund recipients: investees and grantees\n\nSeer's team covered three sessions when bookings overlapped, using the same script."
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/metiora/participant-split.png",
+      "width": 1598,
+      "height": 794,
+      "alt": "Pie chart of participant split: Investor 8, Grant Maker 5, Government 2, Grantee 3, Investee 1",
+      "caption": "Participant split"
+    },
+    {
+      "type": "section",
+      "heading": "How the sessions worked",
+      "body": "After joining the Teams meeting & consenting to session recording, I walked each person through the prototype and asked what they expected, what they would trust and what worried them.\n\nFollowing each session I ran the transcript through ChatGPT on a workplace plan where data isn't used for training. It sorted what people said against a set of criteria, and I checked every result against my own notes from the day. That gave me a matrix I could compare across all 19 sessions, with every finding traced back to what someone said."
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/metiora/analysis-flow.png",
+      "width": 1598,
+      "height": 296,
+      "alt": "Analysis flow diagram: 45-60 min remote session, transcript analysis against criteria, check analysis against notes, synthesis matrices, findings",
+      "caption": "Analysis flow"
+    },
+    {
+      "type": "section",
+      "heading": "What we found",
+      "body": "People understood the problem Metiora solves, and they wanted a product like it to exist. Trust ran through most of what we heard. 13 of the 19 sessions raised a trust question in some form: tracing a number back to its source, understanding what the AI had done, or knowing how data would be governed and kept safe. Six people asked for a clear trail from a figure to the evidence behind it.\n\nSeer also wanted to test the AI-native side of the product. People had little to say about the AI features themselves and a lot to say about whether they could trust them. They welcomed AI as an assistant when it was clearly labelled and a person checked the result.\n\nThe finding that surprised Seer's team most was adoption. Metiora automates a lot, and at first it could add a step for investees, who supply the data. If reporting feels like extra work for them, investors receive weaker data and may stop using the product. This needed careful handling. I recommended letting investors upload the reports investees already send, so Metiora can read them while direct investee reporting grows.\n\nI sorted everything into Phase 1 must-haves for investors as the first customers, quick follow-ups, and later phases. Grantmaker and government needs went into the later phases."
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/metiora/finding-recommendation-table.png",
+      "width": 1598,
+      "height": 774,
+      "alt": "Table of findings and recommendations: evidence traceability, AI as assistance not authority, and investee burden as an adoption gate",
+      "caption": "Finding & Recommendation"
+    },
+    {
+      "type": "section",
+      "heading": "The UX audit",
+      "body": "Alongside the sessions I reviewed the prototype screens. Because both ran together, I could link each issue to something participants had told us. The recommendations fell into four groups: trust, workflow clarity, reporting confidence and accessibility.\n\nHidden Save. In the report builder, Save was hard to find and an unexpected pop-up appeared. I rated this Critical, because someone preparing a board report needs to know their work is safe. I recommended a visible save status and an autosave message.\n\nUnexplained labels. Tags like \"Strong\" and \"Moderate\" had no definition, and participants had told us they distrusted summaries they couldn't trace. I recommended definitions and links to the evidence behind each label.\n\nI also flagged small, low-contrast text on every screen (recommending body text closer to 16px and WCAG AA contrast) and AI features marked in different ways (recommending one icon and one label throughout)."
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/metiora/ux-audit-save-hidden.png",
+      "width": 1598,
+      "height": 774,
+      "alt": "Report builder screen with the Save action hidden in the toolbar, annotated to show the issue",
+      "caption": "UX audit finding"
+    },
+    {
+      "type": "section",
+      "heading": "Sharing the findings",
+      "body": "I presented the findings in the report and in a Q&A session I ran with Seer's CEO and Product Manager, with Sean joining. They asked a few questions to clarify and were very happy with the report. Seer's team accepted and adopted the UX recommendations, and the findings fed into the requirements their developers built from. Metiora has now launched."
+    },
+    {
+      "type": "section",
+      "heading": "What I'd do differently",
+      "body": "At the start, Seer and I had different ideas about the kind of testing we would run. After some back and forth we settled on moderated walkthroughs, which suit a mostly static prototype. They show how people react, what they value and what they trust. Whether people can complete tasks on their own is a question for a later round. Next time I would agree what the prototype can and can't test in the very first conversation."
+    }
+  ]
+}
