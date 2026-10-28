@@ -1,9 +1,9 @@
 :root {
   /* Colors — see docs/portfolio/design-tokens.md */
   --color-background: #f9f6ef;
-  --color-surface-sunken: #f5f1e9;
+  --color-surface-sunken: #ebe5d8;
   --color-surface-raised: #ffffff;
-  --color-border-subtle: #e5e2db;
+  --color-border-subtle: #d7d1c4;
   --color-accent-orange: #d44e2e;
   --color-text-primary: #000000;
   --color-text-on-accent: #000000;

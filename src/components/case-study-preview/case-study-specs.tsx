@@ -28,7 +28,7 @@ export function CaseStudySpecs({
           key={label}
           className="flex items-center gap-4 border-t border-border-subtle px-2 py-4"
         >
-          <dt className="w-24 shrink-0 font-jura text-case-study-label font-semibold">
+          <dt className="w-24 shrink-0 font-jura text-case-study-label font-bold">
             {label}:
           </dt>
           <dd className="flex-1 font-albert-sans text-case-study-label font-light">

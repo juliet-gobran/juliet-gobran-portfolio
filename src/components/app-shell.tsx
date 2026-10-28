@@ -13,7 +13,7 @@ export function AppShell({ children }: AppShellProps) {
         <header className="relative z-10 flex shrink-0 items-center justify-between rounded-control border border-border-subtle bg-surface-sunken px-nav-padding-x py-nav-padding-y">
           <Link
             href="/"
-            className="font-jura text-2xl font-semibold text-text-primary transition-opacity duration-300 ease-in-out hover:opacity-70 md:text-nav-name"
+            className="font-jura text-2xl font-bold text-text-primary transition-opacity duration-300 ease-in-out hover:opacity-70 md:text-nav-name"
           >
             Juliet Gobran
           </Link>

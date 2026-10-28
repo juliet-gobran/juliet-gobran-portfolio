@@ -17,7 +17,7 @@ function NavLinks() {
 function ContactCta({ className }: { className?: string }) {
   return (
     <span
-      className={`inline-flex w-fit items-center justify-center rounded-control border border-border-subtle bg-surface-raised px-2 py-1 font-jura text-base font-semibold text-text-primary md:text-case-study-button ${className ?? ""}`}
+      className={`inline-flex w-fit items-center justify-center rounded-control border border-border-subtle bg-surface-raised px-2 py-1 font-jura text-base font-bold text-text-primary md:text-case-study-button ${className ?? ""}`}
     >
       Contact
     </span>

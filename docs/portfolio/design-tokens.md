@@ -9,9 +9,9 @@ Extracted from Figma frame `593:4869` (Portfolio — light redesign). Update whe
 | Token | Hex / value | Figma style | Usage |
 |-------|-------------|--------------|-------|
 | `background` | `#f9f6ef` | Home/Surface/Cream | Page background |
-| `surface-sunken` | `#f5f1e9` | Home/Surface/Darker Cream | Nav bar fill, case study image frames (home card and detail page) |
+| `surface-sunken` | `#ebe5d8` | Home/Surface/Darker Cream | Nav bar fill, case study image frames (home card and detail page) |
 | `surface-raised` | `#ffffff` | Home / Surface / White | Buttons (Contact, View case study) |
-| `border-subtle` | `#e5e2db` | Home / Border / Subtle | 1px borders — nav, buttons, image frames, spec row dividers |
+| `border-subtle` | `#d7d1c4` | Home / Border / Subtle | 1px borders — nav, buttons, image frames, spec row dividers |
 | `text-primary` | `#000000` | Home / Text / Black | Default body/heading text everywhere |
 | `text-on-accent` | `#000000` | — | Text on orange pills — only used by `/the-search` (unrelated job-tracker tool), not the portfolio |
 | `accent-orange` | `#d44e2e` | — | Only used by `/the-search` now; no longer referenced by any portfolio/case-study component |
