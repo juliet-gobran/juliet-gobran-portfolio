@@ -61,19 +61,19 @@ const EGGS: {
     accent: "blue",
     label: "thumbs-up",
     Icon: ThumbsUpIcon,
-    className: "top-0 right-10 size-12 lg:size-14",
+    className: "top-0 right-48 size-12 lg:size-14",
   },
   {
     accent: "orange",
     label: "star",
     Icon: StarIcon,
-    className: "top-16 right-28 size-10 lg:size-12",
+    className: "top-16 right-64 size-10 lg:size-12",
   },
   {
     accent: "pink",
     label: "heart",
     Icon: HeartIcon,
-    className: "top-20 right-6 size-9 lg:size-11",
+    className: "top-20 right-40 size-9 lg:size-11",
   },
 ];
 
@@ -99,7 +99,7 @@ export function AccentEasterEgg() {
           title={label}
           onClick={() => setAccent(eggAccent)}
           style={{ transitionDelay: isVisible ? `${index * 120}ms` : undefined }}
-          className={`group pointer-events-auto absolute flex items-center justify-center transition-all duration-500 ease-out motion-reduce:transition-opacity motion-reduce:duration-300 ${
+          className={`group pointer-events-auto absolute flex items-center justify-center transition-all duration-500 ease-out hover:scale-110 hover:duration-200 motion-reduce:transition-opacity motion-reduce:duration-300 motion-reduce:hover:scale-100 ${
             isVisible
               ? "scale-100 opacity-100"
               : "scale-0 opacity-0 motion-reduce:scale-100"
