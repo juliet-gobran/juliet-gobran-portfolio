@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { CaseStudyContent } from "@/components/case-study-detail/case-study-content";
+import { CaseStudyDetailSidebar } from "@/components/case-study-detail/case-study-detail-sidebar";
 import { ProjectContentPanel } from "@/components/project/project-content-panel";
 import { ProjectExtraContent } from "@/components/project/project-extra-content";
 import { ProjectImageGallery } from "@/components/project/project-image-gallery";
@@ -37,6 +39,15 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   if (!project) {
     notFound();
+  }
+
+  if (project.blocks) {
+    return (
+      <article className="mx-auto flex w-full max-w-[1232px] flex-col items-start gap-8 lg:flex-row lg:justify-center">
+        <CaseStudyDetailSidebar project={project} />
+        <CaseStudyContent blocks={project.blocks} />
+      </article>
+    );
   }
 
   return (

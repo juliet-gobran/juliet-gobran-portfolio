@@ -41,6 +41,9 @@
   --text-case-study-link: var(--font-size-case-study-link);
   --text-case-study-label: var(--font-size-case-study-label);
   --text-case-study-button: var(--font-size-case-study-button);
+  --text-case-study-page-title: var(--font-size-case-study-page-title);
+  --text-case-study-page-subtitle: var(--font-size-case-study-page-subtitle);
+  --text-case-study-page-heading: var(--font-size-case-study-page-heading);
   --text-project-title: var(--font-size-project-title);
   --text-project-title-md: var(--font-size-project-title-md);
   --text-project-title-lg: var(--font-size-project-title-lg);

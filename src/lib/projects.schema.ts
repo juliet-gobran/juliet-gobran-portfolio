@@ -1,5 +1,29 @@
 import { z } from "zod";
 
+const sectionBlockSchema = z.object({
+  type: z.literal("section"),
+  heading: z.string().min(1),
+  body: z.string().min(1),
+});
+
+const imageBlockSchema = z.object({
+  type: z.literal("image"),
+  src: z.string().min(1),
+  width: z.number().int().positive(),
+  height: z.number().int().positive(),
+  alt: z.string().optional().default(""),
+  caption: z.string().min(1).optional(),
+});
+
+export const contentBlockSchema = z.discriminatedUnion("type", [
+  sectionBlockSchema,
+  imageBlockSchema,
+]);
+
+export type ContentBlock = z.infer<typeof contentBlockSchema>;
+export type SectionBlock = z.infer<typeof sectionBlockSchema>;
+export type ImageBlock = z.infer<typeof imageBlockSchema>;
+
 export const projectSchema = z.object({
   slug: z
     .string()
@@ -23,6 +47,7 @@ export const projectSchema = z.object({
   content: z.string(),
   images: z.array(z.string()).max(5),
   extraContent: z.string().nullable(),
+  blocks: z.array(contentBlockSchema).min(1).optional(),
 });
 
 export type Project = z.infer<typeof projectSchema>;

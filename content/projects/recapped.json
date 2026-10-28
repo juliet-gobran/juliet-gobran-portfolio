@@ -1,11 +1,15 @@
 {
   "slug": "recapped",
-  "title": "Recapped",
+  "title": "Recapped design 0-1",
   "status": "published",
-  "role": "Senior Product Designer",
+  "role": "Senior Product Designer at Go To Apps",
+  "client": "Go To Apps (in-house product)",
+  "scope": "Product structure, branding, design system, web app design, landing page and QA",
+  "industry": "Consumer web app",
+  "completed": "April 2026",
   "cardImage": "/images/projects/recapped/Floating-device.png",
   "order": 3,
-  "subtitle": "A simple place to store the things you don't want to forget.",
+  "subtitle": "A simple place to store the things you don't want to forget, designed in three weeks.",
   "year": 2025,
   "url": "https://recapped.com.au/",
   "content": "Recapped was designed to be an SLC (Simple, Lovable & Complete) rather than an MVP (Minimum Viable Product). With limited and simple features, the focus was on making the app feel calming and easy to use.\n\nIt was Sean's (Managing Director of Go To Apps) idea to create the product as an easy way to document the names of his daughters' toys. He wanted to create a simple filing system that would be universal across all sorts of items. This simple data structure (image, title, and notes) is applicable to so many use cases. Maybe it's a list of books you've read, or perhaps you're collecting vintage comics.\n\nAs the product designer on this project, I wanted it to feel personal without requiring too much effort from the user. To achieve this, I created a simple colour palette that allows users to build colour associations with their collections. Another simple value-add was assigning an emoji to each collection. This helps users quickly identify what a collection contains and makes the collections page feel more vibrant and engaging.\n\nAs the sole designer on this project, I was responsible for:\n\n- Researching competitors and helping define the product concept and name\n- Creating responsive wireframes for the web app\n- Developing the product branding, including the logo, signature gradient, font pairing, and core colour palette\n- Mapping user flows and defining the required screens\n- Creating a design system and high-fidelity designs\n- Designing a landing page to market the product\n- Conducting quality assurance following development\n\nThis project was an exciting opportunity to design a polished product in just three weeks.",
@@ -16,5 +20,134 @@
     "/images/projects/recapped/Recapped-process.png",
     "/images/projects/recapped/Recappoed-on-mac.png"
   ],
-  "extraContent": null
+  "extraContent": null,
+  "blocks": [
+    {
+      "type": "section",
+      "heading": "In Short",
+      "body": "Recapped started with a simple idea from Go To Apps' managing director: a place to keep track of his daughters' toys. As the sole designer, I had three weeks to turn a creative brainstorm into a small, calm web app. It has a fixed data structure that keeps collections simple, personal touches in colour and emoji, a brand built with Sean, and a design system ready for future features. Recapped is live."
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/recapped/launched-product.png",
+      "width": 2400,
+      "height": 1600,
+      "alt": "Recapped landing page and app screens on a laptop and phones",
+      "caption": "Recapped - Launched Product"
+    },
+    {
+      "type": "section",
+      "heading": "Overview",
+      "body": "Recapped is a Go To Apps product, a web app for storing the things you don't want to forget. It began as Sean's idea, a simple way to note down the names of his daughters' toys. He could see that the same structure would work for almost anything, from books you've read to vintage comics.\n\nI was the only designer, working from the first concept. I researched competitors, helped shape the concept and the name, wrote responsive wireframes and user flows, created the brand and the design system, designed the screens and a landing page, and ran QA once the developer had built it."
+    },
+    {
+      "type": "section",
+      "heading": "From brainstorm to SLC",
+      "body": "Sean gave me a brainstorm of creative notes with broader features and capabilities than a first version could hold. One idea was letting people define their own data structure for each collection. We both wanted to see it. We cut it because it needed a whole extra set of screens and a more complex database, and we wanted a first version we could deliver in three weeks. It took us a little while to get on the same page about what the first version should be.\n\nI aimed for an SLC: Simple, Lovable and Complete. That means a few features, with each one finished and pleasant to use. I pitched a product structure that kept features to a minimum, and Sean gave his input and approved it."
+    },
+    {
+      "type": "section",
+      "heading": "Research",
+      "body": "I looked at inventory apps to see how they handle collections, and at reading list apps and other collector apps. Many of them let people customise the data structure. We decided a simple, fixed structure was the better choice for the first version.\n\nEvery item has a title, plus optional notes, an image and a location, such as the shelf it lives on. Any collection whose items fit that structure works, whether it's books, toys or comics."
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/recapped/wireframes-customisable-fields.png",
+      "width": 2646,
+      "height": 1704,
+      "alt": "Wireframes exploring customisable fields",
+      "caption": "Wireframes exploring customisable fields"
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/recapped/item-fields-labelled.png",
+      "width": 900,
+      "height": 1840,
+      "alt": "Final design of an item screen with labelled fields: image, title, location and notes",
+      "caption": "Final design of item with labelled fields: image, title, location and notes"
+    },
+    {
+      "type": "section",
+      "heading": "Personal, within limits",
+      "body": "I wanted Recapped to feel personal without asking much effort from the user, so customisation is controlled and simple. A small colour palette lets people build a colour association with each collection. An emoji for each collection helps them see what it holds at a glance and makes the collections page livelier."
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/recapped/collections-and-items.png",
+      "width": 2400,
+      "height": 1600,
+      "alt": "Collections list and item detail screens",
+      "caption": "Collections and items"
+    },
+    {
+      "type": "section",
+      "heading": "Plans and limits",
+      "body": "Each plan has two limits: a number of entries and an amount of storage for images. Sean and I came up with the limits together, because limiting both keeps database costs under control. The Recap 100 plan, for example, includes 100 entries and 1GB of storage.\n\nPeople need to know where they stand, so the settings screen shows a Subscription card with the current plan, entries used and storage used, and a Manage Subscription link. When someone gets close to a limit, a warning tells them, and a different state shows when they've reached it."
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/recapped/limit-warnings-subscription.png",
+      "width": 800,
+      "height": 518,
+      "alt": "Close-to-limit and limit-reached storage warnings, and the subscription details panel",
+      "caption": "Components used for limit warnings and subscription details"
+    },
+    {
+      "type": "section",
+      "heading": "Naming and branding",
+      "body": "For a while we called the product \"Remember App\". We worked on the name together and landed on Recapped.\n\nSean and I worked in a tight feedback loop on the brand, with his input early and often to keep things moving. We decided in order: font, general logo direction, colour, then gradient. I wanted to work with purple and Sean wanted pink and blue. Purple sits between the two, so the final gradient blends pink and blue into a purple that works for both of us."
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/recapped/logo-colour-iterations.png",
+      "width": 800,
+      "height": 476,
+      "alt": "Earlier logo and colour exploration",
+      "caption": "Earlier iterations of logo and colour exploration"
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/recapped/final-branding-in-use.png",
+      "width": 1200,
+      "height": 630,
+      "alt": "Final Recapped branding in use",
+      "caption": "Final branding in use"
+    },
+    {
+      "type": "section",
+      "heading": "The design system",
+      "body": "The design system is built from components, and each one is made for reuse in future features. The file starts with a Foundation page, then Components, then the hi-fi screens, with the process work (ideation and wireframes) kept in its own section. Colours are grouped into primary, accent, grayscale and error. Text styles run from H1 to P3, with separate mobile sizes for the headings, so the type scales between desktop and phone. Components are marked Ready for dev, and our developer built from them. States such as the storage warning (Almost Full and Full) are built as variants, because each plan has a storage limit and people need to see it coming. It supports any collection whose items fit the simple data structure, so the product can grow without a redesign."
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/recapped/component-colour-variants.png",
+      "width": 800,
+      "height": 571,
+      "alt": "Example component and colour variants in the design system library",
+      "caption": "Example component and colour variants in library"
+    },
+    {
+      "type": "section",
+      "heading": "Build and QA",
+      "body": "Our developer built Recapped. We tested it internally, and I ran QA afterwards. QA caught a few small UI issues, including some in the navigation and in the homepage background."
+    },
+    {
+      "type": "section",
+      "heading": "What it became",
+      "body": "Recapped is live at recapped.com.au. Some AI features have been added since my original design. That work sits outside this case study."
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/recapped/plants-collection-example.png",
+      "width": 4096,
+      "height": 2731,
+      "alt": "Recapped plants collection example on a laptop",
+      "caption": "Plants collection example"
+    },
+    {
+      "type": "section",
+      "heading": "What I'd do differently",
+      "body": "At the start I was working from Sean's brainstorm, which was broader than the version we built. It took a little while to agree what the first version included. Next time I would write the scope down together in the first conversation.\n\nTesting was internal. Next time I would also test with people outside our team who collect things, to see whether the simple structure fits how they think about their collections."
+    }
+  ]
 }
