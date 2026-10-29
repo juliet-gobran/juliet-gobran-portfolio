@@ -7,7 +7,7 @@
   "scope": "Leading the research and UX audit for Metiora.",
   "industry": "Impact Measurement, SaaS",
   "completed": "May 2026",
-  "cardImage": "/images/projects/metiora/metiora-hero.png",
+  "cardImage": "/images/projects/metiora/metiora-hero-v2.png",
   "order": 3,
   "subtitle": "Feature testing a new product against real-user workflows.",
   "year": 2026,
@@ -20,8 +20,8 @@
     },
     {
       "type": "image",
-      "src": "/images/projects/metiora/metiora-hero.png",
-      "width": 1598,
+      "src": "/images/projects/metiora/metiora-hero-v2.png",
+      "width": 1596,
       "height": 1172,
       "alt": "Metiora homepage on a laptop with callouts reading 'Evidence traceability is foundational to trust' and 'AI is acceptable as assistance, not authority'",
       "caption": "Metiora - Launched Product"
