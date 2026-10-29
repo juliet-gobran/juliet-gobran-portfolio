@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { AccentProvider } from "@/components/accent-provider";
 import { AppShell } from "@/components/app-shell";
 import { APPLY_SAVED_ACCENT_SCRIPT } from "@/lib/accents";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const jura = Jura({
@@ -20,23 +21,23 @@ const albertSans = Albert_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.juliet-gobran.com.au"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Juliet Gobran",
+    default: SITE_NAME,
     template: "%s",
   },
-  description: "Senior Product Designer portfolio",
+  description: SITE_DESCRIPTION,
   openGraph: {
     type: "website",
     locale: "en_AU",
-    siteName: "Juliet Gobran",
-    title: "Juliet Gobran",
-    description: "Senior Product Designer portfolio",
+    siteName: SITE_NAME,
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Juliet Gobran",
-    description: "Senior Product Designer portfolio",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
   },
 };
 

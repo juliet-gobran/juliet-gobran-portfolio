@@ -18,7 +18,10 @@ src/
   app/
     layout.tsx            # Root layout, fonts, AccentProvider, before-paint accent script
     page.tsx              # Home (/) — intro, Work, Gallery, About, Contact sections
-    projects/[slug]/      # Case study detail (/projects/:slug)
+    projects/[slug]/      # Case study detail (/projects/:slug) + per-project share metadata
+    not-found.tsx         # Styled 404
+    robots.ts / sitemap.ts # Generated from published projects
+    opengraph-image.png   # Link-preview card (all pages)
     globals.css           # Tailwind + token theme, [data-accent] overrides
   components/
     app-shell.tsx         # Nav + scrollable <main>
@@ -40,6 +43,7 @@ src/
     projects.ts / projects.schema.ts
     gallery.ts / gallery.schema.ts
     accents.ts            # Accent list, storage key, before-paint script
+    site.ts               # Site URL, name, description (metadata, robots, sitemap)
     format-display-url.ts
   styles/
     tokens.css            # Design token CSS variables
