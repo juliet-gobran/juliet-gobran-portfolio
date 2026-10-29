@@ -22,7 +22,7 @@ type CaseStudyPreviewProps = {
 
 export function CaseStudyPreview({ project }: CaseStudyPreviewProps) {
   return (
-    <article className="flex w-full flex-col-reverse items-start gap-8 md:flex-row">
+    <article className="flex w-full flex-col-reverse items-start md:flex-row md:gap-8">
       <CaseStudyMeta project={project} />
       <Link
         href={`/projects/${project.slug}`}

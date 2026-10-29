@@ -28,23 +28,23 @@ export function ClaudeIcon() {
   );
 }
 
-export function NotionIcon() {
+export function NextjsIcon() {
   return (
     <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
-      <mask id="toolkit-notion-mask" style={{ maskType: "luminance" }} maskUnits="userSpaceOnUse" x="0" y="0" width="48" height="48">
+      <mask id="toolkit-nextjs-mask" style={{ maskType: "luminance" }} maskUnits="userSpaceOnUse" x="0" y="0" width="48" height="48">
         <path d="M24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48Z" fill="white" />
       </mask>
-      <g mask="url(#toolkit-notion-mask)">
+      <g mask="url(#toolkit-nextjs-mask)">
         <path d="M24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48Z" fill="black" />
-        <path d="M39.8693 42.0056L18.4382 14.4004H14.4004V33.5923H17.6306V18.5029L37.3335 43.959C38.2213 43.365 39.0684 42.7125 39.8693 42.0056Z" fill="url(#toolkit-notion-gradient-1)" />
-        <path d="M30.667 14.4004H33.8671V33.6004H30.667V14.4004Z" fill="url(#toolkit-notion-gradient-2)" />
+        <path d="M39.8693 42.0056L18.4382 14.4004H14.4004V33.5923H17.6306V18.5029L37.3335 43.959C38.2213 43.365 39.0684 42.7125 39.8693 42.0056Z" fill="url(#toolkit-nextjs-gradient-1)" />
+        <path d="M30.667 14.4004H33.8671V33.6004H30.667V14.4004Z" fill="url(#toolkit-nextjs-gradient-2)" />
       </g>
       <defs>
-        <linearGradient id="toolkit-notion-gradient-1" x1="28.5695" y1="31.067" x2="37.0746" y2="41.6087" gradientUnits="userSpaceOnUse">
+        <linearGradient id="toolkit-nextjs-gradient-1" x1="28.5695" y1="31.067" x2="37.0746" y2="41.6087" gradientUnits="userSpaceOnUse">
           <stop stopColor="white" />
           <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
-        <linearGradient id="toolkit-notion-gradient-2" x1="32.267" y1="14.4004" x2="32.2129" y2="28.5003" gradientUnits="userSpaceOnUse">
+        <linearGradient id="toolkit-nextjs-gradient-2" x1="32.267" y1="14.4004" x2="32.2129" y2="28.5003" gradientUnits="userSpaceOnUse">
           <stop stopColor="white" />
           <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
