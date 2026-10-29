@@ -38,11 +38,11 @@ export function AboutSection() {
         <SectionHeading>Hi, I&rsquo;m Juliet</SectionHeading>
       </RevealOnScroll>
 
-      <div className="@container w-full overflow-x-clip">
+      <div className="@container w-full">
         <div className="flex w-full flex-col items-start gap-8 @[832px]:flex-row">
           <RevealOnScroll
             delayMs={100}
-            className="relative w-[400px] max-w-[calc(100%-2rem)] shrink-0 rounded-card border border-border-subtle bg-surface-sunken"
+            className="relative w-[400px] max-w-full shrink-0 rounded-card border border-border-subtle bg-surface-sunken"
           >
             <div className="aspect-[4/5] w-full overflow-hidden rounded-card">
               <Image
