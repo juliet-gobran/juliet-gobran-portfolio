@@ -56,11 +56,17 @@ function getServerSnapshot() {
   return "";
 }
 
-export function WollongongClock() {
+type WollongongClockProps = {
+  className?: string;
+};
+
+export function WollongongClock({ className }: WollongongClockProps) {
   const time = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   return (
-    <span className="font-jura text-xs text-text-primary md:text-footer-clock">
+    <span
+      className={`font-jura text-timestamp font-normal text-text-primary ${className ?? ""}`}
+    >
       {time || "\u00a0"}
     </span>
   );

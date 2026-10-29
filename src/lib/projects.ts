@@ -1,70 +1,18 @@
-import fs from "fs";
 import path from "path";
 
+import { compareByOrder, readContentDir } from "@/lib/content";
 import { projectSchema, type Project } from "@/lib/projects.schema";
 
 const PROJECTS_DIR = path.join(process.cwd(), "content", "projects");
 
-function readProjectFile(filename: string, projectsDir: string): Project {
-  const filePath = path.join(projectsDir, filename);
-  const raw = fs.readFileSync(filePath, "utf-8");
-  let json: unknown;
-
-  try {
-    json = JSON.parse(raw);
-  } catch (error) {
-    throw new Error(`Invalid JSON in content/projects/${filename}`, {
-      cause: error,
-    });
-  }
-
-  const result = projectSchema.safeParse(json);
-  if (!result.success) {
-    throw new Error(
-      `Invalid project schema in content/projects/${filename}: ${result.error.message}`,
-      { cause: result.error },
-    );
-  }
-
-  return result.data;
-}
-
 export function getAllProjects(projectsDir = PROJECTS_DIR): Project[] {
-  const filenames = fs
-    .readdirSync(projectsDir)
-    .filter((name) => name.endsWith(".json"))
-    .sort();
-
-  return filenames.map((filename) => readProjectFile(filename, projectsDir));
+  return readContentDir(projectsDir, projectSchema);
 }
 
 export function getPublishedProjects(projectsDir = PROJECTS_DIR): Project[] {
   return getAllProjects(projectsDir)
     .filter((project) => project.status === "published")
-    .sort((a, b) => {
-      const aOrder = a.order;
-      const bOrder = b.order;
-      const aHasOrder = typeof aOrder === "number";
-      const bHasOrder = typeof bOrder === "number";
-
-      if (aHasOrder && bHasOrder) {
-        if (aOrder !== bOrder) {
-          return aOrder - bOrder;
-        }
-
-        return a.slug.localeCompare(b.slug);
-      }
-
-      if (aHasOrder) {
-        return -1;
-      }
-
-      if (bHasOrder) {
-        return 1;
-      }
-
-      return a.slug.localeCompare(b.slug);
-    });
+    .sort(compareByOrder);
 }
 
 export function getProjectBySlug(

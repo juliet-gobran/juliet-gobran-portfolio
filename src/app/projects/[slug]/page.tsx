@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 
-import { ProjectContentPanel } from "@/components/project/project-content-panel";
-import { ProjectExtraContent } from "@/components/project/project-extra-content";
-import { ProjectImageGallery } from "@/components/project/project-image-gallery";
-import { ProjectPageHeader } from "@/components/project/project-page-header";
+import { CaseStudyContent } from "@/components/case-study-detail/case-study-content";
+import { CaseStudyDetailSidebar } from "@/components/case-study-detail/case-study-detail-sidebar";
+import { RevealOnScroll } from "@/components/reveal-on-scroll";
 import { getAllProjectSlugs, getProjectBySlug } from "@/lib/projects";
+import { SITE_NAME } from "@/lib/site";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
@@ -15,9 +15,10 @@ export function generateStaticParams() {
   return getAllProjectSlugs().map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: ProjectPageProps): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: ProjectPageProps,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
 
@@ -25,9 +26,28 @@ export async function generateMetadata({
     return {};
   }
 
+  const title = `${project.title} — ${SITE_NAME}`;
+  // Overriding openGraph/twitter replaces the root's, so carry the site card image over.
+  const { openGraph, twitter } = await parent;
+
   return {
-    title: `${project.title} — Juliet Gobran`,
+    title,
     description: project.subtitle,
+    openGraph: {
+      type: "article",
+      locale: "en_AU",
+      siteName: SITE_NAME,
+      title,
+      description: project.subtitle,
+      url: `/projects/${project.slug}`,
+      images: openGraph?.images,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: project.subtitle,
+      images: twitter?.images,
+    },
   };
 }
 
@@ -40,26 +60,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <article className="mx-auto flex w-full max-w-project flex-col gap-4 md:gap-8">
-      <ProjectPageHeader project={project} />
-
-      <div className="flex flex-col gap-4 md:gap-8 lg:hidden">
-        <ProjectImageGallery images={project.images} />
-        <ProjectContentPanel content={project.content} />
-      </div>
-
-      <div className="hidden lg:block">
-        <div className="grid grid-cols-[2fr_1fr] items-start gap-8">
-          <div className="sticky top-0">
-            <ProjectImageGallery images={project.images} />
-          </div>
-          <ProjectContentPanel content={project.content} />
-        </div>
-      </div>
-
-      {project.extraContent ? (
-        <ProjectExtraContent content={project.extraContent} />
-      ) : null}
+    <article className="mx-auto flex w-full max-w-[1232px] flex-col items-start gap-8 lg:flex-row lg:justify-center">
+      <RevealOnScroll className="w-full shrink-0 lg:sticky lg:top-0 lg:w-[400px]">
+        <CaseStudyDetailSidebar project={project} />
+      </RevealOnScroll>
+      <CaseStudyContent blocks={project.blocks} />
     </article>
   );
 }

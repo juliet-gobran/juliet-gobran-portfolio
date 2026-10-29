@@ -1,20 +1,123 @@
 {
   "slug": "fpm-for-business",
-  "title": "Footprints Maps for Business",
+  "title": "Footprints Maps advertising model",
   "status": "published",
-  "role": "Senior Product Designer",
-  "cardImage": "/images/projects/fpm-for-business/Dashboard-device.png",
+  "role": "Senior Product Designer at Go To Apps",
+  "client": "Footprints Maps",
+  "scope": "Advertising model structure, naming, and the business portal that delivers it (design and front-end build)",
+  "industry": "B2B, Travel Marketplace",
+  "completed": "April 2026",
+  "cardImage": "/images/projects/fpm-for-business/app-and-advertising-model-hero.png",
   "order": 2,
-  "subtitle": "A self-serve business portal enabling local partners to manage travel app listings.",
+  "subtitle": "Simplifying seven advertising tiers into two, and building the portal that delivers them.",
   "year": 2026,
   "url": "https://business.footprintsmaps.com.au",
-  "content": "Designing the Footprints Maps app naturally led to the next challenge: creating the platform that powers it. Every business profile, Spotlight, opening hour and image shown to travellers first needs to be created somewhere. That somewhere became Footprints Maps for Business.\n\nThe goal was simple. Any business owner, regardless of their marketing or technical experience, should feel confident creating and managing their presence inside the Footprints Maps app.\n\n## A shift in how the product was designed\n\nThis project also marked a major shift in my design process. Rather than designing the entire system in Figma and handing it over, I used it as an opportunity to explore an AI-assisted workflow using Cursor and a Next.js codebase.\n\nI still began with traditional UX foundations. I mapped user flows, defined the information architecture, and refined wireframes to establish how businesses would interact with the platform. From there, I designed the initial portal homepage and a small set of key components in Figma to establish visual direction.\n\nOnce the foundations were clear, I moved directly into Cursor. I set up the Next.js project and defined the design system through tokens, including colour, spacing, typography, and radii. This became the single source of truth for the interface as it was built.\n\nFrom that point onward, the product was designed and built in parallel. Instead of finalising everything in static mockups, I designed components directly in code, iterating in real time with AI-assisted development. This allowed the interface to evolve as it was being implemented, rather than being translated from design to build after the fact.\n\nDesigning this way gave me a level of control I hadn't experienced before. Rather than relying on handoff and interpretation, I could refine the experience throughout implementation. Micro-interactions, animations, responsive behaviours and edge cases were all considered in context, which resulted in a more cohesive and polished final product.\n\n## UX approach and product thinking\n\nThe core design challenge was making advertising management feel approachable for regional businesses. Many users would have no formal marketing experience, limited digital assets, and little time to learn complex systems. The platform therefore needed to feel closer to creating a simple profile than configuring an advertising product.\n\nTo support this, I researched similar products including Shopify, Squarespace, Google Business Profile, and most heavily, TripAdvisor. While we didn't conduct formal user interviews, we combined competitive analysis with client feedback to shape a flow that felt familiar, guided, and low-friction.\n\nA key principle throughout the design was encouraging completeness without overwhelming users. Instead of presenting a blank dashboard, the home screen introduces a setup checklist that breaks onboarding into small, achievable steps. Some items are pre-completed during account creation, creating immediate momentum and a sense of progress.\n\nAlongside this, a profile strength indicator rewards businesses for completing their listing. This not only encourages richer data for travellers but also gives businesses clarity on how to improve their presence over time.\n\n## The hardest problem to solve\n\nOne of the most complex UX challenges was helping users understand the difference between a Destination and a Spotlight. Internally, these were referred to as Koala and Quokka tiers, but the naming created confusion when discussing actual functionality.\n\nTo solve this, I introduced Destination and Spotlight as the primary product-facing terms, while still allowing the Koala and Quokka tiers to exist in the background. This helped separate the what the feature does from how it is packaged, making the system easier to understand.\n\nI reinforced this distinction through a set of supporting illustrations used across both the landing page and portal, helping users quickly understand what each option meant before they began setup.\n\n## Key feature: Live preview\n\nThe feature I'm most proud of is the live Spotlight preview. As businesses build their promotion, they can immediately see how it will appear inside the Footprints Maps app. This creates a tight feedback loop that removes uncertainty and gives users confidence before publishing.\n\n## Outcome\n\nThe result is a business portal that turns a potentially complex advertising system into a guided, self-managed experience. Businesses can understand what to do, complete setup in manageable steps, and maintain control over their listing without ongoing support.\n\nBy focusing on clarity, progressive onboarding, and real-time feedback, the platform improves both sides of the marketplace: businesses can confidently manage their presence, and travellers receive richer, more complete information inside the Footprints Maps app.",
-  "images": [
-    "/images/projects/fpm-for-business/Pricing-on-mac.png",
-    "/images/projects/fpm-for-business/Checklist.png",
-    "/images/projects/fpm-for-business/Recommendation-flow.png",
-    "/images/projects/fpm-for-business/User-flows.png",
-    "/images/projects/fpm-for-business/Devices.png"
-  ],
-  "extraContent": null
+  "blocks": [
+    {
+      "type": "section",
+      "heading": "In Short",
+      "body": "Footprints Maps planned to launch with a seven-tier advertising model for local businesses. Our team of three didn't think we could deliver all seven in the timeframe, or ask businesses to choose between them, for an app with no users yet. I researched how other apps handle ads, then took a simpler model and a prototype to the founder. Together we landed on two products. I then designed the portal where businesses choose and set them up, and built its front end in code with AI-assisted tools. The model is live."
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/fpm-for-business/app-and-advertising-model-hero.png",
+      "width": 1598,
+      "height": 1172,
+      "alt": "Footprints Maps for Business pricing page on a laptop, and the Footprints Maps app map view on a phone",
+      "caption": "Footprints Maps App and advertising model"
+    },
+    {
+      "type": "section",
+      "heading": "Overview",
+      "body": "Footprints Maps is a gamified travel app that helps people explore regional Australia through challenges you discover on the map and complete. Local businesses pay to appear in it, so the advertising model decides how the app earns its money and how a business first meets the product.\n\nI was the product designer on this 0-1 product, working from the first concept. Our team was three people: me, a developer and our managing director. The founder came to us with a bold idea for how businesses could advertise.\n\nThe businesses we expected to reach were regional operators, many with no formal marketing experience, few digital assets and little time. Whatever we offered needed to feel closer to creating a simple profile than setting up an advertising product."
+    },
+    {
+      "type": "section",
+      "heading": "The starting point: seven tiers",
+      "body": "The founder's model had seven tiers: a banner ad, a business on the map, a custom map pin, a Sponsored Challenge, a Sponsor-created challenge, custom map skins and sponsored regions. It showed real creative ambition, and some of those ideas may suit the product later.\n\nFor a first version with no users, though, it was a lot to take on. Our team had agreed internally that we couldn't design, build and support seven advertising products in the time we had. Two of the ideas show why. Custom map skins would have needed a large amount of design work, and Mapbox limits how far a map can be customised. Sponsored regions would have needed new screens that we didn't want to spend time designing for the first version. I also wanted to keep things simple for businesses, who would need to understand their options quickly and focus on one clear choice."
+    },
+    {
+      "type": "section",
+      "heading": "Research",
+      "body": "I compared two ways of showing ads across several apps, and two of them show the difference clearly. On IMDb, banner ads sit apart from the content around them. On Pinterest, ads blend in with the content around them.\n\nFootprints Maps is built around a map and a sense of discovery, so I recommended the native approach, the way Pinterest does it. Ads would sit inside the experience and keep the feel of the app."
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/fpm-for-business/traditional-vs-native-ads.png",
+      "width": 1598,
+      "height": 1160,
+      "alt": "A traditional banner ad in a streaming app compared to a native, blended-in ad in a content feed",
+      "caption": "Comparing traditional to native advertising in apps"
+    },
+    {
+      "type": "section",
+      "heading": "The pitch and the pushback",
+      "body": "I presented the research and a prototype to the founder. The prototype was a mockup of businesses appearing in the app. My first proposal was a single product: a business gets a pin on the map and is featured in one nearby challenge. It was simple and it was something our team could deliver.\n\nThe founder was open to starting smaller. Then they raised a good point. My version had no place for online-only businesses, and they were already talking to one. That was a real prospect, so I took it seriously.\n\nI went back to the design and worked out how an online business could appear in the app. The answer was a native banner on a challenge. That gave us two products: a pin on the map for businesses with a location, and a native banner for online-only businesses. Seven became two, and both could be delivered in our timeframe."
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/fpm-for-business/destination-and-spotlight-mockups.png",
+      "width": 1598,
+      "height": 730,
+      "alt": "A Destination card mockup for a bakery and a Spotlight native ad mockup for an outdoor brand",
+      "caption": "Mockups featuring Australian businesses for the two product pitch"
+    },
+    {
+      "type": "section",
+      "heading": "Naming the tiers",
+      "body": "The founder wanted the two tiers to be called Koala and Quokka. The names are fun, and they were a must-have for the founder. A business reading them can't tell what it's buying.\n\nI kept both names and added two plain terms for the features inside them. A Destination is the pin on the map for a business with a physical location. A Spotlight is the native banner featured on an existing challenge. Koala includes a Destination and a Spotlight. Quokka includes a Spotlight only.\n\nOn the pricing page, each card says who it suits (\"Best for Online Businesses\" and \"Best for Brick & Mortar Businesses\") and uses an icon for what it includes, so the names are explained at the point of choice. I also added a set of illustrations across the landing page and the portal showing what a Destination and a Spotlight are, so a business understands each option before it starts setup. The founder set the price points."
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/fpm-for-business/pricing-page-products.png",
+      "width": 1596,
+      "height": 1138,
+      "alt": "Quokka and Koala pricing cards showing monthly price, founding partner rate and what each plan includes",
+      "caption": "Products on pricing page - business.footprintsmaps.com.au/products"
+    },
+    {
+      "type": "section",
+      "heading": "Taking the model into the portal",
+      "body": "With the two products settled, I designed the portal where businesses set them up. I mapped the user flows, defined the information architecture and refined wireframes, working backwards from what travellers see in the app.\n\nThe home screen opens with a setup checklist that breaks onboarding into small steps. Some are already ticked off when an account is created, so a business starts with momentum. A profile strength indicator shows how complete a listing is and what to add next. As a business builds its Spotlight, a live preview shows how it will look in the app before it publishes."
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/fpm-for-business/profile-strength-indicator.png",
+      "width": 1598,
+      "height": 1240,
+      "alt": "Destination strength indicator levels from Building to Optimised, alongside the Spotlight editing screen with a live preview",
+      "caption": "Profile strength indicator levels and portal experience"
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/fpm-for-business/partner-setup-checklist.png",
+      "width": 1598,
+      "height": 1762,
+      "alt": "Setup checklist for a new partner showing onboarding steps and progress",
+      "caption": "Setup checklist for new partner"
+    },
+    {
+      "type": "section",
+      "heading": "Designing the portal in code",
+      "body": "This project marked a shift in how I work. I started with the user flows and wireframes, then designed the portal homepage and a few key components in Figma to set the visual direction. After that I moved into Cursor, set up a Next.js project and defined the design system as tokens for colour, spacing, typography and radii. Those tokens became the single source of truth for the interface.\n\nFrom there I designed components directly in code using AI-assisted development, so design and build happened side by side. I built the entire front end myself, which meant I could refine micro-interactions, animations, responsive behaviour and edge cases in context as the portal took shape.\n\nI worked in a View and View-Model structure, building the components and views, while our developer handled the model layer, including the connection to the database. After each view was built, I refactored it to simplify the code and made sure I understood it myself before moving on. That way I could stand behind every part of it."
+    },
+    {
+      "type": "section",
+      "heading": "What it became",
+      "body": "The two-product model is live in Footprints Maps for Business, and the pricing is public. The simpler model also leaves room to bring the other ideas back later."
+    },
+    {
+      "type": "image",
+      "src": "/images/projects/fpm-for-business/portal-home.png",
+      "width": 1598,
+      "height": 1172,
+      "alt": "Portal home screen showing Destination and Spotlight feature status cards and quick actions",
+      "caption": "Portal home"
+    },
+    {
+      "type": "section",
+      "heading": "What I'd do differently",
+      "body": "My first pitch missed the online-only businesses the founder was already speaking to. Next time I would ask early who the client is talking to, so the first version of an idea fits the people who will actually buy it.\n\nThe consumer app moved from internal testing on prototypes to external testing on the beta. The advertising model and the business portal were tested internally only, because resources for research on that side weren't available. Next time I would run research with real businesses, and test the tier names and the two-product structure before launch."
+    }
+  ]
 }

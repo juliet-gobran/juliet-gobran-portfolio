@@ -34,9 +34,7 @@ describe("projects helpers", () => {
           subtitle: "Draft subtitle",
           year: 2026,
           url: null,
-          content: "Draft content",
-          images: [],
-          extraContent: null,
+          blocks: [{ type: "section", heading: "Overview", body: "Draft content" }],
         }),
       );
       writeFileSync(
@@ -50,9 +48,9 @@ describe("projects helpers", () => {
           subtitle: "Published subtitle",
           year: 2025,
           url: "https://example.com",
-          content: "Published content",
-          images: ["/images/projects/b-published/image-1.webp"],
-          extraContent: null,
+          blocks: [
+            { type: "section", heading: "Overview", body: "Published content" },
+          ],
         }),
       );
 
