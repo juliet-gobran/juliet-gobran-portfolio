@@ -5,7 +5,7 @@ import {
   CursorIcon,
   FigmaIcon,
   IllustratorIcon,
-  NotionIcon,
+  NextjsIcon,
 } from "@/components/about/toolkit-icons";
 import { HoverTag } from "@/components/hover-tag";
 import { StarIcon } from "@/components/icons/accent-icons";
@@ -26,7 +26,7 @@ const QUALIFICATIONS = [
 const TOOLKIT = [
   { name: "Figma", Icon: FigmaIcon },
   { name: "Claude", Icon: ClaudeIcon },
-  { name: "Notion", Icon: NotionIcon },
+  { name: "Next.js", Icon: NextjsIcon },
   { name: "Cursor", Icon: CursorIcon },
   { name: "Illustrator", Icon: IllustratorIcon },
 ];
