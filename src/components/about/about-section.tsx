@@ -49,7 +49,7 @@ export function AboutSection() {
                 className="h-full w-full object-cover"
               />
             </div>
-            <div className="absolute -top-10 -right-10 size-32 drop-shadow-surface">
+            <div className="absolute -top-8 -right-8 size-[102px] drop-shadow-surface">
               <StarIcon />
             </div>
           </div>
