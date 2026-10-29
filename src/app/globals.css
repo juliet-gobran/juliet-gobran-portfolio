@@ -38,6 +38,7 @@
   --spacing-nav-padding-x: var(--spacing-nav-padding-x);
   --spacing-nav-padding-y: var(--spacing-nav-padding-y);
   --spacing-center-padding-y: var(--spacing-center-padding-y);
+  --spacing-center-padding-y-mobile: var(--spacing-center-padding-y-mobile);
   --spacing-center-padding-x: var(--spacing-center-padding-x);
   --spacing-nav-link-gap: var(--spacing-nav-link-gap);
   --spacing-case-study-section-y: var(--spacing-case-study-section-y);
