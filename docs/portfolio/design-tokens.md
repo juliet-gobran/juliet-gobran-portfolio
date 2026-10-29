@@ -55,10 +55,11 @@ All project pages now use these tokens — the old project-detail tokens (`proje
 
 | Token | Value | Usage |
 |-------|-------|-------|
-| `shell-inset` | 16px | Nav inset: top/bottom on the shell wrapper (`py-shell-inset`), left/right on the nav itself (`mx-shell-inset`) |
+| `shell-inset` | 16px | Nav inset: top only on the shell wrapper (`pt-shell-inset`), left/right on the nav itself (`mx-shell-inset`). No bottom inset, so the scroll area runs to the screen edge |
 | `nav-padding-x` | 16px | Nav horizontal padding |
 | `nav-padding-y` | 8px | Nav vertical padding |
-| `center-padding-y` | 64px | Main content vertical padding |
+| `center-padding-y` | 64px | Main content vertical padding (`md+`) |
+| `center-padding-y-mobile` | 32px | Main content vertical padding below `md` |
 | `center-padding-x` | 16px | Main content horizontal padding |
 | `nav-link-gap` | 16px | Gap between nav items |
 | `case-study-section-y` | 64px | Vertical padding around each case study preview on home (no dividers) |
@@ -83,8 +84,8 @@ Implemented in [`src/components/app-shell.tsx`](../../src/components/app-shell.t
 
 | Property | Value |
 |----------|-------|
-| Nav inset | 16px (`shell-inset`) on all sides of the nav; page content is not inset by it |
-| Shell layout | Vertical stack, viewport-locked (`h-dvh`) so nav stays in frame; `<main>` is the scroll region (16px side padding, 64px top/bottom) |
+| Nav inset | 16px (`shell-inset`) above and either side of the nav; page content is not inset by it |
+| Shell layout | Vertical stack, viewport-locked (`h-dvh`) so nav stays in frame; `<main>` is the scroll region (16px side padding; 32px top/bottom on mobile, 64px from `md`) |
 | Nav | Bordered, rounded (`radius-control`) bar — `surface-sunken` fill; left: name (links to `/`), right: Work / Gallery / About (anchor links to `/#work`, `/#gallery`, `/#about`) + Contact button (`/#contact`) |
 | No footer | The clock lives inline under the home page intro; the Contact card closes the page |
 | Home max width | 1200px (`max-w-home`) — intro, Work, About. Gallery and Contact run full width |

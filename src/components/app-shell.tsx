@@ -9,7 +9,7 @@ type AppShellProps = {
 export function AppShell({ children }: AppShellProps) {
   return (
     <div className="relative h-dvh overflow-hidden bg-background">
-      <div className="relative flex h-full min-h-0 flex-col py-shell-inset">
+      <div className="relative flex h-full min-h-0 flex-col pt-shell-inset">
         <header className="relative z-10 mx-shell-inset flex shrink-0 items-center justify-between rounded-control border border-border-subtle bg-surface-sunken px-nav-padding-x py-nav-padding-y">
           <Link
             href="/"
@@ -20,7 +20,7 @@ export function AppShell({ children }: AppShellProps) {
           <NavBar />
         </header>
 
-        <main className="min-h-0 flex-1 overflow-y-auto overscroll-y-contain px-center-padding-x py-center-padding-y motion-safe:scroll-smooth">
+        <main className="min-h-0 flex-1 overflow-x-hidden overflow-y-auto overscroll-y-contain px-center-padding-x py-center-padding-y-mobile md:py-center-padding-y motion-safe:scroll-smooth">
           {children}
         </main>
       </div>

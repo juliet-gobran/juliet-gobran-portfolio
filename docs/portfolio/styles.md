@@ -42,7 +42,7 @@ External links: `target="_blank"` + `rel="noopener noreferrer"`.
 
 ## Layout
 
-- The app shell ([`app-shell.tsx`](../../src/components/app-shell.tsx)) is viewport-locked (`h-dvh`); `<main>` is the only scroll region, with `px-center-padding-x py-center-padding-y` and `motion-safe:scroll-smooth`.
+- The app shell ([`app-shell.tsx`](../../src/components/app-shell.tsx)) is viewport-locked (`h-dvh`); `<main>` is the only scroll region, with `px-center-padding-x py-center-padding-y-mobile md:py-center-padding-y` and `motion-safe:scroll-smooth`.
 - The nav sits `mx-shell-inset` (16px) in from each edge; page content runs to `<main>`'s 16px padding.
 - Home sections either sit in the 1200px column (`mx-auto max-w-home`) — intro, Work, About — or run full width — Gallery, Contact.
 - Breakpoints: Tailwind defaults (`md` 768, `lg` 1024) plus a custom `min-[800px]` for the intro/Easter-egg layout. The About row uses a container query (`@container` + `@[832px]:flex-row`) so it reacts to its own width, not the viewport's.

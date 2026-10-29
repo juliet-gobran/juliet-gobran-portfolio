@@ -5,7 +5,7 @@ import {
   CursorIcon,
   FigmaIcon,
   IllustratorIcon,
-  NotionIcon,
+  NextjsIcon,
 } from "@/components/about/toolkit-icons";
 import { HoverTag } from "@/components/hover-tag";
 import { StarIcon } from "@/components/icons/accent-icons";
@@ -26,7 +26,7 @@ const QUALIFICATIONS = [
 const TOOLKIT = [
   { name: "Figma", Icon: FigmaIcon },
   { name: "Claude", Icon: ClaudeIcon },
-  { name: "Notion", Icon: NotionIcon },
+  { name: "Next.js", Icon: NextjsIcon },
   { name: "Cursor", Icon: CursorIcon },
   { name: "Illustrator", Icon: IllustratorIcon },
 ];
@@ -38,7 +38,7 @@ export function AboutSection() {
         <SectionHeading>Hi, I&rsquo;m Juliet</SectionHeading>
       </RevealOnScroll>
 
-      <div className="@container w-full overflow-x-clip">
+      <div className="@container w-full">
         <div className="flex w-full flex-col items-start gap-8 @[832px]:flex-row">
           <RevealOnScroll
             delayMs={100}
