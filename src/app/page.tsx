@@ -4,6 +4,7 @@ import { CaseStudyPreview } from "@/components/case-study-preview/case-study-pre
 import { ContactSection } from "@/components/contact/contact-section";
 import { GalleryGrid } from "@/components/gallery/gallery-grid";
 import { RevealOnScroll } from "@/components/reveal-on-scroll";
+import { SectionHeading } from "@/components/section-heading";
 import { WollongongClock } from "@/components/wollongong-clock";
 import { getGalleryItems } from "@/lib/gallery";
 import { getPublishedProjects } from "@/lib/projects";
@@ -43,9 +44,7 @@ export default function Home() {
           aria-label="Gallery"
           className="flex w-full flex-col gap-8 py-case-study-section-y"
         >
-          <h2 className="font-jura text-case-study-title font-bold leading-[1.15] text-text-primary">
-            Gallery of my work
-          </h2>
+          <SectionHeading>Gallery of my work</SectionHeading>
           <GalleryGrid items={galleryItems} />
         </section>
       ) : null}

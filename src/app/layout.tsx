@@ -4,9 +4,8 @@ import { Analytics } from "@vercel/analytics/next";
 
 import { AccentProvider } from "@/components/accent-provider";
 import { AppShell } from "@/components/app-shell";
+import { APPLY_SAVED_ACCENT_SCRIPT } from "@/lib/accents";
 import "./globals.css";
-
-const SET_ACCENT_BEFORE_PAINT = `(function(){try{var a=localStorage.getItem("accent");if(a==="pink"||a==="blue"||a==="orange"){document.documentElement.dataset.accent=a;}}catch(e){}})();`;
 
 const jura = Jura({
   variable: "--font-jura",
@@ -54,7 +53,7 @@ export default function RootLayout({
     >
       <head>
         <script
-          dangerouslySetInnerHTML={{ __html: SET_ACCENT_BEFORE_PAINT }}
+          dangerouslySetInnerHTML={{ __html: APPLY_SAVED_ACCENT_SCRIPT }}
         />
       </head>
       <body className="h-dvh overflow-hidden" suppressHydrationWarning>

@@ -1,3 +1,5 @@
+import { SectionHeading } from "@/components/section-heading";
+
 type IconProps = { className?: string };
 
 const ICON_STROKE = {
@@ -47,9 +49,7 @@ const SOCIAL_LINKS = [
 export function ContactSection() {
   return (
     <div className="flex w-full flex-col items-center gap-8 rounded-card border border-border-subtle bg-surface-sunken px-6 py-12">
-      <h2 className="text-center font-jura text-case-study-title font-bold leading-[1.15] text-text-primary">
-        Find me here
-      </h2>
+      <SectionHeading className="text-center">Find me here</SectionHeading>
 
       <div className="flex flex-col items-center gap-4">
         <ul className="flex flex-wrap justify-center gap-x-8 gap-y-4">

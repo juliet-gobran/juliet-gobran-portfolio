@@ -8,12 +8,12 @@ import {
   useState,
 } from "react";
 
-export const ACCENTS = ["orange", "pink", "blue"] as const;
-export type Accent = (typeof ACCENTS)[number];
-
-export const DEFAULT_ACCENT: Accent = "orange";
-
-const STORAGE_KEY = "accent";
+import {
+  ACCENT_STORAGE_KEY,
+  DEFAULT_ACCENT,
+  isAccent,
+  type Accent,
+} from "@/lib/accents";
 
 type AccentContextValue = {
   accent: Accent;
@@ -21,10 +21,6 @@ type AccentContextValue = {
 };
 
 const AccentContext = createContext<AccentContextValue | null>(null);
-
-function isAccent(value: string | null): value is Accent {
-  return value !== null && (ACCENTS as readonly string[]).includes(value);
-}
 
 function applyAccent(accent: Accent) {
   document.documentElement.dataset.accent = accent;
@@ -36,7 +32,7 @@ export function AccentProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     let stored: string | null = null;
     try {
-      stored = window.localStorage.getItem(STORAGE_KEY);
+      stored = window.localStorage.getItem(ACCENT_STORAGE_KEY);
     } catch {
       // localStorage unavailable (private mode, disabled) — fall back to default
     }
@@ -56,7 +52,7 @@ export function AccentProvider({ children }: { children: React.ReactNode }) {
   const setAccent = useCallback((next: Accent) => {
     setAccentState(next);
     try {
-      window.localStorage.setItem(STORAGE_KEY, next);
+      window.localStorage.setItem(ACCENT_STORAGE_KEY, next);
     } catch {
       // localStorage unavailable — accent still applies for this session
     }

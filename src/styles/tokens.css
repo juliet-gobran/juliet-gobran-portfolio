@@ -2,15 +2,14 @@
   /* Colors — see docs/portfolio/design-tokens.md */
   --color-background: #f9f6ef;
   --color-surface-sunken: #ebe5d8;
-  --color-surface-raised: #ffffff;
   --color-border-subtle: #d7d1c4;
-  --color-accent-orange: #d44e2e;
   --color-text-primary: #000000;
+  /* Only used by /the-search (unrelated job-tracker tool) */
+  --color-accent-orange: #d44e2e;
   --color-text-on-accent: #000000;
 
-  /* Accents — CTA palette (home card "View case study", nav/header "Contact").
-     Three accents, each with a light (fill) and dark (border) variant.
-     Swappable at runtime via [data-accent] on <html>; see accent-provider.tsx. */
+  /* Accents — CTA palette (home card "View case study", nav "Contact").
+     Three accents, each with a light (fill) and dark (border) variant. */
   --color-accents-pink: #ff9ed8;
   --color-accents-pink-dark: #ec6cb9;
   --color-accents-blue: #87c2ff;
@@ -18,7 +17,7 @@
   --color-accents-orange: #ffa78a;
   --color-accents-orange-dark: #ef774f;
 
-  /* Active accent — defaults to orange; [data-accent="pink"|"blue"] overrides below. */
+  /* Active accent — defaults to orange; [data-accent] overrides live in globals.css. */
   --color-cta-accent: var(--color-accents-orange);
   --color-cta-accent-dark: var(--color-accents-orange-dark);
 
@@ -28,10 +27,7 @@
   --spacing-nav-padding-y: 8px;
   --spacing-center-padding-y: 64px;
   --spacing-center-padding-x: 16px;
-  --spacing-footer-padding-x: 16px;
-  --spacing-footer-padding-y: 8px;
   --spacing-nav-link-gap: 16px;
-  --spacing-project-stack-gap: 80px;
   --spacing-case-study-section-y: 64px;
 
   /* Shadows */
@@ -46,10 +42,9 @@
   --layout-content-max-width: 800px;
   --layout-home-max-width: 1200px;
 
-  /* Typography sizes (reference — applied via Tailwind utilities in Phase 2) */
+  /* Typography sizes */
   --font-size-nav-name: 32px;
   --font-size-nav-link: 20px;
-  --font-size-footer-clock: 14px;
   --font-size-intro-heading: 40px;
   --font-size-timestamp: 16px;
   --font-size-case-study-title: 32px;
@@ -60,12 +55,4 @@
   --font-size-case-study-page-title: 48px;
   --font-size-case-study-page-subtitle: 24px;
   --font-size-case-study-page-heading: 24px;
-
-  /* Project card hover — tweak duration, easing, lift, and shadow here */
-  --project-card-hover-duration: 500ms;
-  --project-card-hover-easing: cubic-bezier(0.22, 1, 0.36, 1);
-  --project-card-title-shadow: -2px 2px 0 var(--color-accent-orange);
-  --project-card-title-lift-x: 2px;
-  --project-card-title-lift-y: -2px;
-  --project-card-image-scale: 1.2;
 }

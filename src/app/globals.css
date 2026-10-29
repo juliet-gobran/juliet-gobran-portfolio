@@ -20,7 +20,6 @@
 @theme inline {
   --color-background: var(--color-background);
   --color-surface-sunken: var(--color-surface-sunken);
-  --color-surface-raised: var(--color-surface-raised);
   --color-border-subtle: var(--color-border-subtle);
   --color-accent-orange: var(--color-accent-orange);
   --color-text-primary: var(--color-text-primary);
@@ -42,10 +41,7 @@
   --spacing-nav-padding-y: var(--spacing-nav-padding-y);
   --spacing-center-padding-y: var(--spacing-center-padding-y);
   --spacing-center-padding-x: var(--spacing-center-padding-x);
-  --spacing-footer-padding-x: var(--spacing-footer-padding-x);
-  --spacing-footer-padding-y: var(--spacing-footer-padding-y);
   --spacing-nav-link-gap: var(--spacing-nav-link-gap);
-  --spacing-project-stack-gap: var(--spacing-project-stack-gap);
   --spacing-case-study-section-y: var(--spacing-case-study-section-y);
 
   --radius-control: var(--radius-control);
@@ -59,7 +55,6 @@
   --max-width-home: var(--layout-home-max-width);
   --text-nav-name: var(--font-size-nav-name);
   --text-nav-link: var(--font-size-nav-link);
-  --text-footer-clock: var(--font-size-footer-clock);
   --text-intro-heading: var(--font-size-intro-heading);
   --text-timestamp: var(--font-size-timestamp);
   --text-case-study-title: var(--font-size-case-study-title);
@@ -76,50 +71,4 @@ body {
   background-color: var(--color-background);
   color: var(--color-text-primary);
   font-family: var(--font-jura), sans-serif;
-}
-
-@layer components {
-  .project-card-title {
-    transition:
-      transform var(--project-card-hover-duration) var(--project-card-hover-easing),
-      text-shadow var(--project-card-hover-duration) var(--project-card-hover-easing);
-  }
-
-  .group:hover .project-card-title,
-  .group:focus-within .project-card-title {
-    transform: translate(
-      var(--project-card-title-lift-x),
-      var(--project-card-title-lift-y)
-    );
-    text-shadow: var(--project-card-title-shadow);
-  }
-
-  .project-card-image {
-    transform-origin: top;
-    transition: transform var(--project-card-hover-duration)
-      var(--project-card-hover-easing);
-  }
-
-  .group:hover .project-card-image,
-  .group:focus-within .project-card-image {
-    transform: scale(var(--project-card-image-scale));
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .project-card-title,
-    .project-card-image {
-      transition: none;
-    }
-
-    .group:hover .project-card-title,
-    .group:focus-within .project-card-title {
-      transform: none;
-      text-shadow: none;
-    }
-
-    .group:hover .project-card-image,
-    .group:focus-within .project-card-image {
-      transform: none;
-    }
-  }
 }

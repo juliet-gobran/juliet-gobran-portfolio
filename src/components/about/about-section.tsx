@@ -9,6 +9,7 @@ import {
 } from "@/components/about/toolkit-icons";
 import { HoverTag } from "@/components/hover-tag";
 import { StarIcon } from "@/components/icons/accent-icons";
+import { SectionHeading } from "@/components/section-heading";
 
 const BIO_PARAGRAPHS = [
   "I’ve been tinkering away at different designs and software now for 5 years. What started as a split passion in technology and visual art has landed me comfortably in the middle spot: product design.",
@@ -32,9 +33,7 @@ const TOOLKIT = [
 export function AboutSection() {
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="font-jura text-case-study-title font-bold leading-[1.15] text-text-primary">
-        Hi, I&rsquo;m Juliet
-      </h2>
+      <SectionHeading>Hi, I&rsquo;m Juliet</SectionHeading>
 
       <div className="@container w-full overflow-x-clip">
         <div className="flex w-full flex-col items-start gap-8 @[832px]:flex-row">

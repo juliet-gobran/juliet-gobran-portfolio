@@ -271,7 +271,7 @@ function ApplicationsTable({
   }
 
   const inputClassName =
-    "w-full min-w-0 rounded border border-transparent bg-transparent px-1 py-1 font-albert-sans text-sm text-text-primary outline-none hover:border-border-subtle focus:border-accent-orange [color-scheme:dark] [&::-webkit-calendar-picker-indicator]:ml-1 [&::-webkit-calendar-picker-indicator]:h-3.5 [&::-webkit-calendar-picker-indicator]:w-3.5 [&::-webkit-calendar-picker-indicator]:p-0 [&::-webkit-calendar-picker-indicator]:opacity-70 [&::-webkit-calendar-picker-indicator]:hover:opacity-100";
+    "w-full min-w-0 rounded border border-transparent bg-transparent px-1 py-1 font-albert-sans text-sm text-text-primary outline-none hover:border-border-subtle focus:border-accent-orange [color-scheme:light] [&::-webkit-calendar-picker-indicator]:ml-1 [&::-webkit-calendar-picker-indicator]:h-3.5 [&::-webkit-calendar-picker-indicator]:w-3.5 [&::-webkit-calendar-picker-indicator]:p-0 [&::-webkit-calendar-picker-indicator]:opacity-70 [&::-webkit-calendar-picker-indicator]:hover:opacity-100";
 
   return (
     <div className="flex flex-col gap-3">
