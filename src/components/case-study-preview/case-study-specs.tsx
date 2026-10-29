@@ -1,5 +1,5 @@
 type CaseStudySpecsProps = {
-  role: string;
+  role?: string;
   client?: string;
   scope?: string;
   industry?: string;

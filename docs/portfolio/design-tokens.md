@@ -108,7 +108,7 @@ Implemented in [`src/components/case-study-preview/`](../../src/components/case-
 - `case-study-preview.tsx` — top-level component. `flex-col-reverse` below `md` (image first, meta second on mobile/tablet), `md:flex-row` (meta left, image right) at `md+`
 - `case-study-meta.tsx` — large meta component composing:
   - `case-study-header.tsx` — title, subtitle, url
-  - `case-study-specs.tsx` — Role / Client / Scope / Industry / Completed rows (only rendered when the project JSON provides a value — `client`, `scope`, `industry`, `completed` are optional fields on top of the existing `role`)
+  - `case-study-specs.tsx` — Client / Scope / Industry / Completed rows on the home card (Role is only shown on the case study page sidebar); each row only renders when the project JSON provides a value
   - `case-study-cta.tsx` — "View case study" button, links to `/projects/[slug]`
 - `case-study-image-frame.tsx` — bordered, rounded, `surface-sunken` frame, no inner padding (image sits flush to the frame edges); `object-contain` so background-removed PNG exports sit inside without cropping
 
