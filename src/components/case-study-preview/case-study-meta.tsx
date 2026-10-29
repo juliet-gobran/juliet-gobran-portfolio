@@ -10,7 +10,6 @@ type CaseStudyMetaProps = {
     | "title"
     | "subtitle"
     | "url"
-    | "role"
     | "client"
     | "scope"
     | "industry"
@@ -27,7 +26,6 @@ export function CaseStudyMeta({ project }: CaseStudyMetaProps) {
         url={project.url}
       />
       <CaseStudySpecs
-        role={project.role}
         client={project.client}
         scope={project.scope}
         industry={project.industry}

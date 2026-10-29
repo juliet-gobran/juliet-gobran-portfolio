@@ -11,7 +11,6 @@ type CaseStudyPreviewProps = {
     | "title"
     | "subtitle"
     | "url"
-    | "role"
     | "client"
     | "scope"
     | "industry"
