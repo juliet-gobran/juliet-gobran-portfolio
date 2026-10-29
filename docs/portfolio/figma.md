@@ -19,7 +19,7 @@
 
 Older dark-theme frames (`359:1096`, `359:1624`, `359:1179`) are superseded by this redesign and no longer tracked here.
 
-> Note: the `/the-search` app has **not** been redesigned — it picked up the light color tokens since it's token-driven, but its layout/typography is unchanged. The home page (all sections) and both case study templates (preview + detail) are fully implemented.
+> Note: the home page (all sections) and both case study templates (preview + detail) are fully implemented.
 
 ## Using Figma in this workflow
 

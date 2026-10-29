@@ -4,9 +4,6 @@
   --color-surface-sunken: #ebe5d8;
   --color-border-subtle: #d7d1c4;
   --color-text-primary: #000000;
-  /* Only used by /the-search (unrelated job-tracker tool) */
-  --color-accent-orange: #d44e2e;
-  --color-text-on-accent: #000000;
 
   /* Accents — CTA palette (home card "View case study", nav "Contact").
      Three accents, each with a light (fill) and dark (border) variant. */

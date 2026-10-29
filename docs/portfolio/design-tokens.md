@@ -12,8 +12,6 @@ Extracted from Figma frame `593:4869` (Portfolio — light redesign). Update whe
 | `surface-sunken` | `#ebe5d8` | Home/Surface/Darker Cream | Nav bar fill, case study image frames, gallery tiles, About photo card, Contact card |
 | `border-subtle` | `#d7d1c4` | Home / Border / Subtle | 1px borders — nav, image frames, gallery tiles, cards, spec row dividers, mobile menu panel |
 | `text-primary` | `#000000` | Home / Text / Black | Default body/heading text everywhere |
-| `text-on-accent` | `#000000` | — | Text on orange pills — only used by `/the-search` (unrelated job-tracker tool), not the portfolio |
-| `accent-orange` | `#d44e2e` | — | Only used by `/the-search` now; no longer referenced by any portfolio/case-study component |
 
 No background image/animation — the galaxy crossfade has been removed entirely.
 
@@ -77,7 +75,7 @@ All project pages now use these tokens — the old project-detail tokens (`proje
 |-------|-------|-------|
 | `radius-control` | 8px | Nav bar, nav CTA, view-case-study button, mobile menu dropdown |
 | `radius-card` | 16px | Case study image frames, gallery tiles, About photo, Contact card |
-| `radius-pill` | 32px | Only used by `/the-search` now |
+| `radius-pill` | 32px | Hover tags (Easter egg "Click me", toolkit names) |
 
 ## Layout
 
