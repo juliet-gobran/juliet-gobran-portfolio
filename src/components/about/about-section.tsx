@@ -36,52 +36,54 @@ export function AboutSection() {
         Hi, I&rsquo;m Juliet
       </h2>
 
-      <div className="@container flex w-full flex-col gap-8 @[832px]:flex-row">
-        <div className="relative w-[400px] max-w-full shrink-0 rounded-card border border-border-subtle bg-surface-sunken p-8">
-          <div className="aspect-[4/5] w-full overflow-hidden rounded-card">
-            <Image
-              src="/images/about/juliet-portrait.webp"
-              alt="Juliet smiling on a street in Perth, wearing a brown jacket and carrying a tote bag"
-              width={896}
-              height={1100}
-              sizes="400px"
-              className="h-full w-full object-cover"
-            />
-          </div>
-          <div className="absolute top-0 right-2 size-32 drop-shadow-surface">
-            <StarIcon />
-          </div>
-        </div>
-
-        <div className="flex min-w-0 flex-1 flex-col gap-8">
-          <div className="flex flex-col gap-4 font-albert-sans text-case-study-body font-light text-text-primary">
-            {BIO_PARAGRAPHS.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <h3 className="font-jura text-case-study-page-heading font-bold text-text-primary">
-              Qualifications
-            </h3>
-            <div className="flex flex-col font-albert-sans text-case-study-body font-light text-text-primary">
-              {QUALIFICATIONS.map((qualification) => (
-                <p key={qualification}>{qualification}</p>
-              ))}
+      <div className="@container w-full">
+        <div className="flex w-full flex-col items-start gap-8 @[832px]:flex-row">
+          <div className="relative w-[400px] max-w-full shrink-0 rounded-card border border-border-subtle bg-surface-sunken p-8">
+            <div className="aspect-[4/5] w-full overflow-hidden rounded-card">
+              <Image
+                src="/images/about/juliet-portrait.webp"
+                alt="Juliet smiling on a street in Perth, wearing a brown jacket and carrying a tote bag"
+                width={896}
+                height={1100}
+                sizes="400px"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="absolute top-0 right-2 size-32 drop-shadow-surface">
+              <StarIcon />
             </div>
           </div>
 
-          <div className="flex flex-col gap-6">
-            <h3 className="font-jura text-case-study-page-heading font-bold text-text-primary">
-              Typical Toolkit
-            </h3>
-            <div className="flex flex-wrap gap-4">
-              {TOOLKIT.map(({ name, Icon }) => (
-                <div key={name} className="group relative size-12 shrink-0">
-                  <Icon />
-                  <HoverTag>{name}</HoverTag>
-                </div>
+          <div className="flex w-full min-w-0 flex-1 flex-col gap-8">
+            <div className="flex flex-col gap-4 font-albert-sans text-case-study-body font-light text-text-primary">
+              {BIO_PARAGRAPHS.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
               ))}
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <h3 className="font-jura text-case-study-page-heading font-bold text-text-primary">
+                Qualifications
+              </h3>
+              <div className="flex flex-col font-albert-sans text-case-study-body font-light text-text-primary">
+                {QUALIFICATIONS.map((qualification) => (
+                  <p key={qualification}>{qualification}</p>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-6">
+              <h3 className="font-jura text-case-study-page-heading font-bold text-text-primary">
+                Typical Toolkit
+              </h3>
+              <div className="flex flex-wrap gap-4">
+                {TOOLKIT.map(({ name, Icon }) => (
+                  <div key={name} className="group relative size-12 shrink-0">
+                    <Icon />
+                    <HoverTag>{name}</HoverTag>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
