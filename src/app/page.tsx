@@ -1,6 +1,7 @@
 import { AboutSection } from "@/components/about/about-section";
 import { AccentEasterEgg } from "@/components/accent-easter-egg";
 import { CaseStudyPreview } from "@/components/case-study-preview/case-study-preview";
+import { ContactSection } from "@/components/contact/contact-section";
 import { GalleryGrid } from "@/components/gallery/gallery-grid";
 import { RevealOnScroll } from "@/components/reveal-on-scroll";
 import { WollongongClock } from "@/components/wollongong-clock";
@@ -57,17 +58,11 @@ export default function Home() {
         >
           <AboutSection />
         </section>
-
-        <section
-          id="contact"
-          aria-label="Contact"
-          className="py-case-study-section-y"
-        >
-          <h2 className="font-jura text-case-study-title font-bold leading-[1.15] text-text-primary">
-            Contact
-          </h2>
-        </section>
       </div>
+
+      <section id="contact" aria-label="Contact" className="w-full pt-case-study-section-y">
+        <ContactSection />
+      </section>
     </div>
   );
 }
