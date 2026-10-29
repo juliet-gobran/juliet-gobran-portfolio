@@ -9,9 +9,8 @@ Extracted from Figma frame `593:4869` (Portfolio — light redesign). Update whe
 | Token | Hex / value | Figma style | Usage |
 |-------|-------------|--------------|-------|
 | `background` | `#f9f6ef` | Home/Surface/Cream | Page background |
-| `surface-sunken` | `#ebe5d8` | Home/Surface/Darker Cream | Nav bar fill, case study image frames (home card and detail page) |
-| `surface-raised` | `#ffffff` | Home / Surface / White | No longer referenced by the portfolio — the CTA buttons now use the accent tokens below |
-| `border-subtle` | `#d7d1c4` | Home / Border / Subtle | 1px borders — nav, image frames, spec row dividers, mobile menu panel |
+| `surface-sunken` | `#ebe5d8` | Home/Surface/Darker Cream | Nav bar fill, case study image frames, gallery tiles, About photo card, Contact card |
+| `border-subtle` | `#d7d1c4` | Home / Border / Subtle | 1px borders — nav, image frames, gallery tiles, cards, spec row dividers, mobile menu panel |
 | `text-primary` | `#000000` | Home / Text / Black | Default body/heading text everywhere |
 | `text-on-accent` | `#000000` | — | Text on orange pills — only used by `/the-search` (unrelated job-tracker tool), not the portfolio |
 | `accent-orange` | `#d44e2e` | — | Only used by `/the-search` now; no longer referenced by any portfolio/case-study component |
@@ -58,7 +57,7 @@ All project pages now use these tokens — the old project-detail tokens (`proje
 
 | Token | Value | Usage |
 |-------|-------|-------|
-| `shell-inset` | 16px | Outer padding around the nav |
+| `shell-inset` | 16px | Nav inset: top/bottom on the shell wrapper (`py-shell-inset`), left/right on the nav itself (`mx-shell-inset`) |
 | `nav-padding-x` | 16px | Nav horizontal padding |
 | `nav-padding-y` | 8px | Nav vertical padding |
 | `center-padding-y` | 64px | Main content vertical padding |
@@ -70,14 +69,14 @@ All project pages now use these tokens — the old project-detail tokens (`proje
 
 | Token | Value | Usage |
 |-------|-------|-------|
-| `drop-shadow-surface` | `0 0 8px rgba(0, 0, 0, 0.25)` | Figma "Drop shadow" effect (X 0, Y 0, Blur 8, Spread 0, Black 25%) applied as a `drop-shadow` filter — conforms to the icon shape rather than boxing it. Used on the home intro accent Easter egg icons |
+| `drop-shadow-surface` | `0 0 8px rgba(0, 0, 0, 0.25)` | Figma "Drop shadow" effect (X 0, Y 0, Blur 8, Spread 0, Black 25%) applied as a `drop-shadow` filter — conforms to the icon shape rather than boxing it. Used on the accent Easter egg icons and the About star |
 
 ## Radius
 
 | Token | Value | Usage |
 |-------|-------|-------|
 | `radius-control` | 8px | Nav bar, nav CTA, view-case-study button, mobile menu dropdown |
-| `radius-card` | 16px | Case study image frames (home card and detail page) |
+| `radius-card` | 16px | Case study image frames, gallery tiles, About photo, Contact card |
 | `radius-pill` | 32px | Only used by `/the-search` now |
 
 ## Layout
@@ -86,12 +85,22 @@ Implemented in [`src/components/app-shell.tsx`](../../src/components/app-shell.t
 
 | Property | Value |
 |----------|-------|
-| Outer inset | 16px (`shell-inset`) around the nav |
-| Shell layout | Vertical stack, viewport-locked (`h-dvh`) so nav stays in frame; `<main>` is the scroll region |
+| Nav inset | 16px (`shell-inset`) on all sides of the nav; page content is not inset by it |
+| Shell layout | Vertical stack, viewport-locked (`h-dvh`) so nav stays in frame; `<main>` is the scroll region (16px side padding, 64px top/bottom) |
 | Nav | Bordered, rounded (`radius-control`) bar — `surface-sunken` fill; left: name (links to `/`), right: Work / Gallery / About (anchor links to `/#work`, `/#gallery`, `/#about`) + Contact button (`/#contact`) |
-| No footer | The previous footer (clock + role) has been removed — the clock now lives inline under the home page intro |
-| Home max width | 1200px (`max-w-home`) |
+| No footer | The clock lives inline under the home page intro; the Contact card closes the page |
+| Home max width | 1200px (`max-w-home`) — intro, Work, About. Gallery and Contact run full width |
 | Content max width | 800px (`max-w-content`) — intro heading |
+
+## Home sections
+
+| Section | Component | Notes |
+|---------|-----------|-------|
+| Intro | `page.tsx` + [`accent-easter-egg.tsx`](../../src/components/accent-easter-egg.tsx) | Headline + icons share a row (the icons sit in a reserved frame so they never overlap the text); stacks under 800px with the icons as a 40px row |
+| Work | [`case-study-preview/`](../../src/components/case-study-preview/) | See below |
+| Gallery | [`gallery-grid.tsx`](../../src/components/gallery/gallery-grid.tsx) | 1 → 2 (`md`) → 3 (`lg`) columns, 5:4 tiles, `object-cover` |
+| About | [`about-section.tsx`](../../src/components/about/about-section.tsx) | 400px 4:5 photo in a `surface-sunken` card with the star (102px) breaking out of its top-right corner; bio, Qualifications, Typical Toolkit (48px icons, 16px gap, `HoverTag` names). Container query stacks it once the text column would drop under ~400px |
+| Contact | [`contact-section.tsx`](../../src/components/contact/contact-section.tsx) | Full-width `surface-sunken` card: LinkedIn / Medium / Github, Email (mailto), Resume (downloads `public/files/juliet-gobran-cv.pdf`) |
 
 ## Case study preview (home page)
 

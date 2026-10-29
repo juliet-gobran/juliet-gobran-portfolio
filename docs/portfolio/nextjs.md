@@ -16,34 +16,46 @@
 ```text
 src/
   app/
-    layout.tsx          # Root layout, fonts, global styles
-    page.tsx            # Home (/)
-    about/page.tsx      # About (/about)
-    projects/[slug]/    # Project detail (/projects/:slug)
-    globals.css         # Tailwind + token theme
+    layout.tsx            # Root layout, fonts, AccentProvider, before-paint accent script
+    page.tsx              # Home (/) — intro, Work, Gallery, About, Contact sections
+    projects/[slug]/      # Case study detail (/projects/:slug)
+    globals.css           # Tailwind + token theme, [data-accent] overrides
   components/
-    app-shell.tsx       # Nav + scrollable center + footer layout
-    galaxy-background.tsx # Animated galaxy crossfade (client component)
-    motion-preference-provider.tsx # Motion on/off context + galaxy wrapper
-    nav-bar.tsx         # Responsive nav, dropdown, motion toggle
-    wollongong-clock.tsx # Live Wollongong clock (client component)
+    app-shell.tsx         # Nav + scrollable <main>
+    nav-bar.tsx           # Responsive nav (anchor links), mobile dropdown
+    accent-provider.tsx   # Active accent context + localStorage persistence
+    accent-easter-egg.tsx # Star/thumbs-up/heart accent switcher by the intro
+    reveal-on-scroll.tsx  # Fade/rise-in on scroll (IntersectionObserver)
+    section-heading.tsx   # Shared h2 for home sections
+    hover-tag.tsx         # "Click me"-style hover tooltip
+    wollongong-clock.tsx  # Live Wollongong clock
+    icons/                # Accent icons (star, thumbs-up, heart)
+    case-study-preview/   # Home case study cards
+    case-study-detail/    # Case study page (sidebar + blocks)
+    gallery/              # Gallery grid
+    about/                # About section + toolkit icons
+    contact/              # Contact card
   lib/
-    nav-links.ts        # Nav link constants
-    projects.ts         # Read and filter project JSON
-    projects.schema.ts  # Zod schema
+    content.ts            # Shared JSON-dir loader + order sort
+    projects.ts / projects.schema.ts
+    gallery.ts / gallery.schema.ts
+    accents.ts            # Accent list, storage key, before-paint script
+    format-display-url.ts
   styles/
-    tokens.css          # Design token CSS variables
-  types/
-    project.ts          # Project TypeScript types
+    tokens.css            # Design token CSS variables
 
 content/
-  projects/             # One JSON file per project
+  projects/               # One JSON file per project
+  gallery/                # One JSON file per gallery image
 
 public/
-  galaxy/               # Galaxy background frames (1–6)
-  images/projects/      # Project images by slug
+  images/projects/        # Case study images by slug
+  images/gallery/         # Gallery images
+  images/about/           # Portrait + toolkit SVG sources
+  images/accents/         # Accent icon SVG sources
+  files/                  # Downloadable CV
 
-docs/portfolio/         # Design specs and workflow docs
+docs/portfolio/           # Design specs and workflow docs
 ```
 
 ## Commands
@@ -83,26 +95,8 @@ Source of truth for values: [design-tokens.md](design-tokens.md).
 
 Do not deploy to production without explicit approval.
 
-## Phase 2
+## Current state
 
-**Done:**
+The light redesign is fully built: home (intro + accent Easter egg, Work, Gallery, About, Contact) and the `blocks`-driven case study page. See [site-map.md](site-map.md) for structure and [design-tokens.md](design-tokens.md) for component/token details.
 
-- App shell layout (nav, scrollable center, footer) — [`src/components/app-shell.tsx`](../../src/components/app-shell.tsx)
-  - Nav and footer: separate `border-border-shell` blocks with `rounded-t-shell-top` / `rounded-b-shell-bottom`
-  - Center: borderless, `overflow-y-auto`, `max-w-content` inner wrapper
-  - Responsive typography at `md` breakpoint (see [styles.md](styles.md))
-- Galaxy background animation — [`src/components/galaxy-background.tsx`](../../src/components/galaxy-background.tsx)
-  - Crossfade loop through `public/galaxy/1-Galaxy.png` … `6-Galaxy.png` (continuous 5s fades, no hold)
-  - Paused when **Motion** toggle is off (default on), OS `prefers-reduced-motion`, or tab visibility is hidden; freezes mid-blend and resumes from same point
-- Responsive nav — [`src/components/nav-bar.tsx`](../../src/components/nav-bar.tsx)
-  - Mobile: bordered dropdown + hamburger/cross animation
-  - Desktop: inline links + Motion toggle
-  - Link hover: `text-accent-orange` with `ease-in-out` transition
-- Wollongong clock client component — [`src/components/wollongong-clock.tsx`](../../src/components/wollongong-clock.tsx)
-  - `useSyncExternalStore` + `Intl.DateTimeFormat` (`Australia/Sydney`)
-  - Hydration-safe (empty server snapshot)
-
-**Not yet built:**
-
-- Project Card component on home
-- Project detail page design + Markdown rendering
+The CV at `public/files/juliet-gobran-cv.pdf` is served with `Content-Disposition: attachment` (configured in [`next.config.ts`](../../next.config.ts)) so it always downloads rather than opening in a tab.
