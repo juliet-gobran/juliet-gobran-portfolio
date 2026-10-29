@@ -36,9 +36,9 @@ export function AboutSection() {
         Hi, I&rsquo;m Juliet
       </h2>
 
-      <div className="@container w-full">
+      <div className="@container w-full overflow-x-clip">
         <div className="flex w-full flex-col items-start gap-8 @[832px]:flex-row">
-          <div className="relative w-[400px] max-w-full shrink-0 rounded-card border border-border-subtle bg-surface-sunken p-8">
+          <div className="relative w-[400px] max-w-full shrink-0 rounded-card border border-border-subtle bg-surface-sunken">
             <div className="aspect-[4/5] w-full overflow-hidden rounded-card">
               <Image
                 src="/images/about/juliet-portrait.webp"
@@ -49,7 +49,7 @@ export function AboutSection() {
                 className="h-full w-full object-cover"
               />
             </div>
-            <div className="absolute top-0 right-2 size-32 drop-shadow-surface">
+            <div className="absolute -top-10 -right-10 size-32 drop-shadow-surface">
               <StarIcon />
             </div>
           </div>
