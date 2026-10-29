@@ -9,6 +9,7 @@ import {
 } from "@/components/about/toolkit-icons";
 import { HoverTag } from "@/components/hover-tag";
 import { StarIcon } from "@/components/icons/accent-icons";
+import { RevealOnScroll } from "@/components/reveal-on-scroll";
 import { SectionHeading } from "@/components/section-heading";
 
 const BIO_PARAGRAPHS = [
@@ -33,11 +34,16 @@ const TOOLKIT = [
 export function AboutSection() {
   return (
     <div className="flex flex-col gap-4">
-      <SectionHeading>Hi, I&rsquo;m Juliet</SectionHeading>
+      <RevealOnScroll>
+        <SectionHeading>Hi, I&rsquo;m Juliet</SectionHeading>
+      </RevealOnScroll>
 
       <div className="@container w-full overflow-x-clip">
         <div className="flex w-full flex-col items-start gap-8 @[832px]:flex-row">
-          <div className="relative w-[400px] max-w-full shrink-0 rounded-card border border-border-subtle bg-surface-sunken">
+          <RevealOnScroll
+            delayMs={100}
+            className="relative w-[400px] max-w-full shrink-0 rounded-card border border-border-subtle bg-surface-sunken"
+          >
             <div className="aspect-[4/5] w-full overflow-hidden rounded-card">
               <Image
                 src="/images/about/juliet-portrait.webp"
@@ -51,16 +57,19 @@ export function AboutSection() {
             <div className="absolute -top-8 -right-8 size-[102px] drop-shadow-surface">
               <StarIcon />
             </div>
-          </div>
+          </RevealOnScroll>
 
           <div className="flex w-full min-w-0 flex-1 flex-col gap-8">
-            <div className="flex flex-col gap-4 font-albert-sans text-case-study-body font-light text-text-primary">
+            <RevealOnScroll
+              delayMs={200}
+              className="flex flex-col gap-4 font-albert-sans text-case-study-body font-light text-text-primary"
+            >
               {BIO_PARAGRAPHS.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
-            </div>
+            </RevealOnScroll>
 
-            <div className="flex flex-col gap-2">
+            <RevealOnScroll delayMs={200} className="flex flex-col gap-2">
               <h3 className="font-jura text-case-study-page-heading font-bold text-text-primary">
                 Qualifications
               </h3>
@@ -69,9 +78,9 @@ export function AboutSection() {
                   <p key={qualification}>{qualification}</p>
                 ))}
               </div>
-            </div>
+            </RevealOnScroll>
 
-            <div className="flex flex-col gap-6">
+            <RevealOnScroll delayMs={200} className="flex flex-col gap-6">
               <h3 className="font-jura text-case-study-page-heading font-bold text-text-primary">
                 Typical Toolkit
               </h3>
@@ -83,7 +92,7 @@ export function AboutSection() {
                   </div>
                 ))}
               </div>
-            </div>
+            </RevealOnScroll>
           </div>
         </div>
       </div>

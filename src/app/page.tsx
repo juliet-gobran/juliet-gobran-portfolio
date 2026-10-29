@@ -60,7 +60,9 @@ export default function Home() {
       </div>
 
       <section id="contact" aria-label="Contact" className="w-full pt-case-study-section-y">
-        <ContactSection />
+        <RevealOnScroll>
+          <ContactSection />
+        </RevealOnScroll>
       </section>
     </div>
   );
