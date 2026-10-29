@@ -10,7 +10,7 @@ export function AppShell({ children }: AppShellProps) {
   return (
     <div className="relative h-dvh overflow-hidden bg-background">
       <div className="relative flex h-full min-h-0 flex-col py-shell-inset">
-        <header className="relative z-10 flex shrink-0 items-center justify-between rounded-control border border-border-subtle bg-surface-sunken px-nav-padding-x py-nav-padding-y">
+        <header className="relative z-10 mx-shell-inset flex shrink-0 items-center justify-between rounded-control border border-border-subtle bg-surface-sunken px-nav-padding-x py-nav-padding-y">
           <Link
             href="/"
             className="font-jura text-2xl font-bold text-text-primary transition-opacity duration-300 ease-in-out hover:opacity-70 md:text-nav-name"
