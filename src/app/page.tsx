@@ -1,3 +1,4 @@
+import { AboutSection } from "@/components/about/about-section";
 import { AccentEasterEgg } from "@/components/accent-easter-egg";
 import { CaseStudyPreview } from "@/components/case-study-preview/case-study-preview";
 import { GalleryGrid } from "@/components/gallery/gallery-grid";
@@ -54,9 +55,7 @@ export default function Home() {
           aria-label="About"
           className="py-case-study-section-y"
         >
-          <h2 className="font-jura text-case-study-title font-bold leading-[1.15] text-text-primary">
-            About
-          </h2>
+          <AboutSection />
         </section>
 
         <section
